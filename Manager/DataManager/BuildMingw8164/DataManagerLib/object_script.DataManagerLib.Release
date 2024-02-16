@@ -1,0 +1,10 @@
+release/baseservice.o
+release/inputflow.o
+release/outputflow.o
+release/processor.o
+release/datamanager.o
+release/moc_baseservice.o
+release/moc_inputflow.o
+release/moc_outputflow.o
+release/moc_processor.o
+release/moc_datamanager.o

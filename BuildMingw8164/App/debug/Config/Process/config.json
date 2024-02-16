@@ -1,0 +1,42 @@
+[
+    {
+        "Plugin": "UnitConverter",
+        "Reduce Name": "UC",
+        "Assigned Channels":
+            [
+                "189301637_ERB_Accelerometer_ch0",
+                "189301637_ERB_Accelerometer_ch1",
+                "189301637_ERB_Accelerometer_ch2"
+            ],
+        "Params":
+            {
+                "OutputUnit": "mm/s",
+                "HP_bt": 2.0,
+                "HP_fc": 5.0
+            }
+    },
+
+    {
+        "Plugin": "FFTAnalysis",
+        "Reduce Name": "FFT",
+        "Assigned Channels":
+            [
+                "189301637_ERB_Accelerometer_ch0_UC",
+                "189301637_ERB_Accelerometer_ch1_UC",
+                "189301637_ERB_Accelerometer_ch2_UC"
+            ],
+        "Setup":
+            {
+                "blockSize": 10192,
+                "numAvg": 4,
+                "avg": "Linear",
+                "scale": "Linear",
+                "ampFormat": "RMS",
+                "window": "Hanning",
+                "function": "FFT",
+                "isDCFilter": true,
+                "fcDCFilter": 1.0,
+                "isFullRange": true
+            }
+    }
+]
