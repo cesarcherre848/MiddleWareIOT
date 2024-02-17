@@ -8,7 +8,8 @@ QT += core
 # Archivos fuente
 HEADERS += basicstatistics.h \
     Constants/textMaps.h \
-    Models/BSConf.h
+    Models/BSConf.h \
+    Utils/TimeDomain.h
 
 
 SOURCES += basicstatistics.cpp

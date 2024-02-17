@@ -5,6 +5,7 @@
 enum class Function{
     RMS,
     Peak,
+    Peak_Peak,
     Kurtosis,
     Crest_Factor,
     Skewness

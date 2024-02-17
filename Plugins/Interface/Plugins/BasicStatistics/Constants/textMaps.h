@@ -7,6 +7,7 @@
 const QMap<Function, QString> mapFunction = {
     {Function::RMS, "RMS"},
     {Function::Peak, "Peak"},
+    {Function::Peak_Peak, "Peak Peak"},
     {Function::Crest_Factor, "Crest Factor"},
     {Function::Kurtosis, "Kurtosis"},
     {Function::Skewness, "Skewness"},
@@ -15,6 +16,7 @@ const QMap<Function, QString> mapFunction = {
 const QMap<QString, Function> invMapFunction = {
     {"RMS", Function::RMS},
     {"Peak", Function::Peak},
+    {"Peak Peak", Function::Peak_Peak},
     {"Crest Factor", Function::Crest_Factor},
     {"Kurtosis", Function::Kurtosis},
     {"Skewness", Function::Skewness},

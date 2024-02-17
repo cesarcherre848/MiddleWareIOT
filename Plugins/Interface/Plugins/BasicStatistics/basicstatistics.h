@@ -7,7 +7,8 @@
 #include "QtPlugin"
 #include "QQueue"
 #include "../DataManagerLib/Models/Signals.h" // modificar al cambiar de entorno
-//#include "Models/UCConf.h"
+#include "Models/BSConf.h"
+
 
 class BasicStatistics : public PluginInterface {
     Q_OBJECT
@@ -39,8 +40,12 @@ private:
 
     QQueue<Signal> inputDataQueue;
 
+    BSConf conf;
+
 
 private:
+
+    void getBSConf();
 
     void computeOperation(Signal data, QQueue<Signal> &queue);
 
