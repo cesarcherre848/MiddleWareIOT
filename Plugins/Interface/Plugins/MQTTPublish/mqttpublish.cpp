@@ -61,24 +61,8 @@ void MQTTPublish::execute()
         Signal currentData = inputDataQueue.dequeue();
         applyComponentSignal(currentData);
         QByteArray message = parseValuePayload(currentData);
-
-        comm->publishPayload(message, "MiddleWareIOT");
-        //computeOperation(currentData, outChannelQueue);
-        //computeSingleFunction(currentData, singleChannelQueue);
-    }
-
-
-    /*
-    int items = outChannelQueue.size();
-    for (int i = 0; i < items; i++) {
-        Signal signal = outChannelQueue.dequeue();
-        emit processedData(signal);
-    }
-
-    outChannelQueue.clear();
-    */
-
-
+        publishMultipleTopics(message, conf.topics);
+    } 
     inputDataQueue.clear();
 }
 
@@ -105,17 +89,36 @@ void MQTTPublish::setAsignedComponents(const QMap<QString, AssignedComponent> & 
 
 void MQTTPublish::getConf()
 {
-    conf.hostname = "146.190.122.149";
-    conf.port = 1883;
+    if(setup.contains("hostname")){
+        QString hostname = setup["hostname"].toString();
+        conf.hostname = hostname;
+    }
+    if(setup.contains("port")){
+        int port = setup["port"].toInt();
+        conf.port = port;
+    }
+    if(setup.contains("topics")){
+        QStringList topics = setup["topics"].toStringList();
+        conf.topics = topics;
+    }
+
 }
 
 void MQTTPublish::initMQTTCommunication()
 {
+    if(conf.port == 0){
+        return;
+    }
+
+    if(conf.hostname.isEmpty()){
+        return;
+    }
+
     comm = new MQTTComm(this);
     comm->setHostName(conf.hostname);
     comm->setPort(conf.port);
     connect(comm, &MQTTComm::updateStatusConnection, this, [=](QString msg){
-        qDebug() << "Status Connection" << msg;
+        qWarning() << QString("%1 %2").arg(getName()).arg("Connections Status") << msg;
     });
     comm->connect();
 }
@@ -150,6 +153,13 @@ void MQTTPublish::applyComponentSignal(Signal &signal)
             QString newChannel = channelMap[channel];
             name = name.replace(channel, newChannel);
         }
+    }
+}
+
+void MQTTPublish::publishMultipleTopics(QByteArray message, QStringList topics)
+{
+    foreach (QString topic, topics) {
+        comm->publishPayload(message, topic);
     }
 }
 

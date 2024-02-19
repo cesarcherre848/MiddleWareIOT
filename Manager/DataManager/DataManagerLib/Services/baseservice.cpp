@@ -5,12 +5,23 @@
 #include "QJsonObject"
 #include "QJsonArray"
 
-BaseService::BaseService() {}
+BaseService::BaseService(QSettings &_settings) : settings(_settings){}
+
+BaseService::~BaseService()
+{
+    if(timer){
+        delete timer;
+    }
+
+    for (PluginInterface* obj : operationsInstances) {
+        delete obj;
+    }
+    operationsInstances.clear();
+
+}
 
 void BaseService::loadPluginIntances()
 {
-
-    qDebug() << "pass load plugin Instances" << operations.size();
 
     for (int i = 0; i < operations.size(); ++i) {
         Operation operation = operations[i];
@@ -146,6 +157,57 @@ void BaseService::loadConfig()
 
     jsonByteArrayToOperation(jsonData);
 }
+
+void BaseService::mainTimeout()
+{
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &BaseService::execute);
+    timer->start((int)interval*1000);
+}
+
+void BaseService::setInterval(float newInterval)
+{
+    interval = newInterval;
+}
+
+void BaseService::addDirectoryPlugins(QString dir)
+{
+    directoryPlugins << dir;
+}
+
+void BaseService::printOperationsInstances()
+{
+    qDebug() << operationsInstances;
+}
+
+void BaseService::enqueueDataQueue(const Signal &data)
+{
+    dataQueue.enqueue(data);
+}
+
+Signal BaseService::dequeueDataQueue()
+{
+    return dataQueue.dequeue();
+}
+
+void BaseService::insertData(const Signal &data)
+{
+    mutex.lock();
+    enqueueDataQueue(data);
+    mutex.unlock();
+}
+
+int BaseService::sizeDataQueue()
+{
+    return dataQueue.size();
+}
+
+QSettings &BaseService::getSettings() const
+{
+    return settings;
+}
+
+
 
 
 void BaseService::executeAllOperations()

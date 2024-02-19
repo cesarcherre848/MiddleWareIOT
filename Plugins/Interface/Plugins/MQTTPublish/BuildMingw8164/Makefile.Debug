@@ -208,6 +208,7 @@ debug/moc_mqttpublish.cpp: ../mqttpublish.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
 		../Models/MPConf.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		D:/Proyectos/Health\ Vibration\ Monitoring/Dinamic\ Libraries/Comunications/MQTTComm/MQTTCommLib/mqttcomm.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/Dinamic\ Libraries/Comunications/MQTTComm/MQTTCommLib/MQTTComm_global.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
@@ -227,7 +228,6 @@ debug/moc_mqttpublish.cpp: ../mqttpublish.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicname.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QExplicitlySharedDataPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMetaType \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicfilter.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscriptionproperties.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QIODevice \
@@ -373,6 +373,7 @@ debug/mqttpublish.o: ../mqttpublish.cpp ../mqttpublish.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
 		../Models/MPConf.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		D:/Proyectos/Health\ Vibration\ Monitoring/Dinamic\ Libraries/Comunications/MQTTComm/MQTTCommLib/mqttcomm.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/Dinamic\ Libraries/Comunications/MQTTComm/MQTTCommLib/MQTTComm_global.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
@@ -392,7 +393,6 @@ debug/mqttpublish.o: ../mqttpublish.cpp ../mqttpublish.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicname.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QExplicitlySharedDataPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMetaType \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicfilter.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscriptionproperties.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QIODevice \

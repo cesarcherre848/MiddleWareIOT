@@ -14,24 +14,19 @@ class OutputFlow : public BaseService
 {
     Q_OBJECT
 public:
-    explicit OutputFlow(const QMap<QString, AssignedComponent> &newAssignedComponent);
+    explicit OutputFlow(const QMap<QString, AssignedComponent> &newAssignedComponent, QSettings &_settings);
 
     ~OutputFlow();
 
 
 private:
 
-    QQueue<Signal> outputDataQueue;
-    QMutex mutex;
-
-    QTimer* timer;
-
     QSqlDatabase db = QSqlDatabase::addDatabase("QPSQL");
 
 
 private:
 
-    void mainTimeout();
+
 
 
 // just for test
@@ -40,17 +35,16 @@ private:
     std::string vectorToText(const std::vector<double>& data);
 
 
-    void loadOperations();
-
     void applyComponentSignal(Signal &signal);
+
+    void initConfig();
 
 signals:
 
 public slots:
 
-    void execute();
+    void execute() override;
 
-    void insertData(const Signal &);
 };
 
 

@@ -1,28 +1,30 @@
 #include "outputflow.h"
 #include <sstream>
 
-OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedComponent)
+OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedComponent, QSettings &_settings)
+:BaseService{_settings}
 {
 
+    initConfig();
 #ifdef QT_DEBUG
 
 
-    directoryPlugins << "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildMingw8164/debug";
+    addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildMingw8164/debug");
 
-
+    //dirConfig = dirRel + "/Config/Output";
 
 #else \
     // Código para compilación en modo Release
 #endif
 
-
+    loadConfig();
     setAsignedComponents(newAssignedComponent);
 
-    loadOperations();
     loadPluginIntances();
-    //loadOperaitonInstances();
 
-    qDebug() << "Operations Output Instances:" << operationsInstances;
+
+    qDebug() << "Operations Output Instances:";
+    printOperationsInstances();
 
 
     mainTimeout();
@@ -46,22 +48,11 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
 
 OutputFlow::~OutputFlow()
 {
-    if(timer){
-        delete timer;
-    }
 
     db.close();
 }
 
 
-void OutputFlow::mainTimeout()
-{
-    timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &OutputFlow::execute);
-    timer->start(2000);
-
-
-}
 
 std::string OutputFlow::vectorToText(const std::vector<double> &data)
 {
@@ -80,25 +71,7 @@ std::string OutputFlow::vectorToText(const std::vector<double> &data)
     return ss.str();
 }
 
-void OutputFlow::loadOperations()
-{
-    Operation MQTTPublish;
-    MQTTPublish.name = "MQTTPublish";
-    //fft1.assignedSignalName = {"189301635_Acceleration_ch0", "189301635_Acceleration_ch1", "189301635_Acceleration_ch2"};
 
-    MQTTPublish.assignedSignalName = {
-        "189301637_ERB_Temperature",
-        "189301637_ERB_Battery",
-        "189301637_ERB_Velocity_ch0_RMS",
-        "189301637_ERB_Velocity_ch1_RMS",
-        "189301637_ERB_Velocity_ch2_RMS"
-        //"189301637_Accelerometer_ch0"
-        //"189301637_Accelerometer_ch1",
-        //"189301637_Accelerometer_ch2",
-    };
-
-    operations << MQTTPublish;
-}
 
 void OutputFlow::applyComponentSignal(Signal &signal)
 {
@@ -117,6 +90,14 @@ void OutputFlow::applyComponentSignal(Signal &signal)
     }
 }
 
+void OutputFlow::initConfig()
+{
+    const QSettings& settings = getSettings();
+    double interval = settings.value("Output/Interval", 1.).toDouble();
+    dirConfig = dirRel + settings.value("Output/DirConfig", "/Config/Output").toString();
+    setInterval(interval);
+}
+
 void OutputFlow::execute()
 {
 
@@ -130,13 +111,13 @@ void OutputFlow::execute()
 
     QString queryString = "INSERT INTO \"Test\" (id, measurement, \"timestamp\", arrayx, arrayy) VALUES ";
 
-    int items = outputDataQueue.size();
+    int items = sizeDataQueue();
     int count = 0;
     for (int i = 0; i < items; ++i) {
-        mutex.lock();
-        Signal currentData = outputDataQueue.dequeue();
+
+        Signal currentData = dequeueDataQueue();
         insertDatatoOperation(currentData);
-        mutex.unlock();
+
 
 
         applyComponentSignal(currentData);
@@ -159,7 +140,7 @@ void OutputFlow::execute()
         }
 
 
-        qDebug() << currentData;
+        qInfo() << currentData;
     }
 
     if(count > 0){
@@ -181,9 +162,4 @@ void OutputFlow::execute()
 
 }
 
-void OutputFlow::insertData(const Signal & signal)
-{
-    mutex.lock();
-    outputDataQueue.enqueue(signal);
-    mutex.unlock();
-}
+

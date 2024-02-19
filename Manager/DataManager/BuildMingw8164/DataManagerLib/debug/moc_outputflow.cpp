@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_OutputFlow_t {
-    const uint offsetsAndSize[10];
-    char stringdata0[38];
+    const uint offsetsAndSize[6];
+    char stringdata0[20];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_OutputFlow_t, stringdata0) + ofs), len 
@@ -31,12 +31,10 @@ static const qt_meta_stringdata_OutputFlow_t qt_meta_stringdata_OutputFlow = {
     {
 QT_MOC_LITERAL(0, 10), // "OutputFlow"
 QT_MOC_LITERAL(11, 7), // "execute"
-QT_MOC_LITERAL(19, 0), // ""
-QT_MOC_LITERAL(20, 10), // "insertData"
-QT_MOC_LITERAL(31, 6) // "Signal"
+QT_MOC_LITERAL(19, 0) // ""
 
     },
-    "OutputFlow\0execute\0\0insertData\0Signal"
+    "OutputFlow\0execute\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -46,7 +44,7 @@ static const uint qt_meta_data_OutputFlow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -54,12 +52,10 @@ static const uint qt_meta_data_OutputFlow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   26,    2, 0x0a,    1 /* Public */,
-       3,    1,   27,    2, 0x0a,    2 /* Public */,
+       1,    0,   20,    2, 0x0a,    1 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 4,    2,
 
        0        // eod
 };
@@ -71,10 +67,10 @@ void OutputFlow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->execute(); break;
-        case 1: _t->insertData((*reinterpret_cast< const Signal(*)>(_a[1]))); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject OutputFlow::staticMetaObject = { {
@@ -85,7 +81,7 @@ const QMetaObject OutputFlow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_OutputFlow_t
 , QtPrivate::TypeAndForceComplete<OutputFlow, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const Signal &, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -112,13 +108,13 @@ int OutputFlow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 1;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 1)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 1;
     }
     return _id;
 }

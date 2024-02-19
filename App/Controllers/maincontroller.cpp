@@ -6,6 +6,8 @@
 MainController::MainController(QObject *parent)
     : QObject{parent}
 {
+
+    initConfig();
     initDataManager();
     initMQTTCommunication();
 
@@ -26,6 +28,14 @@ MainController::~MainController()
 
     if(manager){
         delete manager;
+    }
+}
+
+void MainController::initConfig()
+{
+    bool infoLogs = settings.value("InfoLogs").toBool();
+    if(!infoLogs){
+        QLoggingCategory::setFilterRules(QStringLiteral("*.info=false"));
     }
 }
 
@@ -87,7 +97,8 @@ void MainController::initMQTTCommunication()
 
 void MainController::initDataManager()
 {
-    manager = new DataManager(this);
+    manager = new DataManager(settings);
+    manager->setParent(this);
 }
 
 /*

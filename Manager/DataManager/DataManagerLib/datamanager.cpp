@@ -3,8 +3,8 @@
 
 
 
-DataManager::DataManager(QObject *parent)
-    : QObject{parent}
+DataManager::DataManager(QSettings& _settings)
+    :settings(_settings)
 {
 
     idNodes = {"189301637"};
@@ -20,8 +20,10 @@ DataManager::DataManager(QObject *parent)
     inputFlow->setParent(this);
 
 
-    processor = new Processor(processInterval, maxQueuesProcessItems);
-    processor->startProcessing();
+
+    processor = new Processor(settings);
+
+
 
     connect(inputFlow, &InputFlow::newInputData, processor, &Processor::insertData);
 
@@ -29,7 +31,7 @@ DataManager::DataManager(QObject *parent)
     connect(processor, &Processor::returnDataToInputQueue, inputFlow, &InputFlow::insertData);
 
 
-    outputFlow = new OutputFlow(asignedComponents);
+    outputFlow = new OutputFlow(asignedComponents, settings);
 
     // conectar el processor con el salida
     connect(processor, &Processor::newProcessData, outputFlow, &OutputFlow::insertData);

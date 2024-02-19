@@ -60,6 +60,8 @@ private:
 
     void applyComponentSignal(Signal &signal);
 
+    void publishMultipleTopics(QByteArray message, QStringList topics);
+
 
 
 signals:

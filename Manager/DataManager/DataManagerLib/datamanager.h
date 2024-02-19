@@ -11,13 +11,14 @@
 #include "Services/inputflow.h"
 #include "Services/processor.h"
 #include "Services/outputflow.h"
+#include "QSettings"
 
 class DATAMANAGER_EXPORT DataManager : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit DataManager(QObject *parent = nullptr);
+    explicit DataManager(QSettings& _settings);
     ~DataManager();
 
     void insertInputDataQueue(const Signal& signal);
@@ -45,6 +46,7 @@ private:
     QMap<QString, AssignedComponent> asignedComponents;
     QStringList idNodes;
 
+    QSettings &settings;
 
 private:
 
@@ -52,6 +54,7 @@ private:
     void getDataFromDB();
 
     QMap<QString, QString> byteArrayJsonToChannels(QByteArray bytearray);
+
 
 };
 

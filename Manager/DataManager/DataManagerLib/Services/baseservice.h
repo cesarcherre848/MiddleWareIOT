@@ -1,30 +1,35 @@
 #ifndef BASESERVICE_H
 #define BASESERVICE_H
 #include "QCoreApplication"
+#include "QSettings"
 #include "QStringList"
+#include "QQueue"
+#include "QTimer"
 #include "Models/Operation.h"
 #include "../Interface/plugininterface.h"
+
 
 
 class BaseService : public QObject
 {
     Q_OBJECT
 public:
-    explicit BaseService();
+    explicit BaseService(QSettings &_settings);
+    ~BaseService();
 
 public:
 
-    QStringList directoryPlugins;
 
     QList<Operation> operations;
-
-    QList<PluginInterface *> operationsInstances;
 
     QMap<QString, AssignedComponent> asignedComponents;
 
     QString dirConfig;
 
     QString dirRel = QCoreApplication::applicationDirPath();
+
+
+
 
 public:
 
@@ -38,6 +43,45 @@ public:
 
     void loadConfig();
 
+    void mainTimeout();
+
+    void setInterval(float newInterval);
+
+    void addDirectoryPlugins(QString);
+
+    void printOperationsInstances();
+
+    void enqueueDataQueue(const Signal& data);
+
+    Signal dequeueDataQueue();
+
+    void insertData(const Signal & data);
+
+    int sizeDataQueue();
+
+
+
+    QSettings &getSettings() const;
+
+private:
+
+    QTimer* timer;
+
+    float interval = 2.;
+
+    QList<PluginInterface *> operationsInstances;
+
+    QStringList directoryPlugins;
+
+    QQueue<Signal> dataQueue;
+
+    QMutex mutex;
+
+    QSettings& settings;
+
+
+
+
 private:
 
     PluginInterface *getPluginInterface(Operation operation);
@@ -48,6 +92,8 @@ private:
 public slots:
 
     void reciveProcessedData(const Signal&);
+
+    virtual void execute(){};
 
 signals:
 
