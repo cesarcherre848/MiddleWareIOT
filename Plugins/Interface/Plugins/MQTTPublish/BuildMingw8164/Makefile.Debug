@@ -16,10 +16,10 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DTHRID_LIBS_STATIC -DQT_QML_DEBUG -DQT_PLUGIN -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../../MQTTPublish -I. -I../../MQTTPublish -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Manager/DataManager/DataManagerLib" -I../../../../Interface -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Idebug -I/include -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
+INCPATH       = -I../../MQTTPublish -I. -I../../MQTTPublish -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Manager/DataManager/DataManagerLib" -I../../../../Interface -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Idebug -I/include -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -shared -Wl,-subsystem,windows -mthreads -Wl,--out-implib,debug\libMQTTPublish.a
-LIBS        =        -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\BuildMingw8164\debug" -lPluginInterface -L"D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\BuildMingw8164\MQTTCommLib\debug" -lMQTTCommLib C:\Qt\6.2.0\mingw81_64\lib\libQt6Gui.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
+LIBS        =        -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\BuildMingw8164\debug" -lPluginInterface -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\BuildMingw8164\MQTTCommLib\debug" -lMQTTCommLib C:\Qt\6.2.0\mingw81_64\lib\libQt6Gui.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
 QMAKE         = C:\Qt\6.2.0\mingw81_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -209,8 +209,8 @@ debug/moc_mqttpublish.cpp: ../mqttpublish.h \
 		../Models/MPConf.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
-		D:/Proyectos/Health\ Vibration\ Monitoring/Dinamic\ Libraries/Comunications/MQTTComm/MQTTCommLib/mqttcomm.h \
-		D:/Proyectos/Health\ Vibration\ Monitoring/Dinamic\ Libraries/Comunications/MQTTComm/MQTTCommLib/MQTTComm_global.h \
+		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
+		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
@@ -253,7 +253,7 @@ debug/moc_mqttpublish.cpp: ../mqttpublish.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
-	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildMingw8164/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish" -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\mqttpublish.h -o debug\moc_mqttpublish.cpp
+	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildMingw8164/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish" -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\mqttpublish.h -o debug\moc_mqttpublish.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -374,8 +374,8 @@ debug/mqttpublish.o: ../mqttpublish.cpp ../mqttpublish.h \
 		../Models/MPConf.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
-		D:/Proyectos/Health\ Vibration\ Monitoring/Dinamic\ Libraries/Comunications/MQTTComm/MQTTCommLib/mqttcomm.h \
-		D:/Proyectos/Health\ Vibration\ Monitoring/Dinamic\ Libraries/Comunications/MQTTComm/MQTTCommLib/MQTTComm_global.h \
+		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
+		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
