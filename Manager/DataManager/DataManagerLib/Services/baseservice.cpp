@@ -76,10 +76,12 @@ PluginInterface *BaseService::getPluginInterface(Operation operation)
                         pluginInstance = nullptr;
                     }
                 } else {
-                    qDebug() << "  No se pudo convertir a PluginInterface";
+                    qWarning() << loader.errorString();
                 }
             }
-            loader.unload();
+            else{
+                qWarning() << loader.errorString();
+            }
         }
     }
 

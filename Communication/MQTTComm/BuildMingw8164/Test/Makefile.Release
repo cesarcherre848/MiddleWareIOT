@@ -13,13 +13,13 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_NO_DEBUG -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="\"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Comunications/MQTTComm/BuildMingw8164/Test\"" -DQT_QML_DEBUG
+DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_NO_DEBUG -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="\"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/BuildMingw8164/Test\"" -DQT_QML_DEBUG
 CFLAGS        = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../../Test -I. -I../../Test -I../MQTTComm -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Irelease -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
+INCPATH       = -I../../Test -I. -I../../Test -I../MQTTComm -I../../Test -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Irelease -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,console -mthreads
-LIBS        =        -L"D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\BuildMingw8164\MQTTCommLib\debug" -lmqttcommlib C:\Qt\6.2.0\mingw81_64\lib\libQt6Test.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
+LIBS        =        -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\BuildMingw8164\MQTTCommLib\release" -lMQTTCommLib C:\Qt\6.2.0\mingw81_64\lib\libQt6Test.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
 QMAKE         = C:\Qt\6.2.0\mingw81_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -79,12 +79,12 @@ clean: compiler_clean
 	-$(DEL_FILE) release\tst_configurationtest.o
 
 distclean: clean 
-	-$(DEL_FILE) "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\BuildMingw8164\Test\target_wrapper.bat"
+	-$(DEL_FILE) "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\BuildMingw8164\Test\target_wrapper.bat"
 	-$(DEL_FILE) $(DESTDIR_TARGET)
 	-$(DEL_FILE) Makefile.Release
 
 check: first
-	call "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\BuildMingw8164\Test\target_wrapper.bat" $(TESTRUNNER) release\$(TARGET) $(TESTARGS)
+	call "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\BuildMingw8164\Test\target_wrapper.bat" $(TESTRUNNER) release\$(TARGET) $(TESTARGS)
 
 mocclean: compiler_moc_header_clean compiler_moc_objc_header_clean compiler_moc_source_clean
 
@@ -459,7 +459,7 @@ release/tst_configurationtest.moc: ../../Test/tst_configurationtest.cpp \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		release/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
-	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Comunications/MQTTComm/BuildMingw8164/Test/release/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Comunications/MQTTComm/Test" -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Comunications/MQTTComm/Test" -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Comunications/MQTTComm/MQTTComm" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\Test\tst_configurationtest.cpp -o release\tst_configurationtest.moc
+	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/BuildMingw8164/Test/release/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/Test" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/Test" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTComm" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/Test" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\Test\tst_configurationtest.cpp -o release\tst_configurationtest.moc
 
 compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:

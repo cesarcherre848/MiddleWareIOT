@@ -41,90 +41,90 @@ SUBTARGETS    =  \
 
 sub-MQTTCommLib-qmake_all:  FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	cd MQTTCommLib\ && $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 	cd MQTTCommLib\ && $(MAKE) -f Makefile qmake_all
 sub-MQTTCommLib: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile
 sub-MQTTCommLib-make_first-ordered: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
 sub-MQTTCommLib-make_first: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
 sub-MQTTCommLib-all-ordered: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
 sub-MQTTCommLib-all: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
 sub-MQTTCommLib-clean-ordered: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
 sub-MQTTCommLib-clean: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
 sub-MQTTCommLib-distclean-ordered: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
 sub-MQTTCommLib-distclean: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
 sub-MQTTCommLib-install_subtargets-ordered: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
 sub-MQTTCommLib-install_subtargets: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
 sub-MQTTCommLib-uninstall_subtargets-ordered: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
 sub-MQTTCommLib-uninstall_subtargets: FORCE
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
 sub-Test-qmake_all: sub-MQTTCommLib-qmake_all FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	cd Test\ && $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 	cd Test\ && $(MAKE) -f Makefile qmake_all
 sub-Test: sub-MQTTCommLib FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile
 sub-Test-make_first-ordered: sub-MQTTCommLib-make_first-ordered  FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
 sub-Test-make_first: sub-MQTTCommLib-make_first FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
 sub-Test-all-ordered: sub-MQTTCommLib-all-ordered  FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
 sub-Test-all: sub-MQTTCommLib-all FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
 sub-Test-clean-ordered: sub-MQTTCommLib-clean-ordered  FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
 sub-Test-clean: sub-MQTTCommLib-clean FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
 sub-Test-distclean-ordered: sub-MQTTCommLib-distclean-ordered  FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
 sub-Test-distclean: sub-MQTTCommLib-distclean FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
 sub-Test-install_subtargets-ordered: sub-MQTTCommLib-install_subtargets-ordered  FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
 sub-Test-install_subtargets: sub-MQTTCommLib-install_subtargets FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
 sub-Test-uninstall_subtargets-ordered: sub-MQTTCommLib-uninstall_subtargets-ordered  FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
 sub-Test-uninstall_subtargets: sub-MQTTCommLib-uninstall_subtargets FORCE
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
 
 Makefile: ../MQTTComm.pro C:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++/qmake.conf C:/Qt/6.2.0/mingw81_64/mkspecs/features/spec_pre.prf \
 		C:/Qt/6.2.0/mingw81_64/mkspecs/features/device_config.prf \
@@ -431,34 +431,34 @@ uninstall_subtargets: sub-MQTTCommLib-uninstall_subtargets-ordered sub-Test-unin
 
 sub-MQTTCommLib-debug_ordered:
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile debug
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile debug
 sub-Test-debug_ordered: sub-MQTTCommLib-debug_ordered 
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile debug
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile debug
 debug: sub-MQTTCommLib-debug_ordered sub-Test-debug_ordered
 
 sub-MQTTCommLib-release_ordered:
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile release
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile release
 sub-Test-release_ordered: sub-MQTTCommLib-release_ordered 
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile release
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile release
 release: sub-MQTTCommLib-release_ordered sub-Test-release_ordered
 
 sub-MQTTCommLib-check_ordered:
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile check
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile check
 sub-Test-check_ordered: sub-MQTTCommLib-check_ordered 
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile check
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile check
 check: sub-MQTTCommLib-check_ordered sub-Test-check_ordered
 
 sub-MQTTCommLib-benchmark_ordered:
 	@if not exist MQTTCommLib\ mkdir MQTTCommLib\ & if not exist MQTTCommLib\ exit 1
-	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile benchmark
+	cd MQTTCommLib\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\MQTTCommLib\MQTTCommLib.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile benchmark
 sub-Test-benchmark_ordered: sub-MQTTCommLib-benchmark_ordered 
 	@if not exist Test\ mkdir Test\ & if not exist Test\ exit 1
-	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile benchmark
+	cd Test\ && ( if not exist Makefile $(QMAKE) -o Makefile "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\Test\Test.pro" -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile benchmark
 benchmark: sub-MQTTCommLib-benchmark_ordered sub-Test-benchmark_ordered
 install:install_subtargets  FORCE
 

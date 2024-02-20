@@ -5,10 +5,10 @@ CONFIG += c++17 cmdline
 
 
 
-LIBS += -L$$PWD/../../'Dinamic Libraries/Comunications/MQTTComm/BuildMingw8164/MQTTCommLib/debug' -lmqttcommlib
+#LIBS += -L$$PWD/../../'Dinamic Libraries/Comunications/MQTTComm/BuildMingw8164/MQTTCommLib/debug' -lmqttcommlib
 
-INCLUDEPATH += $$PWD/'../../Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib'
-DEPENDPATH += $$PWD/'../../Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib'
+#INCLUDEPATH += $$PWD/'../../Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib'
+#DEPENDPATH += $$PWD/'../../Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib'
 
 
 include("Third/Third.pri")
@@ -72,3 +72,9 @@ INCLUDEPATH += $$PWD/../Plugins/Interface
 DEPENDPATH += $$PWD/../Plugins/Interface
 
 
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/release/ -lMQTTCommLib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/debug/ -lMQTTCommLib
+
+INCLUDEPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
+DEPENDPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib

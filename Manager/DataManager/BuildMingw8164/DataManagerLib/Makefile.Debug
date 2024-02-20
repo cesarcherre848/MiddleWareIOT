@@ -357,6 +357,41 @@ debug/moc_inputflow.cpp: ../../DataManagerLib/Services/inputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
+		../../DataManagerLib/Services/baseservice.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreApplication \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfuture.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qthread.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qexception.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpointer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qapplicationpermission.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSettings \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsettings.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
+		../../DataManagerLib/Models/Operation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
+		../../../../Plugins/Interface/plugininterface.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
 	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/BuildMingw8164/DataManagerLib/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtSql -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\DataManagerLib\Services\inputflow.h -o debug\moc_inputflow.cpp
@@ -902,10 +937,6 @@ debug/moc_datamanager.cpp: ../../DataManagerLib/datamanager.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qelapsedtimer.h \
 		../../DataManagerLib/Services/inputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
-		../../DataManagerLib/Services/processor.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSettings \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsettings.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../DataManagerLib/Services/baseservice.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreApplication \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication.h \
@@ -922,6 +953,8 @@ debug/moc_datamanager.cpp: ../../DataManagerLib/datamanager.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSettings \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsettings.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		../../DataManagerLib/Models/Operation.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
@@ -936,6 +969,8 @@ debug/moc_datamanager.cpp: ../../DataManagerLib/datamanager.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
+		../../DataManagerLib/Services/processor.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../DataManagerLib/Services/outputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/QtSql \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/QtSqlDepends \
@@ -1364,7 +1399,42 @@ debug/inputflow.o: ../../DataManagerLib/Services/inputflow.cpp ../../DataManager
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
+		../../DataManagerLib/Services/baseservice.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreApplication \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfuture.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qthread.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qexception.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpointer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qapplicationpermission.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSettings \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsettings.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
+		../../DataManagerLib/Models/Operation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
+		../../../../Plugins/Interface/plugininterface.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\inputflow.o ..\..\DataManagerLib\Services\inputflow.cpp
 
 debug/outputflow.o: ../../DataManagerLib/Services/outputflow.cpp ../../DataManagerLib/Services/outputflow.h \
@@ -1914,10 +1984,6 @@ debug/datamanager.o: ../../DataManagerLib/datamanager.cpp ../../DataManagerLib/d
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qelapsedtimer.h \
 		../../DataManagerLib/Services/inputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
-		../../DataManagerLib/Services/processor.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSettings \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsettings.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../DataManagerLib/Services/baseservice.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreApplication \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication.h \
@@ -1934,6 +2000,8 @@ debug/datamanager.o: ../../DataManagerLib/datamanager.cpp ../../DataManagerLib/d
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSettings \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsettings.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		../../DataManagerLib/Models/Operation.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
@@ -1948,6 +2016,8 @@ debug/datamanager.o: ../../DataManagerLib/datamanager.cpp ../../DataManagerLib/d
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
+		../../DataManagerLib/Services/processor.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../DataManagerLib/Services/outputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/QtSql \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/QtSqlDepends \

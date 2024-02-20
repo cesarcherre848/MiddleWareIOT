@@ -15,7 +15,7 @@ DataManager::DataManager(QSettings& _settings)
 
     qDebug() << "Hola mundo DataManager";
 
-    inputFlow = new InputFlow(inputDataQueue);
+    inputFlow = new InputFlow(inputDataQueue, settings);
     inputFlow->setCleanTimeout(true);
     inputFlow->setParent(this);
 

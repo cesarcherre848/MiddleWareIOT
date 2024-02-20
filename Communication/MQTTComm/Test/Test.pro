@@ -13,4 +13,9 @@ INCLUDEPATH += \
     $$PWD \
     ../MQTTComm
 
-LIBS += -L$$PWD/../BuildMingw8164/MQTTCommLib/debug/ -lmqttcommlib
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../BuildMingw8164/MQTTCommLib/release/ -lMQTTCommLib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../BuildMingw8164/MQTTCommLib/debug/ -lMQTTCommLib
+
+INCLUDEPATH += $$PWD/''
+DEPENDPATH += $$PWD/''

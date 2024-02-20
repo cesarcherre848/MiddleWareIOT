@@ -6,6 +6,7 @@ MQTTComm::MQTTComm(QObject *parent):
     QObject(parent)
 {
     client = new QMqttClient(this);
+    client->setCleanSession(false);
 
 
 

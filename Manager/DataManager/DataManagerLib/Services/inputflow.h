@@ -6,12 +6,13 @@
 #include "QMutex"
 #include "QQueue"
 #include "QTimer"
+#include "baseservice.h"
 
-class InputFlow : public QObject
+class InputFlow : public BaseService
 {
     Q_OBJECT
 public:
-    explicit InputFlow(QQueue<Signal>& inputDataQueue);
+    explicit InputFlow(QQueue<Signal>& inputDataQueue, QSettings &_settings);
     ~InputFlow();
 
     void setCleanTimeout(bool newCleanTimeout);
@@ -34,6 +35,9 @@ private:
     void verifySizeInputQueue();
 
     void mainTimeout();
+
+    void initConfig();
+
 
 private:
 

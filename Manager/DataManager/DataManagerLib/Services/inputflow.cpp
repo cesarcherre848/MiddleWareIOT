@@ -1,9 +1,32 @@
 #include "inputflow.h"
 #include <QUuid>
 
-InputFlow::InputFlow(QQueue<Signal>& inputDataQueue)
-   : inputDataQueue_(inputDataQueue)
+InputFlow::InputFlow(QQueue<Signal>& inputDataQueue, QSettings &_settings)
+
+   : inputDataQueue_(inputDataQueue), BaseService{_settings}
 {
+
+
+    initConfig();
+#ifdef QT_DEBUG
+
+
+    addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTSubscriber/BuildMingw8164/debug");
+
+//dirConfig = dirRel + "/Config/Output";
+
+#else \
+    // Código para compilación en modo Release
+#endif
+
+    loadConfig();
+
+
+    loadPluginIntances();
+
+    qDebug() << "Operations Input Instances:";
+    printOperationsInstances();
+
     verifySizeInputQueue();
     mainTimeout();
 }
@@ -52,6 +75,12 @@ void InputFlow::mainTimeout()
         }
     });
     timer->start(1000);
+}
+
+void InputFlow::initConfig()
+{
+    const QSettings& settings = getSettings();
+    dirConfig = dirRel + settings.value("Input/DirConfig", "/Config/Input").toString();
 }
 
 void InputFlow::setLimitSize(int newLimitSize)

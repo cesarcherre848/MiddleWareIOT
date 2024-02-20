@@ -387,7 +387,7 @@ all: debug-all release-all  FORCE
 clean: debug-clean release-clean  FORCE
 distclean: debug-distclean release-distclean  FORCE
 	-$(DEL_FILE) Makefile
-	-$(DEL_FILE) "D:\Proyectos\Health Vibration Monitoring\Dinamic Libraries\Comunications\MQTTComm\BuildMingw8164\Test\target_wrapper.bat"
+	-$(DEL_FILE) "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\BuildMingw8164\Test\target_wrapper.bat"
 
 debug-check:
 	$(MAKE) -f $(MAKEFILE).Debug check
