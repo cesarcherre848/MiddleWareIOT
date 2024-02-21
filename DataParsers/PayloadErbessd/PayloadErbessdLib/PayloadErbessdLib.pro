@@ -32,3 +32,9 @@ unix {
 
 INCLUDEPATH += $$PWD/../../../Manager/DataManager/DataManagerLib
 DEPENDPATH += $$PWD/../../../Manager/DataManager/DataManagerLib
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../MQTTParser/BuildMingw8164/release/ -lMQTTParser
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../MQTTParser/BuildMingw8164/debug/ -lMQTTParser
+
+INCLUDEPATH += $$PWD/../../MQTTParser
+DEPENDPATH += $$PWD/../../MQTTParser

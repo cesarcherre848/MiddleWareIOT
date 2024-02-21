@@ -9,7 +9,8 @@
 
 #include "../DataManagerLib/Models/Signals.h"
 
-PayloadErbessd::PayloadErbessd()
+PayloadErbessd::PayloadErbessd(QObject *parent)
+    : MQTTParser{parent}
 {
 
 

@@ -63,8 +63,8 @@ void MainController::initMQTTCommunication()
 
 
         QThread* thread = new QThread(this);
-        PayloadErbessd* payloadErbessdParser = new PayloadErbessd();
-        payloadErbessdParser->setParent(this);
+        PayloadErbessd* payloadErbessdParser = new PayloadErbessd(this);
+
 
         payloadErbessdParser->setPayLoad(message, topic);
 

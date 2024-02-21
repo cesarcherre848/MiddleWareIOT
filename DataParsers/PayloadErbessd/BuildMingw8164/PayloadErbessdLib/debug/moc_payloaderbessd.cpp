@@ -104,7 +104,7 @@ void PayloadErbessd::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
 }
 
 const QMetaObject PayloadErbessd::staticMetaObject = { {
-    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    QMetaObject::SuperData::link<MQTTParser::staticMetaObject>(),
     qt_meta_stringdata_PayloadErbessd.offsetsAndSize,
     qt_meta_data_PayloadErbessd,
     qt_static_metacall,
@@ -129,12 +129,12 @@ void *PayloadErbessd::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_PayloadErbessd.stringdata0))
         return static_cast<void*>(this);
-    return QObject::qt_metacast(_clname);
+    return MQTTParser::qt_metacast(_clname);
 }
 
 int PayloadErbessd::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QObject::qt_metacall(_c, _id, _a);
+    _id = MQTTParser::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

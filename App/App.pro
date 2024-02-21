@@ -78,3 +78,9 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTCo
 
 INCLUDEPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
 DEPENDPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/release/ -lMQTTParser
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/debug/ -lMQTTParser
+
+INCLUDEPATH += $$PWD/../DataParsers/MQTTParser
+DEPENDPATH += $$PWD/../DataParsers/MQTTParser

@@ -16,10 +16,10 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="\"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/BuildMingw8164/Test\"" -DQT_QML_DEBUG
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../../Test -I. -I../../Test -I../PayloadErbessd -I../../../../Manager/DataManager/DataManagerLib -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Idebug -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
+INCPATH       = -I../../Test -I. -I../../Test -I../PayloadErbessd -I../../../../Manager/DataManager/DataManagerLib -I../../../MQTTParser -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Idebug -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,console -mthreads
-LIBS        =        -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\DataParsers\PayloadErbessd\BuildMingw8164\PayloadErbessdLib\debug" -lpayloaderbessdlib C:\Qt\6.2.0\mingw81_64\lib\libQt6Test.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
+LIBS        =        -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\DataParsers\PayloadErbessd\BuildMingw8164\PayloadErbessdLib\debug" -lpayloaderbessdlib -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\DataParsers\MQTTParser\BuildMingw8164\debug" -lMQTTParser C:\Qt\6.2.0\mingw81_64\lib\libQt6Test.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
 QMAKE         = C:\Qt\6.2.0\mingw81_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -443,9 +443,11 @@ debug/tst_dataparse.moc: ../../Test/tst_dataparse.cpp \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		../../../MQTTParser/mqttparser.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
-	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/BuildMingw8164/Test/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/Test" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/Test" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessd" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\Test\tst_dataparse.cpp -o debug\tst_dataparse.moc
+	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/BuildMingw8164/Test/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/Test" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/Test" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessd" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/MQTTParser" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\Test\tst_dataparse.cpp -o debug\tst_dataparse.moc
 
 compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
@@ -796,6 +798,8 @@ debug/tst_dataparse.o: ../../Test/tst_dataparse.cpp C:/Qt/6.2.0/mingw81_64/inclu
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		../../../MQTTParser/mqttparser.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
 		debug/tst_dataparse.moc
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tst_dataparse.o ..\..\Test\tst_dataparse.cpp
 

@@ -6,13 +6,14 @@
 #include "QObject"
 #include "QMap"
 #include "../DataManagerLib/Models/Signals.h"
+#include "mqttparser.h"
 
-class PAYLOADERBESSD_EXPORT PayloadErbessd : public QObject
+class PAYLOADERBESSD_EXPORT PayloadErbessd : public MQTTParser
 {
     Q_OBJECT
 
 public:
-    explicit PayloadErbessd();
+    explicit PayloadErbessd(QObject *parent = nullptr);
 
     void setPayLoad(const QByteArray &byteArray, QString topic);
 
