@@ -10,8 +10,6 @@ HEADERS += plugininterface.h
 SOURCES += plugininterface.cpp
 
 
-INCLUDEPATH += $$PWD/'../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
-DEPENDPATH += $$PWD/'../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
 
-
-
+INCLUDEPATH += $$PWD/../../Manager/DataManager/DataManagerLib
+DEPENDPATH += $$PWD/../../Manager/DataManager/DataManagerLib
