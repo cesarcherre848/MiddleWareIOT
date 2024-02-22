@@ -1,6 +1,7 @@
 QT -= gui
 QT += sql
-
+QT += core
+QT += network mqtt
 
 TEMPLATE = lib
 DEFINES += DATAMANAGER_LIBRARY
@@ -35,9 +36,9 @@ unix {
 }
 !isEmpty(target.path): INSTALLS += target
 
-#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../MiddleWareIOT/Plugins/Interface/BuildMingw8164/release/ -lPluginInterface
-LIBS += -L$$PWD/../../../../MiddleWareIOT/Plugins/Interface/BuildMingw8164/debug/ -lPluginInterface
-#else:unix: LIBS += -L$$PWD/../../../../MiddleWareIOT/Plugins/Interface/BuildMingw8164/ -lPluginInterface
 
-INCLUDEPATH += $$PWD/../../../../MiddleWareIOT/Plugins/Interface
-DEPENDPATH += $$PWD/../../../../MiddleWareIOT/Plugins/Interface
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../Plugins/Interface/BuildMingw8164/release/ -lPluginInterface
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../Plugins/Interface/BuildMingw8164/debug/ -lPluginInterface
+
+INCLUDEPATH += $$PWD/../../../Plugins/Interface
+DEPENDPATH += $$PWD/../../../Plugins/Interface

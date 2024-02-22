@@ -6,7 +6,7 @@
 #include "QObject"
 #include "QtPlugin"
 #include "QQueue"
-#include "../DataManagerLib/Models/Signals.h" // modificar al cambiar de entorno
+#include "Models/Signals.h" // modificar al cambiar de entorno
 #include "Models/MPConf.h"
 #include "mqttcomm.h"
 
@@ -20,7 +20,7 @@ public:
 
 
     PluginInterface *newInstance() override;
-
+    MQTTPublish();
     ~MQTTPublish();
 
     void setSetup(const QMap<QString, QVariant> &newSetup) override;

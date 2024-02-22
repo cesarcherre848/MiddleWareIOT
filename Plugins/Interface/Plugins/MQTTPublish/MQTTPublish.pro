@@ -4,6 +4,7 @@ TARGET = MQTTPublish
 INCLUDEPATH += ./
 
 QT += core
+QT += network mqtt
 
 # Archivos fuente
 HEADERS += mqttpublish.h \
@@ -15,8 +16,6 @@ SOURCES += mqttpublish.cpp
 include("Third/Third.pri")
 
 
-INCLUDEPATH += $$PWD/'../../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
-DEPENDPATH += $$PWD/'../../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
 
 
 
@@ -41,3 +40,7 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../Communicati
 
 INCLUDEPATH += $$PWD/../../../../Communication/MQTTComm/MQTTCommLib
 DEPENDPATH += $$PWD/../../../../Communication/MQTTComm/MQTTCommLib
+
+
+INCLUDEPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
+DEPENDPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib

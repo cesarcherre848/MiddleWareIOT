@@ -14,11 +14,15 @@ PluginInterface *MQTTPublish::newInstance()
     return new MQTTPublish();
 }
 
+MQTTPublish::MQTTPublish()
+{
+    comm = new MQTTComm(this);
+}
+
 MQTTPublish::~MQTTPublish()
 {
     if(comm){
-        comm->disconnect();
-        delete comm;
+        comm->deleteLater();
     }
 }
 
@@ -114,7 +118,7 @@ void MQTTPublish::initMQTTCommunication()
         return;
     }
 
-    comm = new MQTTComm(this);
+
     comm->setHostName(conf.hostname);
     comm->setPort(conf.port);
     connect(comm, &MQTTComm::updateStatusConnection, this, [=](QString msg){

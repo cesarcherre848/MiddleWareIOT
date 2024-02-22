@@ -43,19 +43,14 @@ DataManager::DataManager(QSettings& _settings)
 DataManager::~DataManager()
 {
     if(inputFlow){
-        delete inputFlow;
+        inputFlow->deleteLater();
     }
     if(processor){
-        delete processor;
+        processor->deleteLater();
     }
     if(outputFlow){
-        delete outputFlow;
+        outputFlow->deleteLater();
     }
-    /*
-    if(sizeCheckTimer){
-        delete sizeCheckTimer;
-    }
-*/
 }
 
 void DataManager::insertInputDataQueue(const Signal &signal)

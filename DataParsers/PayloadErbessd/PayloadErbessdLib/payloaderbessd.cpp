@@ -16,6 +16,11 @@ PayloadErbessd::PayloadErbessd(QObject *parent)
 
 }
 
+PayloadErbessd::~PayloadErbessd()
+{
+
+}
+
 void PayloadErbessd::setPayLoad(const QByteArray &byteArray, QString topic)
 {
 

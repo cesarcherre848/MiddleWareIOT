@@ -34,7 +34,7 @@ public slots:
 
 signals:
 
-    //void finished();
+    void finished();
 
     //void updateSignals(QList<Signal>);
 

@@ -5,11 +5,12 @@
 #include "plugininterface.h"
 #include "QObject"
 #include "QtPlugin"
+#include "QMutex"
 #include "QQueue"
-#include "../DataManagerLib/Models/Signals.h" // modificar al cambiar de entorno
+#include "Models/Signals.h" // modificar al cambiar de entorno
 #include "Models/MSConf.h"
 #include "mqttcomm.h"
-
+#include "Utils/parserthread.h"
 
 class MQTTSubscriber : public PluginInterface {
     Q_OBJECT
@@ -21,6 +22,7 @@ public:
 
     PluginInterface *newInstance() override;
 
+    MQTTSubscriber();
     ~MQTTSubscriber();
 
     void setSetup(const QMap<QString, QVariant> &newSetup) override;
@@ -50,11 +52,25 @@ private:
 
     QMap<QString, AssignedComponent> asignedComponents;
 
+    QMutex mutex;
+
+    QMap<QString, ParserThread*> parsersThread;
+
 private:
 
     void getConf();
 
     void initMQTTCommunication();
+
+    void stopsThreads();
+
+    void waitThreads();
+
+    void deleteThreads();
+
+    void initInstancesParsers();
+
+
 
     //QByteArray parseValuePayload(const Signal& data);
 

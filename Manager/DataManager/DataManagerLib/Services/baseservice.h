@@ -6,7 +6,7 @@
 #include "QQueue"
 #include "QTimer"
 #include "Models/Operation.h"
-#include "../Interface/plugininterface.h"
+#include "plugininterface.h"
 
 
 

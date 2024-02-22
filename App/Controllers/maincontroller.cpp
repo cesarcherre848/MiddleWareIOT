@@ -22,13 +22,16 @@ MainController::MainController(QObject *parent)
 MainController::~MainController()
 {
     if(comm){
-        comm->disconnect();
+        //comm->disconnect();
         delete comm;
     }
 
+    qDebug() << "delete comm";
     if(manager){
-        delete manager;
+        manager->deleteLater();
     }
+
+    qDebug() << "delete manager";
 }
 
 void MainController::initConfig()
@@ -65,14 +68,18 @@ void MainController::initMQTTCommunication()
         QThread* thread = new QThread(this);
         PayloadErbessd* payloadErbessdParser = new PayloadErbessd(this);
 
+        MQTTParser* parser = (MQTTParser*) payloadErbessdParser;
 
         payloadErbessdParser->setPayLoad(message, topic);
 
 
-        QObject::connect(payloadErbessdParser, &PayloadErbessd::finished, thread, &QThread::quit);
-        QObject::connect(payloadErbessdParser, &PayloadErbessd::finished, payloadErbessdParser, &PayloadErbessd::deleteLater);
-        QObject::connect(thread, &QThread::finished, thread, &QThread::deleteLater);
+        //QObject::connect(parser, &PayloadErbessd::finished, thread, &QThread::quit);
+        //QObject::connect(parser, &PayloadErbessd::finished, parser, &PayloadErbessd::deleteLater);
+        //QObject::connect(thread, &QThread::finished, thread, &QThread::deleteLater);
 
+        connect(parser, SIGNAL(finished()), thread, SLOT(quit()));
+        connect(parser, SIGNAL(finished()), parser, SLOT(deleteLater()));
+        connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
 
 
         QObject::connect(payloadErbessdParser, &PayloadErbessd::updateSignals, this, [=](QList<Signal> data){

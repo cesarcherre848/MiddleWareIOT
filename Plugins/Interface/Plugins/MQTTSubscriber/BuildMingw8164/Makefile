@@ -221,6 +221,8 @@ Makefile: ../MQTTSubscriber.pro C:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++/qmake.c
 		C:/Qt/6.2.0/mingw81_64/mkspecs/features/lex.prf \
 		../MQTTSubscriber.pro \
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6Gui.prl \
+		C:/Qt/6.2.0/mingw81_64/lib/Qt6Mqtt.prl \
+		C:/Qt/6.2.0/mingw81_64/lib/Qt6Network.prl \
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6Core.prl \
 		C:/Qt/6.2.0/mingw81_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\MQTTSubscriber.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -375,6 +377,8 @@ C:/Qt/6.2.0/mingw81_64/mkspecs/features/yacc.prf:
 C:/Qt/6.2.0/mingw81_64/mkspecs/features/lex.prf:
 ../MQTTSubscriber.pro:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6Gui.prl:
+C:/Qt/6.2.0/mingw81_64/lib/Qt6Mqtt.prl:
+C:/Qt/6.2.0/mingw81_64/lib/Qt6Network.prl:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6Core.prl:
 C:/Qt/6.2.0/mingw81_64/mkspecs/features/build_pass.prf:
 qmake: FORCE

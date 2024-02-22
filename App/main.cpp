@@ -1,12 +1,11 @@
 #include <QCoreApplication>
 #include "QDebug"
 #include "Controllers/maincontroller.h"
+#include "app.h"
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
-
-
+    App a(argc, argv);
 
     MainController m;
 

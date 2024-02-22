@@ -4,18 +4,20 @@ TARGET = MQTTSubscriber
 INCLUDEPATH += ./
 
 QT += core
+QT += network mqtt
 
 # Archivos fuente
 HEADERS += mqttsubscriber.h \
-    Models/MSConf.h
+    Constants/textMaps.h \
+    Models/MSConf.h \
+    Utils/parserthread.h
 
-SOURCES += mqttsubscriber.cpp
+SOURCES += mqttsubscriber.cpp \
+    Utils/parserthread.cpp
 
 include("Third/Third.pri")
 
 
-INCLUDEPATH += $$PWD/'../../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
-DEPENDPATH += $$PWD/'../../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
 
 
 
@@ -40,3 +42,22 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../Communicati
 
 INCLUDEPATH += $$PWD/../../../../Communication/MQTTComm/MQTTCommLib
 DEPENDPATH += $$PWD/../../../../Communication/MQTTComm/MQTTCommLib
+
+
+
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../DataParsers/MQTTParser/BuildMingw8164/release/ -lMQTTParser
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../DataParsers/MQTTParser/BuildMingw8164/debug/ -lMQTTParser
+
+INCLUDEPATH += $$PWD/../../../../DataParsers/MQTTParser
+DEPENDPATH += $$PWD/../../../../DataParsers/MQTTParser
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../DataParsers/PayloadErbessd/BuildMingw8164/PayloadErbessdLib/release/ -lPayloadErbessdLib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../DataParsers/PayloadErbessd/BuildMingw8164/PayloadErbessdLib/debug/ -lPayloadErbessdLib
+
+INCLUDEPATH += $$PWD/../../../../DataParsers/PayloadErbessd/PayloadErbessdLib
+DEPENDPATH += $$PWD/../../../../DataParsers/PayloadErbessd/PayloadErbessdLib
+
+
+INCLUDEPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
+DEPENDPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib

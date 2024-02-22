@@ -30,8 +30,18 @@ MQTTComm::MQTTComm(QObject *parent):
 
 MQTTComm::~MQTTComm()
 {
+    reconnectTimer->stop();
+    QObject::disconnect(client, &QMqttClient::disconnected, this, &MQTTComm::onDisconnected);
+    QObject::disconnect(client, &QMqttClient::disconnected, this, &MQTTComm::onDisconnected);
+    QObject::disconnect(client, &QMqttClient::stateChanged, this, &MQTTComm::onStateChanged);
+
+    client->disconnectFromHost();
+    reconnectTimer->deleteLater();
+
+    qWarning() << "Disconnected from broker";
+
     if(client){
-        delete client;
+        client->deleteLater();
     }
 }
 
@@ -79,7 +89,7 @@ void MQTTComm::disconnect()
         return;
     }
 
-    client->disconnectFromHost();
+    //client->disconnectFromHost();
 }
 
 void MQTTComm::publishPayload(const QByteArray &message, QString topicString)

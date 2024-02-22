@@ -5,19 +5,19 @@
 #include "QJsonObject"
 #include "QJsonArray"
 
-BaseService::BaseService(QSettings &_settings) : settings(_settings){}
+BaseService::BaseService(QSettings &_settings) : settings(_settings){
+
+}
 
 BaseService::~BaseService()
 {
     if(timer){
-        delete timer;
+        timer->deleteLater();
     }
-
     for (PluginInterface* obj : operationsInstances) {
         delete obj;
     }
     operationsInstances.clear();
-
 }
 
 void BaseService::loadPluginIntances()
@@ -72,8 +72,9 @@ PluginInterface *BaseService::getPluginInterface(Operation operation)
                         return instance.release();
                     }
                     else{
-                        pluginInstance->deleteLater();
-                        pluginInstance = nullptr;
+                        //qDebug() << pluginInstance;
+                        //pluginInstance->deleteLater();
+                        delete pluginInstance;
                     }
                 } else {
                     qWarning() << loader.errorString();

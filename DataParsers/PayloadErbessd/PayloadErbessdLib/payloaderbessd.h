@@ -14,6 +14,7 @@ class PAYLOADERBESSD_EXPORT PayloadErbessd : public MQTTParser
 
 public:
     explicit PayloadErbessd(QObject *parent = nullptr);
+    ~PayloadErbessd();
 
     void setPayLoad(const QByteArray &byteArray, QString topic);
 
@@ -46,7 +47,7 @@ public slots:
 
 signals:
 
-    void finished();
+    //void finished();
 
     void updateSignals(QList<Signal>);
 

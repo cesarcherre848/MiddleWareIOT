@@ -1,21 +1,23 @@
 QT = core
 QT += sql
+QT += network mqtt
+
 
 CONFIG += c++17 cmdline
 
 
 
-#LIBS += -L$$PWD/../../'Dinamic Libraries/Comunications/MQTTComm/BuildMingw8164/MQTTCommLib/debug' -lmqttcommlib
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/release/ -lMQTTCommLib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/debug/ -lMQTTCommLib
 
-#INCLUDEPATH += $$PWD/'../../Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib'
-#DEPENDPATH += $$PWD/'../../Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib'
+INCLUDEPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
+DEPENDPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
+
 
 
 include("Third/Third.pri")
 
 
-#INCLUDEPATH += $$PWD/'../../Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib'
-#DEPENDPATH += $$PWD/'../../Dinamic Libraries/Comunications/MQTTComm/MQTTCommLib'
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -24,6 +26,7 @@ include("Third/Third.pri")
 SOURCES += \
         Controllers/maincontroller.cpp \
         Utils/globalresources.cpp \
+        app.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -33,15 +36,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Controllers/maincontroller.h \
-    Utils/globalresources.h
+    Utils/globalresources.h \
+    app.h
 
 
 
-
-#LIBS += -L$$PWD/'../../Dinamic Libraries/DataParsers/PayloadErbessd/BuildMingw8164/PayloadErbessdLib/debug/' -lPayloadErbessdLib
-
-#INCLUDEPATH += $$PWD/'../../Dinamic Libraries/DataParsers/PayloadErbessd/PayloadErbessdLib'
-#DEPENDPATH += $$PWD/'../../Dinamic Libraries/DataParsers/PayloadErbessd/PayloadErbessdLib'
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/PayloadErbessd/BuildMingw8164/PayloadErbessdLib/release/ -lPayloadErbessdLib
@@ -53,10 +52,13 @@ DEPENDPATH += $$PWD/../DataParsers/PayloadErbessd/PayloadErbessdLib
 
 
 
-#LIBS += -L$$PWD/'../../Dinamic Libraries/Manager/DataManager/BuildMingw8164/DataManagerLib/debug/' -lDataManagerLib
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/release/ -lMQTTParser
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/debug/ -lMQTTParser
 
-#INCLUDEPATH += $$PWD/'../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
-#DEPENDPATH += $$PWD/'../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
+INCLUDEPATH += $$PWD/../DataParsers/MQTTParser
+DEPENDPATH += $$PWD/../DataParsers/MQTTParser
+
+
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Manager/DataManager/BuildMingw8164/DataManagerLib/release/ -lDataManagerLib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Manager/DataManager/BuildMingw8164/DataManagerLib/debug/ -lDataManagerLib
@@ -66,21 +68,12 @@ DEPENDPATH += $$PWD/../Manager/DataManager/DataManagerLib
 
 
 
-LIBS += -L$$PWD/../Plugins/Interface/BuildMingw8164/debug/ -lPluginInterface
+
+
+
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Plugins/Interface/BuildMingw8164/release/ -lPluginInterface
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Plugins/Interface/BuildMingw8164/debug/ -lPluginInterface
 
 INCLUDEPATH += $$PWD/../Plugins/Interface
 DEPENDPATH += $$PWD/../Plugins/Interface
-
-
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/release/ -lMQTTCommLib
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/debug/ -lMQTTCommLib
-
-INCLUDEPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
-DEPENDPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/release/ -lMQTTParser
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/debug/ -lMQTTParser
-
-INCLUDEPATH += $$PWD/../DataParsers/MQTTParser
-DEPENDPATH += $$PWD/../DataParsers/MQTTParser
