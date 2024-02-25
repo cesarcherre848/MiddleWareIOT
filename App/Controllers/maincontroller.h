@@ -31,6 +31,7 @@ private:
 
 
 
+
     //QSqlDatabase db;
 
 private:
@@ -39,6 +40,8 @@ private:
     //void getDataFromDB();
 
 public slots:
+
+    void exitRequest();
 
     //void updateStatusConnection();
 };

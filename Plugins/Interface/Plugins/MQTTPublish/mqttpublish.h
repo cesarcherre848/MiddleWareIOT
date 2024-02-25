@@ -46,7 +46,7 @@ private:
 
     MPConf conf;
 
-    MQTTComm* comm;
+    MQTTComm* comm = nullptr;
 
     QMap<QString, AssignedComponent> asignedComponents;
 

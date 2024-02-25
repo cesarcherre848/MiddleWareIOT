@@ -8,7 +8,7 @@
                 "port": 1883,
                 "topics":
                 {
-                    "ERB":["topi1"]
+                    "ERB":["prueba/#"]
                 }
             }
     }

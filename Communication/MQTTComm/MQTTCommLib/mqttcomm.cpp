@@ -5,6 +5,9 @@
 MQTTComm::MQTTComm(QObject *parent):
     QObject(parent)
 {
+
+    reconnectTimer = new QTimer(this);
+
     client = new QMqttClient(this);
     client->setCleanSession(false);
 
@@ -22,7 +25,7 @@ MQTTComm::MQTTComm(QObject *parent):
 
 
 
-    reconnectTimer = new QTimer(this);
+
     reconnectTimer->setInterval(5000); // Configurar el intervalo del temporizador a 1 segundo
     QObject::connect(reconnectTimer, &QTimer::timeout, this, &MQTTComm::tryReconnect);
 
@@ -39,6 +42,7 @@ MQTTComm::~MQTTComm()
     reconnectTimer->deleteLater();
 
     qWarning() << "Disconnected from broker";
+    qDebug() << "Destroy MQTTCOMM";
 
     if(client){
         client->deleteLater();

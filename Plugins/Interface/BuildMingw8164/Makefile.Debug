@@ -16,7 +16,7 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_QML_DEBUG -DQT_PLUGIN -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../../Interface -I. -I../../Interface -I"../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Idebug -I/include -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
+INCPATH       = -I../../Interface -I. -I../../Interface -I../../../Manager/DataManager/DataManagerLib -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Idebug -I/include -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -shared -Wl,-subsystem,windows -mthreads -Wl,--out-implib,debug\libPluginInterface.a
 LIBS        =        C:\Qt\6.2.0\mingw81_64\lib\libQt6Gui.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
@@ -198,12 +198,13 @@ debug/moc_plugininterface.cpp: ../plugininterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
-		../../../../Dinamic\ Libraries/Manager/DataManager/DataManagerLib/Models/Signals.h \
+		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
-	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/BuildMingw8164/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -I"D:/Proyectos/Health Vibration Monitoring/Dinamic Libraries/Manager/DataManager/DataManagerLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\plugininterface.h -o debug\moc_plugininterface.cpp
+	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/BuildMingw8164/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\plugininterface.h -o debug\moc_plugininterface.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -314,9 +315,10 @@ debug/plugininterface.o: ../plugininterface.cpp ../plugininterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
-		../../../../Dinamic\ Libraries/Manager/DataManager/DataManagerLib/Models/Signals.h \
+		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\plugininterface.o ..\plugininterface.cpp
 
 debug/moc_plugininterface.o: debug/moc_plugininterface.cpp 

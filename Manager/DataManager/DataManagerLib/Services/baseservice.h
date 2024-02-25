@@ -65,11 +65,11 @@ public:
 
 private:
 
-    QTimer* timer;
+    QTimer* timer = nullptr;
 
     float interval = 2.;
 
-    QList<PluginInterface *> operationsInstances;
+    QList<std::shared_ptr<PluginInterface>> operationsInstances;
 
     QStringList directoryPlugins;
 
@@ -84,7 +84,7 @@ private:
 
 private:
 
-    PluginInterface *getPluginInterface(Operation operation);
+    std::shared_ptr<PluginInterface> getPluginInterface(Operation operation);
 
     void jsonByteArrayToOperation(QByteArray byteArray);
 

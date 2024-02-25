@@ -210,11 +210,13 @@ debug/moc_mqttsubscriber.cpp: ../mqttsubscriber.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
 		../Models/MSConf.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
@@ -225,8 +227,6 @@ debug/moc_mqttsubscriber.cpp: ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttype.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPair \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedDataPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QHash \
@@ -489,11 +489,13 @@ debug/mqttsubscriber.o: ../mqttsubscriber.cpp ../mqttsubscriber.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
 		../Models/MSConf.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
@@ -504,8 +506,6 @@ debug/mqttsubscriber.o: ../mqttsubscriber.cpp ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttype.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPair \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedDataPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QHash \
@@ -552,7 +552,8 @@ debug/mqttsubscriber.o: ../mqttsubscriber.cpp ../mqttsubscriber.h \
 		../Constants/textMaps.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib/payloaderbessd.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib/PayloadErbessd_global.h \
-		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib/Models/ErbessdData.h
+		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib/Models/ErbessdData.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttTopicFilter
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mqttsubscriber.o ..\mqttsubscriber.cpp
 
 debug/parserthread.o: ../Utils/parserthread.cpp ../Utils/parserthread.h \

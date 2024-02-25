@@ -22,6 +22,7 @@ MQTTParser *ParserThread::getParser() const
 void ParserThread::run()
 {
     if(parser){
+        qDebug() << "pass execute";
         parser->execute();
     }
 }

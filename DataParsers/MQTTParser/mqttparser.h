@@ -36,7 +36,7 @@ signals:
 
     void finished();
 
-    //void updateSignals(QList<Signal>);
+    void updateSignals(QList<Signal>);
 
 
 

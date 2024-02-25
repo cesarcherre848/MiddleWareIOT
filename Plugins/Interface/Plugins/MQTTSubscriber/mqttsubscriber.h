@@ -7,6 +7,7 @@
 #include "QtPlugin"
 #include "QMutex"
 #include "QQueue"
+#include "QList"
 #include "Models/Signals.h" // modificar al cambiar de entorno
 #include "Models/MSConf.h"
 #include "mqttcomm.h"
@@ -48,13 +49,15 @@ private:
 
     MSConf conf;
 
-    MQTTComm* comm;
+    MQTTComm* comm = nullptr;
 
     QMap<QString, AssignedComponent> asignedComponents;
 
     QMutex mutex;
 
-    QMap<QString, ParserThread*> parsersThread;
+    QMap<TypeParser, ParserThread*> parsersThread;
+
+    QMap<QString, TypeParser> topicTypeParser;
 
 private:
 
@@ -68,7 +71,9 @@ private:
 
     void deleteThreads();
 
-    void initInstancesParsers();
+
+    void getTopicTypeParser();
+
 
 
 
@@ -79,6 +84,11 @@ private:
     //void publishMultipleTopics(QByteArray message, QStringList topics);
 
 
+private slots:
+
+    void recibeSignals(QList<Signal>);
+
+    void computePayload(const QByteArray &message, QString topic);
 
 signals:
 

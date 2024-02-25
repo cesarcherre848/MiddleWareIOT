@@ -203,6 +203,7 @@ release/moc_mqttpublish.cpp: ../mqttpublish.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
@@ -216,7 +217,6 @@ release/moc_mqttpublish.cpp: ../mqttpublish.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttype.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPair \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedDataPointer \
@@ -368,6 +368,7 @@ release/mqttpublish.o: ../mqttpublish.cpp ../mqttpublish.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
@@ -381,7 +382,6 @@ release/mqttpublish.o: ../mqttpublish.cpp ../mqttpublish.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttype.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPair \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedDataPointer \

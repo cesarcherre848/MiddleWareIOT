@@ -4,14 +4,14 @@
 
 #include <QtPlugin>
 #include "QMap"
-#include "../DataManagerLib/Models/Signals.h" // modificar al cambiar de entorno
-
+#include "Models/Signals.h"
+#include "QDebug"
 class PluginInterface : public QObject {
 
     Q_OBJECT
 
 public:
-    virtual ~PluginInterface() {}
+    virtual ~PluginInterface() { qDebug() << "Delete Plugin interface";};
 
     virtual PluginInterface *newInstance() = 0;
 

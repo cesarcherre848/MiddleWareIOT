@@ -21,9 +21,12 @@ MQTTPublish::MQTTPublish()
 
 MQTTPublish::~MQTTPublish()
 {
+     qDebug() << "Destroy MQTTPublish";
     if(comm){
         comm->deleteLater();
     }
+
+
 }
 
 void MQTTPublish::setSetup(const QMap<QString, QVariant> &newSetup)

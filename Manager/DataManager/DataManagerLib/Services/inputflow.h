@@ -43,12 +43,12 @@ private:
 
     QQueue<Signal>& inputDataQueue_;
 
-    QTimer* sizeCheckTimer;
+    QTimer* sizeCheckTimer = nullptr;
     bool cleanTimeout = false;
     int msVerify = 10000;
     int limitSize = 20;
 
-    QTimer* timer;
+    QTimer* timer =  nullptr;
 
 public:
 

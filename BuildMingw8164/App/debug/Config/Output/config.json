@@ -11,7 +11,16 @@
                 "189301637_ERB_Velocity_ch2_RMS",
                 "189301637_ERB_Accelerometer_ch0_UC_BS_RMS",
                 "189301637_ERB_Accelerometer_ch1_UC_BS_RMS",
-                "189301637_ERB_Accelerometer_ch2_UC_BS_RMS"
+                "189301637_ERB_Accelerometer_ch2_UC_BS_RMS",
+
+                "189301605_ERB_Temperature",
+                "189301605_ERB_Battery",
+                "189301605_ERB_Velocity_ch0_RMS",
+                "189301605_ERB_Velocity_ch1_RMS",
+                "189301605_ERB_Velocity_ch2_RMS",
+                "189301605_ERB_Accelerometer_ch0_UC_BS_RMS",
+                "189301605_ERB_Accelerometer_ch1_UC_BS_RMS",
+                "189301605_ERB_Accelerometer_ch2_UC_BS_RMS"
             ],
         "Setup":
             {

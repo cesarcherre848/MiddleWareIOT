@@ -7,7 +7,7 @@
 #include "Constants/textMaps.h"
 #include "QDateTime"
 
-#include "../DataManagerLib/Models/Signals.h"
+
 
 PayloadErbessd::PayloadErbessd(QObject *parent)
     : MQTTParser{parent}
@@ -178,8 +178,6 @@ void PayloadErbessd::dataProcessToSignal(ErbessdData &data)
     signalRmsZ.unit = "mm/s";
     signalRmsZ.type = Type::value;
 
-    //qDebug() << signalTemp;
-    //qDebug() << signalBatt;
 
     emit updateSignals({signalTemp, signalBatt, signalRmsX, signalRmsY, signalRmsZ});
 
@@ -225,10 +223,6 @@ void PayloadErbessd::dataRawToSignal(ErbessdData &data)
     signalCh2.rate = data.rate;
 
 
-    //qDebug() << signalCh0;
-    //qDebug() << signalCh1;
-    //qDebug() << signalCh2;
-
     emit updateSignals({signalCh0, signalCh1, signalCh2});
 }
 
@@ -250,6 +244,7 @@ void PayloadErbessd::dataToSignal(ErbessdData &data)
 
 void PayloadErbessd::execute()
 {
+
 
     QJsonParseError jsonError;
 

@@ -17,6 +17,9 @@ public slots:
 private:
     void setupConsoleCtrlHandler();
 
+signals:
+
+    void exitRequest();
 };
 
 #endif // APP_H

@@ -12,6 +12,8 @@ MainController::MainController(QObject *parent)
     initMQTTCommunication();
 
 
+
+
     //this->mapIdComponent.insert("189301637","0108bb4d-218e-4ba0-9102-60fbdab3c97e");
 
     //IdNodes = {"189301637"};
@@ -23,7 +25,7 @@ MainController::~MainController()
 {
     if(comm){
         //comm->disconnect();
-        delete comm;
+        comm->deleteLater();
     }
 
     qDebug() << "delete comm";
@@ -65,23 +67,24 @@ void MainController::initMQTTCommunication()
         //qDebug() << "message" << QString(message);
 
 
-        QThread* thread = new QThread(this);
-        PayloadErbessd* payloadErbessdParser = new PayloadErbessd(this);
+        //QThread* thread = new QThread(this);
+        //PayloadErbessd* payloadErbessdParser = new PayloadErbessd(this);
 
-        MQTTParser* parser = (MQTTParser*) payloadErbessdParser;
+        //MQTTParser* parser = (MQTTParser*) payloadErbessdParser;
 
-        payloadErbessdParser->setPayLoad(message, topic);
+        //payloadErbessdParser->setPayLoad(message, topic);
 
 
         //QObject::connect(parser, &PayloadErbessd::finished, thread, &QThread::quit);
         //QObject::connect(parser, &PayloadErbessd::finished, parser, &PayloadErbessd::deleteLater);
         //QObject::connect(thread, &QThread::finished, thread, &QThread::deleteLater);
 
-        connect(parser, SIGNAL(finished()), thread, SLOT(quit()));
-        connect(parser, SIGNAL(finished()), parser, SLOT(deleteLater()));
-        connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+        //connect(parser, SIGNAL(finished()), thread, SLOT(quit()));
+        //connect(parser, SIGNAL(finished()), parser, SLOT(deleteLater()));
+        //connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
 
 
+        /*
         QObject::connect(payloadErbessdParser, &PayloadErbessd::updateSignals, this, [=](QList<Signal> data){
             //qDebug() << data;
             if(this->manager){
@@ -91,11 +94,12 @@ void MainController::initMQTTCommunication()
                 }
             }
         });
+        */
 
 
         // Iniciar el hilo y ejecutar la tarea
-        QObject::connect(thread, &QThread::started, payloadErbessdParser, &PayloadErbessd::execute);
-        thread->start();
+        //QObject::connect(thread, &QThread::started, payloadErbessdParser, &PayloadErbessd::execute);
+        //thread->start();
 
     });
 
@@ -106,6 +110,12 @@ void MainController::initDataManager()
 {
     manager = new DataManager(settings);
     manager->setParent(this);
+}
+
+void MainController::exitRequest()
+{
+    qDebug() << "Delete MainController";
+    this->deleteLater();
 }
 
 /*

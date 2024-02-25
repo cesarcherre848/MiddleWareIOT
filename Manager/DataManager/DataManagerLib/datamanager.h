@@ -37,9 +37,9 @@ private:
 
     //QTimer* sizeCheckTimer;
 
-    InputFlow* inputFlow;
-    Processor* processor;
-    OutputFlow* outputFlow;
+    InputFlow* inputFlow = nullptr;
+    Processor* processor = nullptr;
+    OutputFlow* outputFlow = nullptr;
 
 
     QSqlDatabase db;
@@ -54,6 +54,8 @@ private:
     void getDataFromDB();
 
     QMap<QString, QString> byteArrayJsonToChannels(QByteArray bytearray);
+
+    QString formatIdNodes();
 
 
 };

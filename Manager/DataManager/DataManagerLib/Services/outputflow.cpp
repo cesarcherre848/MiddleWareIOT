@@ -49,6 +49,8 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
 OutputFlow::~OutputFlow()
 {
     db.close();
+
+    qDebug() << "Delete Output";
 }
 
 

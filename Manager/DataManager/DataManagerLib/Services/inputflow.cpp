@@ -6,6 +6,8 @@ InputFlow::InputFlow(QQueue<Signal>& inputDataQueue, QSettings &_settings)
    : inputDataQueue_(inputDataQueue), BaseService{_settings}
 {
 
+    timer = new QTimer(this);
+    sizeCheckTimer = new QTimer(this);
 
     initConfig();
 #ifdef QT_DEBUG
@@ -60,7 +62,7 @@ void InputFlow::insertData(const Signal & data)
 
 void InputFlow::verifySizeInputQueue()
 {
-    sizeCheckTimer = new QTimer(this);
+
     QObject::connect(sizeCheckTimer, &QTimer::timeout, this, [=]() {
         if (this->inputDataQueue_.size() > limitSize) { // Verificar si el tamaño de la cola supera el límite
             qWarning() << QString("La cola ha superado el límite de tamaño. Eliminando (%1) elementos...").arg(inputDataQueue_.size());
@@ -71,7 +73,7 @@ void InputFlow::verifySizeInputQueue()
 
 void InputFlow::mainTimeout()
 {
-    timer = new QTimer(this);
+    //timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, [=](){
         int items = inputDataQueue_.size();
         for (int i = 0; i < items; ++i) {

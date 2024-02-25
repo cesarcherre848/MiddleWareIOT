@@ -7,7 +7,7 @@ DataManager::DataManager(QSettings& _settings)
     :settings(_settings)
 {
 
-    idNodes = {"189301637"};
+    idNodes = {"189301637", "189301605"};
     InitDB();
     getDataFromDB();
 
@@ -26,6 +26,7 @@ DataManager::DataManager(QSettings& _settings)
 
 
     connect(inputFlow, &InputFlow::newInputData, processor, &Processor::insertData);
+    connect(inputFlow, &InputFlow::returnDataToInputQueue, inputFlow, &InputFlow::insertData);
 
     // retorno a la cola de entrada de los procesados
     connect(processor, &Processor::returnDataToInputQueue, inputFlow, &InputFlow::insertData);
@@ -102,8 +103,10 @@ void DataManager::getDataFromDB()
 {
     QSqlQuery query;
     query.prepare("SELECT \"Id_Node\", \"Id_Component\", \"ChannelKey\" FROM \"SensorComponent\" AS sc "
-                  "where sc.\"Id_Node\" IN (:IdNodes)");
-    query.bindValue(":IdNodes", idNodes.join(","));
+                  "where sc.\"Id_Node\" IN (" + formatIdNodes() + ")");
+    //query.bindValue(":IdNodes", formatIdNodes());
+
+
 
 
 
@@ -142,5 +145,15 @@ QMap<QString, QString> DataManager::byteArrayJsonToChannels(QByteArray bytearray
     }
 
     return output;
+}
+
+QString DataManager::formatIdNodes()
+{
+    QStringList output;
+
+    for (const QString &item : idNodes) {
+        output.append("'" + item + "'");
+    }
+    return output.join(", ");
 }
 

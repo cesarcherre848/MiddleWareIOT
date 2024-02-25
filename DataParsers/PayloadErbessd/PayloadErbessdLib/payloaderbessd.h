@@ -5,7 +5,7 @@
 #include "Models/ErbessdData.h"
 #include "QObject"
 #include "QMap"
-#include "../DataManagerLib/Models/Signals.h"
+#include "Models/Signals.h"
 #include "mqttparser.h"
 
 class PAYLOADERBESSD_EXPORT PayloadErbessd : public MQTTParser
@@ -49,7 +49,7 @@ signals:
 
     //void finished();
 
-    void updateSignals(QList<Signal>);
+    //void updateSignals(QList<Signal>);
 
 };
 

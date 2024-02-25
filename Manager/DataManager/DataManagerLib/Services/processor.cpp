@@ -37,7 +37,7 @@ Processor::Processor(QSettings &_settings) : BaseService{_settings}
 
 Processor::~Processor()
 {
-
+    qDebug() << "Delete procesor";
 }
 
 

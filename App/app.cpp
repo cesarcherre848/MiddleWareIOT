@@ -8,7 +8,7 @@
 #ifdef Q_OS_WIN
 static BOOL WINAPI consoleCtrlHandler(DWORD signal) {
     if (signal == CTRL_C_EVENT) {
-        QCoreApplication::exit();
+        QCoreApplication::quit();
         return TRUE;
     }
     return FALSE;
@@ -24,6 +24,7 @@ App::App(int argc, char **argv) :
 
 void App::cleanupBeforeExit()
 {
+    emit exitRequest();
     qWarning() << "Exit requesting ..";
 }
 

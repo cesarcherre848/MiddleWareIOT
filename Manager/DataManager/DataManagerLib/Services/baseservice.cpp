@@ -6,18 +6,27 @@
 #include "QJsonArray"
 
 BaseService::BaseService(QSettings &_settings) : settings(_settings){
-
+    timer = new QTimer(this);
 }
 
 BaseService::~BaseService()
 {
+
+    qDebug() << "Destroy BaseService";
     if(timer){
+
+
+        timer->stop();
         timer->deleteLater();
     }
+
+    /*
     for (PluginInterface* obj : operationsInstances) {
-        delete obj;
+        qDebug() << "delete Interface" << obj;
+        obj->deleteLater();
     }
-    operationsInstances.clear();
+*/
+
 }
 
 void BaseService::loadPluginIntances()
@@ -25,9 +34,9 @@ void BaseService::loadPluginIntances()
 
     for (int i = 0; i < operations.size(); ++i) {
         Operation operation = operations[i];
-        PluginInterface * pluginInterface = getPluginInterface(operation);
+        std::shared_ptr<PluginInterface> pluginInterface = getPluginInterface(operation);
         if(pluginInterface){
-            connect(pluginInterface, SIGNAL(processedData(const Signal&)), this, SLOT(reciveProcessedData(const Signal&)));
+            connect(pluginInterface.get(), SIGNAL(processedData(const Signal&)), this, SLOT(reciveProcessedData(const Signal&)));
             operationsInstances.append(pluginInterface);
         }
     }
@@ -35,7 +44,7 @@ void BaseService::loadPluginIntances()
 
 }
 
-PluginInterface *BaseService::getPluginInterface(Operation operation)
+std::shared_ptr<PluginInterface>BaseService::getPluginInterface(Operation operation)
 {
     QStringList fullFilenamePlugins;
     QString dirName;
@@ -63,13 +72,13 @@ PluginInterface *BaseService::getPluginInterface(Operation operation)
 
                     if(plugin->getName() == operation.name){
 
-                        std::unique_ptr<PluginInterface> instance(plugin->newInstance());
+                        std::shared_ptr<PluginInterface> instance(plugin->newInstance());
                         instance->setSetup(operation.setup);
                         instance->setAsginedSignals(operation.assignedSignalName);
                         if(!asignedComponents.isEmpty()){
                             instance->setAsignedComponents(asignedComponents);
                         }
-                        return instance.release();
+                        return instance;
                     }
                     else{
                         //qDebug() << pluginInstance;
@@ -163,9 +172,10 @@ void BaseService::loadConfig()
 
 void BaseService::mainTimeout()
 {
-    timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &BaseService::execute);
     timer->start((int)interval*1000);
+
+
 }
 
 void BaseService::setInterval(float newInterval)
@@ -180,7 +190,7 @@ void BaseService::addDirectoryPlugins(QString dir)
 
 void BaseService::printOperationsInstances()
 {
-    qDebug() << operationsInstances;
+    //qDebug() << operationsInstances;
 }
 
 void BaseService::enqueueDataQueue(const Signal &data)
@@ -215,7 +225,7 @@ QSettings &BaseService::getSettings() const
 
 void BaseService::executeAllOperations()
 {
-    for (PluginInterface* instance : operationsInstances) {
+    for (std::shared_ptr<PluginInterface> instance : operationsInstances) {
         if(instance){
             instance->execute();
         }
@@ -225,7 +235,7 @@ void BaseService::executeAllOperations()
 
 void BaseService::insertDatatoOperation(const Signal &data)
 {
-    for (PluginInterface* instance : operationsInstances) {
+    for (std::shared_ptr<PluginInterface> instance : operationsInstances) {
         if(instance){
             instance->insertData(data);
         }

@@ -27,7 +27,7 @@ public:
 
     void disconnect();
 
-    QMqttClient* client;
+    QMqttClient* client = nullptr;
 
     void publishPayload(const QByteArray &message, QString topic);
 
@@ -36,7 +36,7 @@ private:
     QString hostName;
     int port;
     QString subTopic;
-    QTimer *reconnectTimer;
+    QTimer *reconnectTimer = nullptr;
 
 
 

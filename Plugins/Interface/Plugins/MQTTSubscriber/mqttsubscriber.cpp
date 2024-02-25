@@ -5,6 +5,7 @@
 #include "QVariantList"
 #include "Constants/textMaps.h"
 #include "payloaderbessd.h"
+#include <QMqttTopicFilter>
 
 //#include "Utils/TimeDomain.h"
 //#include "Constants/textMaps.h"
@@ -24,21 +25,39 @@ MQTTSubscriber::MQTTSubscriber()
 
 MQTTSubscriber::~MQTTSubscriber()
 {
-    stopsThreads();
-    waitThreads();
-    deleteThreads();
+
+    qDebug() << this;
+    qDebug() << "Destroy MQTTSubscriber";
+
+    this->blockSignals(true);
+    disconnect(comm, &MQTTComm::recievePayload, this,  &MQTTSubscriber::computePayload);
+
+    /*
+    QList<QThread *> threadList = findChildren<QThread *>();
+    for (QThread *thread : threadList) {
+        thread->quit();
+        thread->wait();
+        thread->deleteLater();
+    }
+
+    QList<MQTTParser*> parserList = findChildren<MQTTParser*>();
+    for (MQTTParser*parser : parserList) {
+        parser->deleteLater();
+    }
+*/
 
 
     if(comm){
         comm->deleteLater();
     }
+
+
 }
 
 void MQTTSubscriber::setSetup(const QMap<QString, QVariant> &newSetup)
 {
     setup = newSetup;
     getConf();
-    initInstancesParsers();
     initMQTTCommunication();
 
 }
@@ -104,6 +123,10 @@ void MQTTSubscriber::getConf()
             conf.parserTopics.insert(key, mapTopics[key].toStringList());
         }
     }
+
+    getTopicTypeParser();
+
+
 }
 
 void MQTTSubscriber::initMQTTCommunication()
@@ -124,65 +147,81 @@ void MQTTSubscriber::initMQTTCommunication()
     });
 
 
+    connect(comm, &MQTTComm::recievePayload, this,  &MQTTSubscriber::computePayload);
+    //connect(comm, &MQTTComm::recievePayload, this, [=](const QByteArray &message, QString topic){
+        //computePayload(message, topic);
+    //});
+
+
     comm->connect();
 }
 
-void MQTTSubscriber::stopsThreads()
-{
-    mutex.lock();
-    foreach (QThread* thread, parsersThread.values()) {
-        if(thread){
-            if(thread->isRunning()){
-                thread->quit();
-            }
-        }
-    }
-    mutex.unlock();
-}
 
-void MQTTSubscriber::waitThreads()
-{
-    mutex.lock();
-    foreach (QThread* thread, parsersThread.values()) {
-        if(thread){
-            if(thread->isRunning()){
-                thread->wait();
-            }
-        }
-    }
-    mutex.unlock();
-}
 
-void MQTTSubscriber::deleteThreads()
-{
-    mutex.lock();
 
-    foreach (ParserThread* thread, parsersThread.values()) {
-        MQTTParser* parser = thread->getParser();
-        if(parser){
-            delete parser;
-        }
-    }
 
-    qDeleteAll(parsersThread);
-    mutex.unlock();
-}
-
-void MQTTSubscriber::initInstancesParsers()
+void MQTTSubscriber::getTopicTypeParser()
 {
     QMap<QString, QStringList> parserTopics = conf.parserTopics;
-
     foreach (QString key, parserTopics.keys()) {
-        switch (invMapTypeParser[key]) {
-        case TypeParser::ERB:
-            parsersThread.insert(key,new ParserThread(new PayloadErbessd(this), this));
-            break;
-        default:
+        QStringList topics = parserTopics[key];
+        foreach (QString topic, topics) {
+            if(!invMapTypeParser.keys().contains(key)){
+                continue;
+            }
+            TypeParser typeParser = invMapTypeParser[key];
+            topicTypeParser.insert(topic, typeParser);
+        }
+    }
+
+}
+
+void MQTTSubscriber::computePayload(const QByteArray &message, QString topic)
+{
+
+    QStringList topics = topicTypeParser.keys();
+
+    bool matchTopic = false;
+    QMqttTopicName topicN(topic);
+    foreach (QString _topic, topics) {
+        QMqttTopicFilter _topicN(_topic);
+        if(_topicN.match(topicN)){
+            matchTopic = true;
             break;
         }
     }
 
-    qDebug() << parsersThread;
+    if(!matchTopic){
+        return;
+    }
+
+
+
+    TypeParser typeParser = topicTypeParser[topic];
+
+    if(typeParser == TypeParser::ERB){
+        QThread* thread = new QThread(this);
+        PayloadErbessd* payloadErbessdParser = new PayloadErbessd(this);
+        payloadErbessdParser->setPayLoad(message, topic);
+        MQTTParser* parser = (MQTTParser*) payloadErbessdParser;
+        connect(parser, SIGNAL(finished()), thread, SLOT(quit()));
+        connect(parser, SIGNAL(finished()), parser, SLOT(deleteLater()));
+        connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+
+        connect(parser, SIGNAL(updateSignals(QList<Signal>)), this, SLOT(recibeSignals(QList<Signal>)));
+
+        QObject::connect(thread, &QThread::started, payloadErbessdParser, &PayloadErbessd::execute);
+        thread->start();
+    }
+
+
+}
+
+void MQTTSubscriber::recibeSignals(QList<Signal> data)
+{
+    for (int i = 0; i < data.size(); ++i) {
+        emit processedData(data[i]);
+    }
 }
 
 
