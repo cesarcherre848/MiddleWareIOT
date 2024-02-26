@@ -1,7 +1,7 @@
 QT -= gui
 QT += sql
 QT += core
-QT += network mqtt
+QT += network
 
 TEMPLATE = lib
 DEFINES += DATAMANAGER_LIBRARY
@@ -37,8 +37,12 @@ unix {
 !isEmpty(target.path): INSTALLS += target
 
 
+unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../Plugins/Interface/BuildGCC11/release/ -lPluginInterface
+else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../Plugins/Interface/BuildGCC11/debug/ -lPluginInterface
+
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../Plugins/Interface/BuildMingw8164/release/ -lPluginInterface
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../Plugins/Interface/BuildMingw8164/debug/ -lPluginInterface
 
 INCLUDEPATH += $$PWD/../../../Plugins/Interface
 DEPENDPATH += $$PWD/../../../Plugins/Interface
+
