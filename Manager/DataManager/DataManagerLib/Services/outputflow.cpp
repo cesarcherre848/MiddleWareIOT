@@ -8,9 +8,11 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
     initConfig();
 #ifdef QT_DEBUG
 
-
+#ifdef Q_OS_WIN
     addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildMingw8164/debug");
-
+#elif __linux__
+    addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildGCC11/debug");
+#endif
     //dirConfig = dirRel + "/Config/Output";
 
 #else \

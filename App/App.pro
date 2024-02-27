@@ -7,17 +7,7 @@ CONFIG += c++17 cmdline
 
 
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/release/ -lMQTTCommLib
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/debug/ -lMQTTCommLib
 
-
-
-unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildGCC11/release/MQTTCommLib/ -lMQTTCommLib
-else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildGCC11/debug/MQTTCommLib/ -lMQTTCommLib
-
-
-INCLUDEPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
-DEPENDPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
 
 
 
@@ -47,10 +37,26 @@ HEADERS += \
 
 
 
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/release/ -lMQTTCommLib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/debug/ -lMQTTCommLib
+
+
+unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildGCC11/release/MQTTCommLib/ -lMQTTCommLib
+else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildGCC11/debug/MQTTCommLib/ -lMQTTCommLib
+
+
+INCLUDEPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
+DEPENDPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
+
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/PayloadErbessd/BuildMingw8164/PayloadErbessdLib/release/ -lPayloadErbessdLib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../DataParsers/PayloadErbessd/BuildMingw8164/PayloadErbessdLib/debug/ -lPayloadErbessdLib
+
+
+unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/PayloadErbessd/BuildGCC11/release/PayloadErbessdLib/ -lPayloadErbessdLib
+else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../DataParsers/PayloadErbessd/BuildGCC11/debug/PayloadErbessdLib/ -lPayloadErbessdLib
+
 
 INCLUDEPATH += $$PWD/../DataParsers/PayloadErbessd/PayloadErbessdLib
 DEPENDPATH += $$PWD/../DataParsers/PayloadErbessd/PayloadErbessdLib
@@ -60,6 +66,10 @@ DEPENDPATH += $$PWD/../DataParsers/PayloadErbessd/PayloadErbessdLib
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/release/ -lMQTTParser
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/debug/ -lMQTTParser
+
+unix:!macx:CONFIG(release, debug|release) LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildGCC11/release/ -lMQTTParser
+else:unix:!macx:CONFIG(debug, debug|release) LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildGCC11/debug/ -lMQTTParser
+
 
 INCLUDEPATH += $$PWD/../DataParsers/MQTTParser
 DEPENDPATH += $$PWD/../DataParsers/MQTTParser
@@ -92,6 +102,15 @@ else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Plugins/Interfa
 
 INCLUDEPATH += $$PWD/../Plugins/Interface
 DEPENDPATH += $$PWD/../Plugins/Interface
+
+
+
+
+
+
+
+
+
 
 
 

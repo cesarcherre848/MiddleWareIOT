@@ -194,7 +194,11 @@ void BaseService::addDirectoryPlugins(QString dir)
 
 void BaseService::printOperationsInstances()
 {
-    //qDebug() << operationsInstances;
+
+    foreach(std::shared_ptr<PluginInterface> operationInstance, operationsInstances){
+        qDebug() << operationInstance.get();
+    }
+
 }
 
 void BaseService::enqueueDataQueue(const Signal &data)

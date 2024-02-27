@@ -1,6 +1,6 @@
 [
     {
-        "Plugin": "MQTTPublishd",
+        "Plugin": "MQTTPublish",
         "Reduce Name": "MQTTP",
         "Assigned Channels":
             [
