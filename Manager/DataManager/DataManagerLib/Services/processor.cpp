@@ -14,11 +14,13 @@ Processor::Processor(QSettings &_settings) : BaseService{_settings}
 
 
 #ifdef QT_DEBUG
-
+#ifdef Q_OS_WIN
     addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/UnitConverter/BuildMingw8164/debug");
     addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildMingw8164/debug");
     addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildMingw8164/debug");
-
+#elif __linux__
+    addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildGCC11/debug");
+#endif
 
 #else \
     // Código para compilación en modo Release

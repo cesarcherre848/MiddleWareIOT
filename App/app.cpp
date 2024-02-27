@@ -2,6 +2,9 @@
 #include "QDebug"
 #ifdef Q_OS_WIN
 #include <windows.h>
+#elif __linux__
+#include <csignal>
+#include <unistd.h>
 #endif
 
 
@@ -13,7 +16,16 @@ static BOOL WINAPI consoleCtrlHandler(DWORD signal) {
     }
     return FALSE;
 }
+#elif __linux__
+static void handleSignal(int signal) {
+    if (signal == SIGINT || signal == SIGTERM) {
+        QCoreApplication::quit();
+    }
+}
 #endif
+
+
+
 
 App::App(int argc, char **argv) :
     QCoreApplication(argc, argv)
@@ -32,5 +44,8 @@ void App::setupConsoleCtrlHandler()
 {
 #ifdef Q_OS_WIN
     SetConsoleCtrlHandler(consoleCtrlHandler, TRUE);
+#elif __linux__
+    signal(SIGINT, handleSignal);
+    signal(SIGTERM, handleSignal);
 #endif
 }

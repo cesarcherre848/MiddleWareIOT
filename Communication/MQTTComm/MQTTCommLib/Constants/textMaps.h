@@ -2,7 +2,12 @@
 #define TEXTMAPS_H
 
 #include "QMap"
+#ifdef __linux__
+#include <QtMqtt/qmqttclient.h>
+#elif Q_OS_WIN
 #include <QtMqtt/QMqttClient>
+#endif
+
 
 
 const QMap<QMqttClient::ClientState, QString> mapState = {

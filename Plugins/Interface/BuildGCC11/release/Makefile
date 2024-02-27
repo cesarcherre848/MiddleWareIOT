@@ -102,6 +102,8 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_linguist.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_linguist_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
@@ -178,6 +180,7 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_post.prf \
+		../../.qmake.stash \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -260,6 +263,8 @@ Makefile: ../../Interface.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf 
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_linguist.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_linguist_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
@@ -336,6 +341,7 @@ Makefile: ../../Interface.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf 
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -406,6 +412,8 @@ Makefile: ../../Interface.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf 
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_linguist.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_linguist_private.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri:
@@ -482,6 +490,7 @@ Makefile: ../../Interface.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf 
 /opt/Qt/6.2.0/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt/6.2.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt/6.2.0/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt/6.2.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -651,6 +660,7 @@ moc_plugininterface.cpp: ../../plugininterface.h \
 		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/BuildGCC11/release/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtGui -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../plugininterface.h -o moc_plugininterface.cpp
@@ -764,7 +774,8 @@ plugininterface.o: ../../plugininterface.cpp ../../plugininterface.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o plugininterface.o ../../plugininterface.cpp
 
 moc_plugininterface.o: moc_plugininterface.cpp 

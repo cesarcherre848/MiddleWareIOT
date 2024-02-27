@@ -17,5 +17,11 @@ INCLUDEPATH += \
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../BuildMingw8164/MQTTCommLib/release/ -lMQTTCommLib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../BuildMingw8164/MQTTCommLib/debug/ -lMQTTCommLib
 
+
+
+
+unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../BuildGCC11/release/MQTTCommLib/ -lMQTTCommLib
+else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../BuildGCC11/debug/MQTTCommLib/ -lMQTTCommLib
+
 INCLUDEPATH += $$PWD/''
 DEPENDPATH += $$PWD/''

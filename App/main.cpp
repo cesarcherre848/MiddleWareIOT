@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     MainController m;
 
     qDebug() << "Hola mundo";
-    //QTimer::singleShot(3000, &mySlot);
+    //QTimer::singleShot(5000, &mySlot);
 
 
     return a.exec();

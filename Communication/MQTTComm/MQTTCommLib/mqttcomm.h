@@ -3,8 +3,13 @@
 
 #include "MQTTComm_global.h"
 #include "QString"
+
+#ifdef __linux__
+#include <QtMqtt/qmqttclient.h>
+#elif Q_OS_WIN
 #include <QtMqtt/QMqttClient>
-#include <QtMqtt/QMqttMessage>
+#endif
+
 #include "QObject"
 #include "QTimer"
 

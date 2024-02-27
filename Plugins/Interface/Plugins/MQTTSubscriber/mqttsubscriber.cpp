@@ -5,7 +5,14 @@
 #include "QVariantList"
 #include "Constants/textMaps.h"
 #include "payloaderbessd.h"
+
+
+#ifdef __linux__
+#include <QtMqtt/qmqtttopicfilter.h>
+#elif Q_OS_WIN
 #include <QMqttTopicFilter>
+
+#endif
 
 //#include "Utils/TimeDomain.h"
 //#include "Constants/textMaps.h"

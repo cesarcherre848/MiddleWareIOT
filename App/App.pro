@@ -10,6 +10,12 @@ CONFIG += c++17 cmdline
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/release/ -lMQTTCommLib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildMingw8164/MQTTCommLib/debug/ -lMQTTCommLib
 
+
+
+unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildGCC11/release/MQTTCommLib/ -lMQTTCommLib
+else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Communication/MQTTComm/BuildGCC11/debug/MQTTCommLib/ -lMQTTCommLib
+
+
 INCLUDEPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
 DEPENDPATH += $$PWD/../Communication/MQTTComm/MQTTCommLib
 
@@ -63,6 +69,11 @@ DEPENDPATH += $$PWD/../DataParsers/MQTTParser
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Manager/DataManager/BuildMingw8164/DataManagerLib/release/ -lDataManagerLib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Manager/DataManager/BuildMingw8164/DataManagerLib/debug/ -lDataManagerLib
 
+
+unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../Manager/DataManager/BuildGCC11/release/DataManagerLib/ -lDataManagerLib
+else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Manager/DataManager/BuildGCC11/debug/DataManagerLib/ -lDataManagerLib
+
+
 INCLUDEPATH += $$PWD/../Manager/DataManager/DataManagerLib
 DEPENDPATH += $$PWD/../Manager/DataManager/DataManagerLib
 
@@ -75,5 +86,16 @@ DEPENDPATH += $$PWD/../Manager/DataManager/DataManagerLib
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Plugins/Interface/BuildMingw8164/release/ -lPluginInterface
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Plugins/Interface/BuildMingw8164/debug/ -lPluginInterface
 
+unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../Plugins/Interface/BuildGCC11/release/ -lPluginInterface
+else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Plugins/Interface/BuildGCC11/debug/ -lPluginInterface
+
+
 INCLUDEPATH += $$PWD/../Plugins/Interface
 DEPENDPATH += $$PWD/../Plugins/Interface
+
+
+
+
+
+
+

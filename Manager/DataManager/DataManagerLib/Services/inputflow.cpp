@@ -12,8 +12,12 @@ InputFlow::InputFlow(QQueue<Signal>& inputDataQueue, QSettings &_settings)
     initConfig();
 #ifdef QT_DEBUG
 
-
+#ifdef Q_OS_WIN
     addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTSubscriber/BuildMingw8164/debug");
+#elif __linux__
+    addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/MQTTSubscriber/BuildGCC11/debug");
+#endif
+
 
 //dirConfig = dirRel + "/Config/Output";
 

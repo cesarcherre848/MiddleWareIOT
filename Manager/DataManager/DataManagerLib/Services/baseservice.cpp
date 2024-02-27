@@ -54,8 +54,11 @@ std::shared_ptr<PluginInterface>BaseService::getPluginInterface(Operation operat
         for (int i = 0; i < filenames.size(); ++i) {
             filenames[i] = dirName + "/" + filenames[i];
         }
+
+
         fullFilenamePlugins << filenames;
     }
+
 
     foreach(const QString& file, fullFilenamePlugins) {
 
@@ -69,6 +72,8 @@ std::shared_ptr<PluginInterface>BaseService::getPluginInterface(Operation operat
                 PluginInterface *plugin = qobject_cast<PluginInterface*>(pluginInstance);
 
                 if (plugin) {
+
+
 
                     if(plugin->getName() == operation.name){
 
@@ -126,7 +131,6 @@ void BaseService::jsonByteArrayToOperation(QByteArray byteArray)
             operation.name = nameOp;
             operation.assignedSignalName = assChsOp;
             operation.setup = setupOp;
-
             operations << operation;
         }
     }
