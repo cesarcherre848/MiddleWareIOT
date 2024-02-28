@@ -11,7 +11,7 @@
 #include <algorithm>
 
 
-#include "timedomain.h"
+#include "TimeDomain.h"
 #include "Constants/valuesMaps.h"
 #include "Utils/UnitsConvert.h"
 #include "Utils/TimeDomain.h"

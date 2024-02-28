@@ -1,6 +1,6 @@
 [
     {
-        "Plugin": "UnitConverterdd",
+        "Plugin": "UnitConverter",
         "Reduce Name": "UC",
         "Assigned Channels":
             [
@@ -20,7 +20,7 @@
     },
 
     {
-        "Plugin": "FFTAnalysis2",
+        "Plugin": "FFTAnalysis",
         "Reduce Name": "FFT",
         "Assigned Channels":
             [

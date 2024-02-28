@@ -20,14 +20,16 @@ SOURCES += fftanalysis.cpp
 
 include("Third/Third.pri")
 
-INCLUDEPATH += $$PWD/'../../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
-DEPENDPATH += $$PWD/'../../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
+INCLUDEPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
+DEPENDPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
 
 
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../BuildMingw8164/release/ -lPluginInterface
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../BuildMingw8164/debug/ -lPluginInterface
 
-#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../BuildMingw8164/release/ -lPluginInterface
-LIBS += -L$$PWD/../../BuildMingw8164/debug/ -lPluginInterface
-#else:unix: LIBS += -L$$PWD/../../BuildMingw8164/ -lPluginInterface
+unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../../BuildGCC11/release/ -lPluginInterface
+else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../BuildGCC11/debug/ -lPluginInterface
 
 INCLUDEPATH += $$PWD/../../
 DEPENDPATH += $$PWD/../../
+
