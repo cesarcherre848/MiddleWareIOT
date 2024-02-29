@@ -6,11 +6,6 @@ QT += network mqtt
 CONFIG += c++17 cmdline
 
 
-
-
-
-
-
 include("Third/Third.pri")
 
 

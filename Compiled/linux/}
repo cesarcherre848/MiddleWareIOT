@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+find_files_so() {
+    local dir="$1"   
+	
+    echo "pasa la funcion"
+
+    for archivo in "$dir"/*".so"*; do
+        if [ -f "$archivo" ]; then
+            echo "Archivo encontrado: $archivo"
+            Puedes realizar acciones adicionales aquí, si es necesario
+        fi
+    done
+
+}
+
+
+projectDir="/home/cesarcherre/Projects/MiddleWareIOT"
+managerLibDir="/Manager/DataManager/BuildGCC11/debug/DataManagerLib"
+
+dir="$projectDir$managerLibDir"
+
+for archivo in "$dir"/*".so"*; do
+    if [ -f "$archivo" ]; then
+        echo "Archivo encontrado: $archivo"
+         Puedes realizar acciones adicionales aquí, si es necesario
+    fi
+done
+
+
+find_files_so "$dir"
+

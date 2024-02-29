@@ -46,7 +46,7 @@ private:
     QTimer* sizeCheckTimer = nullptr;
     bool cleanTimeout = false;
     int msVerify = 10000;
-    int limitSize = 20;
+    int limitSize = 100;
 
     QTimer* timer =  nullptr;
 

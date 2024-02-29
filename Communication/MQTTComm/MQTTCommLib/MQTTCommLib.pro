@@ -5,7 +5,6 @@ QT += core network mqtt
 
 TEMPLATE = lib
 DEFINES += MQTTCOMM_LIBRARY
-
 CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
