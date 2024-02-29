@@ -8,7 +8,7 @@ operation_so() {
     for archivo in "$dirCopy"/*".so"*; do
         if [ -f "$archivo" ]; then
         	echo "cp $archivo $dirPaste"
-		#cp "$archivo" "$dirPaste"
+		    cp "$archivo" "$dirPaste"
         	#Puedes realizar acciones adicionales aquí, si es necesario
     	fi
     done
@@ -48,7 +48,36 @@ dirCopy="$projectDir$interfaceLibDir"
 echo "Copy Interface Libs"
 operation_so "$dirCopy" "$dirPaste"
 
-pluginsLibDir="/Plugins/Interface/Plugins"
-dirCopy="$projectDir$pluginsLibDir"
-echo "Copy plugins Libs"
+
+#Pluigns
+
+'
+basicStatisticsLibDir="/Plugins/Interface/Plugins/BasicStatistics/BuildGCC11/debug"
+dirCopy="$projectDir$basicStatisticsLibDir"
+echo "Copy BasicStatistics Libs"
 operation_so "$dirCopy" "$dirPaste"
+
+
+fftAnalysisLibDir="/Plugins/Interface/Plugins/FFTAnalysis/BuildGCC11/debug"
+dirCopy="$projectDir$fftAnalysisLibDir"
+echo "Copy FFTAnalysis Libs"
+operation_so "$dirCopy" "$dirPaste"
+
+
+mqttPublishLibDir="/Plugins/Interface/Plugins/MQTTPublish/BuildGCC11/debug"
+dirCopy="$projectDir$mqttPublishLibDir"
+echo "Copy MQTTPublish Libs"
+operation_so "$dirCopy" "$dirPaste"
+
+
+mqttSubscriberLibDir="/Plugins/Interface/Plugins/MQTTSubscriber/BuildGCC11/debug"
+dirCopy="$projectDir$mqttSubscriberLibDir"
+echo "Copy MQTTSubscriber Libs"
+operation_so "$dirCopy" "$dirPaste"
+
+
+unitConverterLibDir="/Plugins/Interface/Plugins/UnitConverter/BuildGCC11/debug"
+dirCopy="$projectDir$unitConverterLibDir"
+echo "Copy UnitConverter Libs"
+operation_so "$dirCopy" "$dirPaste"
+'
