@@ -15,9 +15,8 @@ SOURCES += unitconverter.cpp
 
 include("Third/Third.pri")
 
-INCLUDEPATH += $$PWD/'../../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
-DEPENDPATH += $$PWD/'../../../../../Dinamic Libraries/Manager/DataManager/DataManagerLib'
-
+INCLUDEPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
+DEPENDPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
 
 
 #win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../BuildMingw8164/release/ -lPluginInterface

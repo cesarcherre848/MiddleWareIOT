@@ -41,14 +41,11 @@ HEADERS += \
 
 
 
-
-
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/PayloadErbessd/BuildMingw8164/PayloadErbessdLib/release/ -lPayloadErbessdLib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../DataParsers/PayloadErbessd/BuildMingw8164/PayloadErbessdLib/debug/ -lPayloadErbessdLib
 
 INCLUDEPATH += $$PWD/../DataParsers/PayloadErbessd/PayloadErbessdLib
 DEPENDPATH += $$PWD/../DataParsers/PayloadErbessd/PayloadErbessdLib
-
 
 
 
@@ -65,10 +62,6 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Manager/DataManager/
 
 INCLUDEPATH += $$PWD/../Manager/DataManager/DataManagerLib
 DEPENDPATH += $$PWD/../Manager/DataManager/DataManagerLib
-
-
-
-
 
 
 
