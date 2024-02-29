@@ -67,7 +67,6 @@ std::shared_ptr<PluginInterface>BaseService::getPluginInterface(Operation operat
         if (loader.load()) {
             QObject* pluginInstance = loader.instance();
 
-aster
             if (pluginInstance) {
                 PluginInterface *plugin = qobject_cast<PluginInterface*>(pluginInstance);
 
@@ -99,7 +98,6 @@ aster
             }
         }
     }
-aster
     return nullptr;
 }
 
