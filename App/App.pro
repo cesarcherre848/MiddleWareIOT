@@ -58,7 +58,6 @@ DEPENDPATH += $$PWD/../DataParsers/PayloadErbessd/PayloadErbessdLib
 
 
 
-
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/release/ -lMQTTParser
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../DataParsers/MQTTParser/BuildMingw8164/debug/ -lMQTTParser
 
@@ -81,10 +80,6 @@ else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Manager/DataMan
 
 INCLUDEPATH += $$PWD/../Manager/DataManager/DataManagerLib
 DEPENDPATH += $$PWD/../Manager/DataManager/DataManagerLib
-
-
-
-
 
 
 

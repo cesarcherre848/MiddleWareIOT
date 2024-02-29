@@ -15,9 +15,16 @@ operation_so() {
 }
 
 
+
+qtDirLib="/opt/Qt/6.2.0/gcc_64/lib"
+
 projectDir="/home/cesarcherre/Projects/MiddleWareIOT"
 dirCompiledLibs="/Compiled/linux/libs"
 dirPaste="$projectDir$dirCompiledLibs"
+
+
+
+
 
 managerLibDir="/Manager/DataManager/BuildGCC11/debug/DataManagerLib"
 dirCopy="$projectDir$managerLibDir"
