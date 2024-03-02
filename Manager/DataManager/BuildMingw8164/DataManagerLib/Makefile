@@ -219,7 +219,6 @@ Makefile: ../../DataManagerLib/DataManagerLib.pro C:/Qt/6.2.0/mingw81_64/mkspecs
 		C:/Qt/6.2.0/mingw81_64/mkspecs/features/lex.prf \
 		../../DataManagerLib/DataManagerLib.pro \
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6Sql.prl \
-		C:/Qt/6.2.0/mingw81_64/lib/Qt6Mqtt.prl \
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6Network.prl \
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6Core.prl \
 		C:/Qt/6.2.0/mingw81_64/mkspecs/features/build_pass.prf
@@ -373,7 +372,6 @@ C:/Qt/6.2.0/mingw81_64/mkspecs/features/yacc.prf:
 C:/Qt/6.2.0/mingw81_64/mkspecs/features/lex.prf:
 ../../DataManagerLib/DataManagerLib.pro:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6Sql.prl:
-C:/Qt/6.2.0/mingw81_64/lib/Qt6Mqtt.prl:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6Network.prl:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6Core.prl:
 C:/Qt/6.2.0/mingw81_64/mkspecs/features/build_pass.prf:

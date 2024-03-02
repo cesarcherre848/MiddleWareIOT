@@ -19,7 +19,7 @@ CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextr
 INCPATH       = -I../../MQTTSubscriber -I. -I../../MQTTSubscriber -I../../../../Interface -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/MQTTParser" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtMqtt -IC:/Qt/6.2.0/mingw81_64/include/QtNetwork -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Irelease -I/include -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -shared -Wl,-subsystem,windows -mthreads -Wl,--out-implib,release\libMQTTSubscriber.a
-LIBS        =        -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\BuildMingw8164\debug" -lPluginInterface -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\BuildMingw8164\MQTTCommLib\release" -lMQTTCommLib -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\DataParsers\MQTTParser\BuildMingw8164\release" -lMQTTParser -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\DataParsers\PayloadErbessd\BuildMingw8164\PayloadErbessdLib\release" -lPayloadErbessdLib C:\Qt\6.2.0\mingw81_64\lib\libQt6Gui.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Mqtt.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Network.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
+LIBS        =        -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\BuildMingw8164\release" -lPluginInterface -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Communication\MQTTComm\BuildMingw8164\MQTTCommLib\release" -lMQTTCommLib -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\DataParsers\MQTTParser\BuildMingw8164\release" -lMQTTParser -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\DataParsers\PayloadErbessd\BuildMingw8164\PayloadErbessdLib\release" -lPayloadErbessdLib C:\Qt\6.2.0\mingw81_64\lib\libQt6Gui.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Mqtt.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Network.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
 QMAKE         = C:\Qt\6.2.0\mingw81_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -222,7 +222,6 @@ release/moc_mqttsubscriber.cpp: ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
@@ -256,7 +255,7 @@ release/moc_mqttsubscriber.cpp: ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttMessage \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
@@ -501,7 +500,6 @@ release/mqttsubscriber.o: ../mqttsubscriber.cpp ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
@@ -535,7 +533,7 @@ release/mqttsubscriber.o: ../mqttsubscriber.cpp ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttMessage \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \

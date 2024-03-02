@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include "Utils/globalresources.h"
-#include "mqttcomm.h"
 #include "datamanager.h"
 
 
@@ -19,12 +18,12 @@ signals:
 public:
 
     void initConfig();
-    void initMQTTCommunication();
+    //void initMQTTCommunication();
     void initDataManager();
 
 private:
 
-    MQTTComm* comm;
+    //MQTTComm* comm;
     QMap<QString, QString>mapIdComponent;
     DataManager* manager;
     QSettings& settings = GlobalResources::getSettings();

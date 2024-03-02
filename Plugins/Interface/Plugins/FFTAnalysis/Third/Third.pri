@@ -2,11 +2,11 @@ DEFINES += THRID_LIBS_STATIC
 
 #FFTW3
 win32 {
-    INCLUDEPATH += $$PWD\FFTW3\include
+    INCLUDEPATH += $$PWD\FFTW3\windows\include
 }
 
-win32: LIBS += $$PWD\FFTW3\lib\windows\libfftw3-3.dll
-win32: LIBS += $$PWD\FFTW3\lib\windows\llibfftw3f-3.dll
+win32: LIBS += $$PWD\FFTW3\windows\lib\libfftw3-3.dll
+win32: LIBS += $$PWD\FFTW3\windows\lib\libfftw3f-3.dll
 
 unix:!macx: LIBS += -lfftw3
 

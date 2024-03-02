@@ -1,6 +1,6 @@
 #include "app.h"
 #include "QDebug"
-#ifdef Q_OS_WIN
+#ifdef _WIN32
 #include <windows.h>
 #elif __linux__
 #include <csignal>
@@ -8,7 +8,7 @@
 #endif
 
 
-#ifdef Q_OS_WIN
+#ifdef _WIN32
 static BOOL WINAPI consoleCtrlHandler(DWORD signal) {
     if (signal == CTRL_C_EVENT) {
         QCoreApplication::quit();
@@ -42,7 +42,7 @@ void App::cleanupBeforeExit()
 
 void App::setupConsoleCtrlHandler()
 {
-#ifdef Q_OS_WIN
+#ifdef _WIN32
     SetConsoleCtrlHandler(consoleCtrlHandler, TRUE);
 #elif __linux__
     signal(SIGINT, handleSignal);

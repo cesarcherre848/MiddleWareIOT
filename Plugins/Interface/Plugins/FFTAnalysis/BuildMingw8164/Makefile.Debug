@@ -16,10 +16,10 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DTHRID_LIBS_STATIC -DQT_QML_DEBUG -DQT_PLUGIN -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../../FFTAnalysis -I. -I../../FFTAnalysis -I../Third/FFTW3/include -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I../../../../Interface -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Idebug -I/include -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
+INCPATH       = -I../../FFTAnalysis -I. -I../../FFTAnalysis -I../Third/FFTW3/windows/include -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I../../../../Interface -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -Idebug -I/include -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -shared -Wl,-subsystem,windows -mthreads -Wl,--out-implib,debug\libFFTAnalysis.a
-LIBS        =        "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\Plugins\FFTAnalysis\Third\FFTW3\lib\libfftw3-3.dll" "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\Plugins\FFTAnalysis\Third\FFTW3\lib\libfftw3f-3.dll" -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\BuildMingw8164\debug" -lPluginInterface C:\Qt\6.2.0\mingw81_64\lib\libQt6Gui.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
+LIBS        =        "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\Plugins\FFTAnalysis\Third\FFTW3\windows\lib\libfftw3-3.dll" "D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\Plugins\FFTAnalysis\Third\FFTW3\windows\lib\libfftw3f-3.dll" -L"D:\Proyectos\Health Vibration Monitoring\MiddleWareIOT\Plugins\Interface\BuildMingw8164\debug" -lPluginInterface C:\Qt\6.2.0\mingw81_64\lib\libQt6Gui.a C:\Qt\6.2.0\mingw81_64\lib\libQt6Core.a   
 QMAKE         = C:\Qt\6.2.0\mingw81_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -219,7 +219,7 @@ debug/moc_fftanalysis.cpp: ../fftanalysis.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
-	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildMingw8164/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/Third/FFTW3/include" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\fftanalysis.h -o debug\moc_fftanalysis.cpp
+	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildMingw8164/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/Third/FFTW3/windows/include" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\fftanalysis.h -o debug\moc_fftanalysis.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -345,11 +345,10 @@ debug/fftanalysis.o: ../fftanalysis.cpp ../fftanalysis.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QHash \
 		../Models/Units.h \
 		../Utils/FreqDomain.h \
-		../Third/FFTW3/include/fftw3.h \
-		../Utils/timedomain.h \
+		../Third/FFTW3/windows/include/fftw3.h \
+		../Utils/TimeDomain.h \
 		../Constants/valuesMaps.h \
-		../Utils/UnitsConvert.h \
-		../Utils/TimeDomain.h
+		../Utils/UnitsConvert.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\fftanalysis.o ..\fftanalysis.cpp
 
 debug/moc_fftanalysis.o: debug/moc_fftanalysis.cpp 

@@ -12,22 +12,25 @@ Processor::Processor(QSettings &_settings) : BaseService{_settings}
     initConfig();
 
 
+    const QSettings& settings = getSettings();
+    QString dirPlugins = settings.value("Processor/Libs", "").toString();
 
-#ifdef QT_DEBUG
-#ifdef Q_OS_WIN
-    addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/UnitConverter/BuildMingw8164/debug");
-    addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildMingw8164/debug");
-    addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildMingw8164/debug");
+    if(dirPlugins.isEmpty()){
+
+#ifdef _WIN32
+        addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/UnitConverter/BuildMingw8164/debug");
+        addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildMingw8164/debug");
+        addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildMingw8164/debug");
 #elif __linux__
-    addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildGCC11/debug");
-    addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/UnitConverter/BuildGCC11/debug");
-    addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildGCC11/debug");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildGCC11/debug");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/UnitConverter/BuildGCC11/debug");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildGCC11/debug");
 #endif
+    }
 
-#else \
-    // Código para compilación en modo Release
-#endif
-
+    else{
+        addDirectoryPlugins(dirRel+dirPlugins);
+    }
 
     loadConfig();
 

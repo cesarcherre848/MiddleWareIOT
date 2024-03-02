@@ -38,6 +38,21 @@
                 "fcDCFilter": 1.0,
                 "isFullRange": true
             }
+    },
+
+    {
+        "Plugin": "BasicStatistics",
+        "Reduce Name": "BS",
+        "Assigned Channels":
+            [
+                "189301637_ERB_Accelerometer_ch0_UC",
+                "189301637_ERB_Accelerometer_ch1_UC",
+                "189301637_ERB_Accelerometer_ch2_UC"
+            ],
+        "Setup":
+            {
+                "functions": ["RMS", "Crest Factor", "Peak", "Kurtosis", "Skewness", "Peak Peak"]
+            }
     }
 
     

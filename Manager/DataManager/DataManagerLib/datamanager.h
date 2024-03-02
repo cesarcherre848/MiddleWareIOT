@@ -48,6 +48,8 @@ private:
 
     QSettings &settings;
 
+    QString dirRel = QCoreApplication::applicationDirPath();
+
 private:
 
     void InitDB();
@@ -56,6 +58,8 @@ private:
     QMap<QString, QString> byteArrayJsonToChannels(QByteArray bytearray);
 
     QString formatIdNodes();
+
+    void loadKnowIdNodes();
 
 
 };

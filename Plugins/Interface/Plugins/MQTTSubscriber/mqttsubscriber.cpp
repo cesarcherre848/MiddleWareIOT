@@ -9,7 +9,7 @@
 
 #ifdef __linux__
 #include <QtMqtt/qmqtttopicfilter.h>
-#elif Q_OS_WIN
+#elif _WIN32
 #include <QMqttTopicFilter>
 
 #endif

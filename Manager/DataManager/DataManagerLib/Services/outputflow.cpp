@@ -6,18 +6,22 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
 {
 
     initConfig();
-#ifdef QT_DEBUG
 
-#ifdef Q_OS_WIN
-    addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildMingw8164/debug");
+    const QSettings& settings = getSettings();
+    QString dirPlugins = settings.value("Output/Libs", "").toString();
+
+    if(dirPlugins.isEmpty()){
+
+#ifdef _WIN32
+        addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildMingw8164/debug");
 #elif __linux__
-    addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildGCC11/debug");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildGCC11/debug");
 #endif
-    //dirConfig = dirRel + "/Config/Output";
+    }
 
-#else \
-    // Código para compilación en modo Release
-#endif
+    else{
+        addDirectoryPlugins(dirRel+dirPlugins);
+    }
 
     loadConfig();
     setAsignedComponents(newAssignedComponent);

@@ -438,7 +438,6 @@ debug/tst_configurationtest.moc: ../../Test/tst_configurationtest.cpp \
 		C:/Qt/6.2.0/mingw81_64/include/QtTest/qttestversion.h \
 		../../MQTTCommLib/mqttcomm.h \
 		../../MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
@@ -455,7 +454,7 @@ debug/tst_configurationtest.moc: ../../Test/tst_configurationtest.cpp \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscriptionproperties.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/QTcpSocket \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttMessage \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
@@ -805,7 +804,6 @@ debug/tst_configurationtest.o: ../../Test/tst_configurationtest.cpp C:/Qt/6.2.0/
 		C:/Qt/6.2.0/mingw81_64/include/QtTest/qttestversion.h \
 		../../MQTTCommLib/mqttcomm.h \
 		../../MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
@@ -822,7 +820,7 @@ debug/tst_configurationtest.o: ../../Test/tst_configurationtest.cpp C:/Qt/6.2.0/
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscriptionproperties.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/QTcpSocket \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttMessage \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		debug/tst_configurationtest.moc
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tst_configurationtest.o ..\..\Test\tst_configurationtest.cpp

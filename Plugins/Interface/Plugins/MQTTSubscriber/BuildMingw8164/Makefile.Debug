@@ -222,7 +222,6 @@ debug/moc_mqttsubscriber.cpp: ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
@@ -256,7 +255,7 @@ debug/moc_mqttsubscriber.cpp: ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttMessage \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
@@ -501,7 +500,6 @@ debug/mqttsubscriber.o: ../mqttsubscriber.cpp ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
 		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
@@ -535,7 +533,7 @@ debug/mqttsubscriber.o: ../mqttsubscriber.cpp ../mqttsubscriber.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttMessage \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \

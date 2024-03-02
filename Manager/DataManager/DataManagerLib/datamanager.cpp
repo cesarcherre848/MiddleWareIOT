@@ -6,24 +6,15 @@
 DataManager::DataManager(QSettings& _settings)
     :settings(_settings)
 {
-
-    idNodes = {"189301637", "189301605"};
+    loadKnowIdNodes();
     InitDB();
     getDataFromDB();
-
-
-
-    qDebug() << "Hola mundo DataManager";
 
     inputFlow = new InputFlow(inputDataQueue, settings);
     inputFlow->setCleanTimeout(true);
     inputFlow->setParent(this);
 
-
-
     processor = new Processor(settings);
-
-
 
     connect(inputFlow, &InputFlow::newInputData, processor, &Processor::insertData);
     connect(inputFlow, &InputFlow::returnDataToInputQueue, inputFlow, &InputFlow::insertData);
@@ -61,13 +52,6 @@ void DataManager::insertInputDataQueue(const Signal &signal)
     }
 
     inputFlow->insertData(signal);
-    /*
-    mutex.lock();
-    inputDataQueue.enqueue(signal);
-    mutex.unlock();
-
-    qDebug() << "insert to queue";
-    */
 }
 
 void DataManager::setProcessInterval(int newProcessInterval)
@@ -90,30 +74,48 @@ void DataManager::setMaxQueuesProcessItems(int newMaxQueuesProcessItems)
 
 void DataManager::InitDB()
 {
+
+    QString host = settings.value("Manager/DBHost", "").toString();
+    int port = settings.value("Manager/DBPort", 0).toInt();
+    QString name = settings.value("Manager/DBName", "").toString();
+    QString user = settings.value("Manager/DBUser", "").toString();
+    QString password = settings.value("Manager/DBPassword", "").toString();
+
+    if( host.isEmpty() || name.isEmpty() || user.isEmpty() || password.isEmpty()){
+        return;
+    }
+
     db = QSqlDatabase::addDatabase("QPSQL");
-    db.setHostName("146.190.122.149"); // Solo el nombre del host o la IP, sin el número de puerto
-    db.setPort(5432);
-    db.setDatabaseName("Empresa1");
-    db.setUserName("root");
-    db.setPassword("Mc05071995..");
-    db.open();
+    db.setHostName(host);
+    db.setPort(port);
+    db.setDatabaseName(name);
+    db.setUserName(user);
+    db.setPassword(password);
+
+    if (!db.open()) {
+        qWarning() << "Error open DB Manager:" << db.lastError().text();
+        return;
+    }
+
+    qInfo() << "Conection DB Maganer Succesfully";
+
 }
 
 void DataManager::getDataFromDB()
 {
+    if(!db.isOpen()){
+        return;
+    }
+
     QSqlQuery query;
     query.prepare("SELECT \"Id_Node\", \"Id_Component\", \"ChannelKey\" FROM \"SensorComponent\" AS sc "
                   "where sc.\"Id_Node\" IN (" + formatIdNodes() + ")");
-    //query.bindValue(":IdNodes", formatIdNodes());
-
-
-
 
 
     if (!query.exec()) {
-        qDebug() << "Error al ejecutar la consulta:" << query.lastError().text();
-        return;
+        qDebug() << "Error in query" << query.lastError().text();
         db.close();
+        return;
     }
 
     while (query.next()) {
@@ -126,6 +128,9 @@ void DataManager::getDataFromDB()
         value.channel = byteArrayJsonToChannels(jsonByteArray);
         asignedComponents.insert(idNode,value);
     }
+
+    query.clear();
+    QSqlDatabase::database().close();
 
     db.close();
 }
@@ -155,5 +160,28 @@ QString DataManager::formatIdNodes()
         output.append("'" + item + "'");
     }
     return output.join(", ");
+}
+
+void DataManager::loadKnowIdNodes()
+{
+
+    QString dirKnowIdNodes = settings.value("KnowIdNodes", "").toString();
+
+    QString knownIdNodesFile = dirRel + dirKnowIdNodes;
+    QFile file(knownIdNodesFile);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Cannot open knowIdNodes";
+        return;
+    }
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString idNode = in.readLine().trimmed();
+        if(idNode.isEmpty())
+        {
+            continue;
+        }
+        idNodes << idNode;
+    }
+
 }
 

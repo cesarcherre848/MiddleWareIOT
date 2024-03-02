@@ -150,7 +150,6 @@ debug/moc_mqttcomm.cpp: ../../MQTTCommLib/mqttcomm.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
@@ -229,7 +228,7 @@ debug/moc_mqttcomm.cpp: ../../MQTTCommLib/mqttcomm.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttMessage \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
@@ -296,7 +295,6 @@ debug/mqttcomm.o: ../../MQTTCommLib/mqttcomm.cpp ../../MQTTCommLib/mqttcomm.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
@@ -375,7 +373,7 @@ debug/mqttcomm.o: ../../MQTTCommLib/mqttcomm.cpp ../../MQTTCommLib/mqttcomm.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttMessage \
+		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \

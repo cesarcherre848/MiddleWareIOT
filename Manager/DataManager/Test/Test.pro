@@ -13,13 +13,10 @@ INCLUDEPATH += \
     $$PWD \
     ../DataManager
 
-#LIBS += -L$$PWD/../BuildMingw8164/DataManagerLib/debug/ -lDataManagerLib
 
 
-#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../BuildMingw8164/DataManagerLib/release/ -lDataManagerLib
-#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../BuildMingw8164/DataManagerLib/debug/ -lDataManagerLib
-#else:unix: LIBS += -L$$PWD/../BuildMingw8164/DataManagerLib/ -lDataManagerLib
-
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../BuildMingw8164/DataManagerLib/release/ -lDataManagerLib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../BuildMingw8164/DataManagerLib/debug/ -lDataManagerLib
 
 unix:!macx:CONFIG(release, debug|release): LIBS += -L$$PWD/../BuildGCC11/release/DataManagerLib/ -lDataManagerLib
 else:unix:!macx:CONFIG(debug, debug|release): LIBS += -L$$PWD/../BuildGCC11/debug/DataManagerLib/ -lDataManagerLib

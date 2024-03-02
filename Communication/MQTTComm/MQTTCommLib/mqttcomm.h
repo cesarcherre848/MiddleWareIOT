@@ -6,7 +6,7 @@
 
 #ifdef __linux__
 #include <QtMqtt/qmqttclient.h>
-#elif Q_OS_WIN
+#elif _WIN32
 #include <QtMqtt/QMqttClient>
 #endif
 

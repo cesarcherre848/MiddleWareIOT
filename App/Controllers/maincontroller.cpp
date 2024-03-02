@@ -9,24 +9,18 @@ MainController::MainController(QObject *parent)
 
     initConfig();
     initDataManager();
-    initMQTTCommunication();
-
-
-
-
-    //this->mapIdComponent.insert("189301637","0108bb4d-218e-4ba0-9102-60fbdab3c97e");
-
-    //IdNodes = {"189301637"};
-
+    //initMQTTCommunication();
 
 }
 
 MainController::~MainController()
 {
+    /*
     if(comm){
         //comm->disconnect();
         comm->deleteLater();
     }
+    */
 
     qDebug() << "delete comm";
     if(manager){
@@ -44,6 +38,7 @@ void MainController::initConfig()
     }
 }
 
+/*
 void MainController::initMQTTCommunication()
 {
     comm = new MQTTComm(this);
@@ -84,7 +79,7 @@ void MainController::initMQTTCommunication()
         //connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
 
 
-        /*
+
         QObject::connect(payloadErbessdParser, &PayloadErbessd::updateSignals, this, [=](QList<Signal> data){
             //qDebug() << data;
             if(this->manager){
@@ -94,7 +89,7 @@ void MainController::initMQTTCommunication()
                 }
             }
         });
-        */
+
 
 
         // Iniciar el hilo y ejecutar la tarea
@@ -105,7 +100,7 @@ void MainController::initMQTTCommunication()
 
     comm->connect();
 }
-
+*/
 void MainController::initDataManager()
 {
     manager = new DataManager(settings);
@@ -117,43 +112,4 @@ void MainController::exitRequest()
     qDebug() << "Delete MainController";
     this->deleteLater();
 }
-
-/*
-void MainController::InitDB()
-{
-    db = QSqlDatabase::addDatabase("QPSQL");
-    db.setHostName("146.190.122.149"); // Solo el nombre del host o la IP, sin el número de puerto
-    db.setPort(5432);
-    db.setDatabaseName("Empresa1");
-    db.setUserName("root");
-    db.setPassword("Mc05071995..");
-    db.open();
-}
-*/
-
-/*
-void MainController::getDataFromDB()
-{
-    QSqlQuery query;
-    query.prepare("SELECT \"Id_Node\", \"Id_Component\" FROM \"SensorComponent\" AS sc "
-                  "where sc.\"Id_Node\" IN (:IdNodes)");
-    query.bindValue(":IdNodes", IdNodes.join(","));
-
-
-
-    if (!query.exec()) {
-        qDebug() << "Error al ejecutar la consulta:" << query.lastError().text();
-        return;
-        db.close();
-    }
-
-    while (query.next()) {
-        QString id_node = query.value(0).toString();
-        QString id_component = query.value(1).toString();
-        this->mapIdComponent.insert(id_node,id_component);
-    }
-
-    db.close();
-}
-*/
 
