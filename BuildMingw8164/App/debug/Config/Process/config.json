@@ -23,7 +23,10 @@
             [
                 "189301637_ERB_Accelerometer_ch0_UC",
                 "189301637_ERB_Accelerometer_ch1_UC",
-                "189301637_ERB_Accelerometer_ch2_UC"
+                "189301637_ERB_Accelerometer_ch2_UC",
+                "189301637_ERB_Accelerometer_ch0",
+                "189301637_ERB_Accelerometer_ch1",
+                "189301637_ERB_Accelerometer_ch2"
             ],
         "Setup":
             {

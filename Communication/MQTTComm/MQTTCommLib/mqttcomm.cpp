@@ -1,6 +1,6 @@
 #include "mqttcomm.h"
 #include "QDebug"
-#include "Constants/textMaps.h"
+
 
 MQTTComm::MQTTComm(QObject *parent):
     QObject(parent)
@@ -41,8 +41,7 @@ MQTTComm::~MQTTComm()
     client->disconnectFromHost();
     reconnectTimer->deleteLater();
 
-    qWarning() << "Disconnected from broker";
-    qDebug() << "Destroy MQTTCOMM";
+    qInfo() << QString("Disconnected MQTT Broker (%1)").arg(hostName).toStdString().c_str();
 
     if(client){
         client->deleteLater();
@@ -66,7 +65,7 @@ void MQTTComm::setSubTopic(const QString &newSubTopic)
     if (client->state() == QMqttClient::Connected) {
         QMqttSubscription *subscription = client->subscribe(topic);
         if (!subscription) {
-            qDebug() << "no se pudo subscribir";
+            qWarning() << "Cannot subscribe topic";
         }
     }
 }
@@ -92,8 +91,6 @@ void MQTTComm::disconnect()
     if(!client){
         return;
     }
-
-    //client->disconnectFromHost();
 }
 
 void MQTTComm::publishPayload(const QByteArray &message, QString topicString)
@@ -107,7 +104,7 @@ void MQTTComm::publishPayload(const QByteArray &message, QString topicString)
 
 void MQTTComm::onConnected()
 {
-    qDebug() << "Connected to broker";
+    qInfo() << QString("Connection to MQTT Broker (%1) Succesfully").arg(hostName).toStdString().c_str();
     reconnectTimer->stop();
     setSubTopic("");
 }
@@ -115,21 +112,19 @@ void MQTTComm::onConnected()
 void MQTTComm::onStateChanged(QMqttClient::ClientState state)
 {
     if (state == QMqttClient::Disconnected) {
-        //qDebug() << "Disconnected. Reconnecting...";
-        reconnectTimer->start(); // Iniciar el temporizador cuando cambia a estado desconectado
-        //client->connectToHost();
+        reconnectTimer->start();
     }
 }
 
 void MQTTComm::onDisconnected()
 {
-    qDebug() << "Disconnected from broker. Reconnecting... in 5 sec";
+    qWarning() << QString("Disconnected from MQTT Broker (%1). Reconnecting... in 5 sec").arg(hostName).toStdString().c_str();
     reconnectTimer->start();
 }
 
 void MQTTComm::tryReconnect()
 {
-    qDebug() << "Attempting to reconnect...";
+    qWarning() << QString("Attempting to reconnect MQTT Broker (%1)...").arg(hostName).toStdString().c_str();
     client->connectToHost();
 }
 

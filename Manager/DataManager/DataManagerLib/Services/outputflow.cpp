@@ -14,6 +14,7 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
 
 #ifdef _WIN32
         addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildMingw8164/debug");
+        addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/Save2DData/BuildMingw8164/debug");
 #elif __linux__
         addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildGCC11/debug");
 #endif
@@ -35,7 +36,7 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
 
     mainTimeout();
 
-
+/*
     db = QSqlDatabase::addDatabase("QPSQL");
     db.setHostName("146.190.122.149"); // Solo el nombre del host o la IP, sin el número de puerto
     db.setPort(5432);
@@ -43,10 +44,10 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
     db.setUserName("root");
     db.setPassword("Mc05071995..");
 
-    if (!db.open()) {
-        qDebug() << "Error al abrir la base de datos: " << db.lastError().text();
-    }
-
+    //if (!db.open()) {
+        //qDebug() << "Error al abrir la base de datos: " << db.lastError().text();
+    //}
+*/
     qDebug() << "Conexión exitosa a la base de datos";
 
 
@@ -55,8 +56,6 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
 OutputFlow::~OutputFlow()
 {
     db.close();
-
-    qDebug() << "Delete Output";
 }
 
 
@@ -72,9 +71,7 @@ std::string OutputFlow::vectorToText(const std::vector<double> &data)
             ss << ", " << data[i];
         }
     }
-
     ss << "}";
-
     return ss.str();
 }
 
@@ -128,6 +125,7 @@ void OutputFlow::execute()
 
 
         applyComponentSignal(currentData);
+        /*
         if(currentData.type == Type::array2D){
 
 
@@ -145,11 +143,12 @@ void OutputFlow::execute()
 
             count++;
         }
-
+        */
 
         qInfo() << currentData;
     }
 
+    /*
     if(count > 0){
         db.transaction();
 
@@ -162,6 +161,7 @@ void OutputFlow::execute()
             db.commit(); // Confirmar la transacción si la ejecución fue exitosa
         }
     }
+    */
 
     executeAllOperations();
 

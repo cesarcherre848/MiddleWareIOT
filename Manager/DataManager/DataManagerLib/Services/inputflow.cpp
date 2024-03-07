@@ -42,19 +42,14 @@ InputFlow::InputFlow(QQueue<Signal>& inputDataQueue, QSettings &_settings)
 InputFlow::~InputFlow()
 {
 
-    qDebug() << "delete into input flow";
-
     if(sizeCheckTimer){
         delete sizeCheckTimer;
     }
-
-    qDebug() << "delete into input flow 2";
 
     if(timer){
         delete timer;
     }
 
-    qDebug() << "delete into input flow 3";
 }
 
 void InputFlow::insertData(const Signal & data)
