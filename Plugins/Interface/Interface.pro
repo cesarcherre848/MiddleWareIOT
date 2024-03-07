@@ -5,6 +5,7 @@ INCLUDEPATH += ./
 
 QT += core
 
+
 # Archivos fuente
 HEADERS += plugininterface.h
 SOURCES += plugininterface.cpp

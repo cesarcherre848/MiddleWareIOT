@@ -37,7 +37,7 @@ App::App(int argc, char **argv) :
 void App::cleanupBeforeExit()
 {
     emit exitRequest();
-    qWarning() << "Exit requesting ..";
+    qWarning() << "Exit requesting ...";
 }
 
 void App::setupConsoleCtrlHandler()

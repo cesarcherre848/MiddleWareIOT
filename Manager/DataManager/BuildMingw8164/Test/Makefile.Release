@@ -452,7 +452,6 @@ release/tst_dataflow.moc: ../../Test/tst_dataflow.cpp \
 		../../DataManagerLib/Models/Operation.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
 		../../DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../DataManagerLib/Services/outputflow.h \
@@ -852,7 +851,6 @@ release/tst_dataflow.o: ../../Test/tst_dataflow.cpp C:/Qt/6.2.0/mingw81_64/inclu
 		../../DataManagerLib/Models/Operation.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
 		../../DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../DataManagerLib/Services/outputflow.h \

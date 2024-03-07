@@ -108,9 +108,15 @@ void DataManager::getDataFromDB()
     }
 
     QSqlQuery query;
-    query.prepare("SELECT \"Id_Node\", \"Id_Component\", \"ChannelKey\" FROM \"SensorComponent\" AS sc "
-                  "where sc.\"Id_Node\" IN (" + formatIdNodes() + ")");
 
+    if(idNodes.isEmpty()){
+        query.prepare("SELECT \"Id_Node\", \"Id_Component\", \"ChannelKey\" FROM \"SensorComponent\" AS sc ");
+    }
+    else{
+        query.prepare("SELECT \"Id_Node\", \"Id_Component\", \"ChannelKey\" FROM \"SensorComponent\" AS sc "
+                      "where sc.\"Id_Node\" IN (" + formatIdNodes() + ")");
+
+    }
 
     if (!query.exec()) {
         qDebug() << "Error in query" << query.lastError().text();
@@ -128,6 +134,8 @@ void DataManager::getDataFromDB()
         value.channel = byteArrayJsonToChannels(jsonByteArray);
         asignedComponents.insert(idNode,value);
     }
+
+    qInfo() << QString("Find %1 components assigned to nodes").arg(asignedComponents.keys().size()).toStdString().c_str();
 
     query.clear();
     QSqlDatabase::database().close();
@@ -166,6 +174,10 @@ void DataManager::loadKnowIdNodes()
 {
 
     QString dirKnowIdNodes = settings.value("KnowIdNodes", "").toString();
+
+    if(dirKnowIdNodes.isEmpty()){
+        return;
+    }
 
     QString knownIdNodesFile = dirRel + dirKnowIdNodes;
     QFile file(knownIdNodesFile);

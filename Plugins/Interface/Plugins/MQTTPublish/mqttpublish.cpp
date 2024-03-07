@@ -21,7 +21,7 @@ MQTTPublish::MQTTPublish()
 
 MQTTPublish::~MQTTPublish()
 {
-     qDebug() << "Destroy MQTTPublish";
+    qDebug() << "Destroy MQTTPublish";
     if(comm){
         comm->deleteLater();
     }
@@ -145,9 +145,6 @@ QByteArray MQTTPublish::parseValuePayload(const Signal &data)
 
 void MQTTPublish::applyComponentSignal(Signal &signal)
 {
-
-
-
     QString idNode = signal.idNode;
     QString& name = signal.name;
     QString channel = signal.channel;

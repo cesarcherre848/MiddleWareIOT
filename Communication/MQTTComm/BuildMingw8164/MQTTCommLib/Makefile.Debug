@@ -376,9 +376,7 @@ debug/mqttcomm.o: ../../MQTTCommLib/mqttcomm.cpp ../../MQTTCommLib/mqttcomm.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
-		../../MQTTCommLib/Constants/textMaps.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mqttcomm.o ..\..\MQTTCommLib\mqttcomm.cpp
 
 debug/moc_mqttcomm.o: debug/moc_mqttcomm.cpp 

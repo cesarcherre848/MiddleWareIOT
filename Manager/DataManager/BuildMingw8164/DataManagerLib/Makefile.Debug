@@ -244,22 +244,15 @@ debug/moc_baseservice.cpp: ../../DataManagerLib/Services/baseservice.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
+		../../DataManagerLib/Models/Signals.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
-		../../DataManagerLib/Models/Signals.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
 	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/BuildMingw8164/DataManagerLib/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtSql -IC:/Qt/6.2.0/mingw81_64/include/QtNetwork -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\DataManagerLib\Services\baseservice.h -o debug\moc_baseservice.cpp
@@ -349,6 +342,7 @@ debug/moc_inputflow.cpp: ../../DataManagerLib/Services/inputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
@@ -385,15 +379,6 @@ debug/moc_inputflow.cpp: ../../DataManagerLib/Services/inputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
 	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/BuildMingw8164/DataManagerLib/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtSql -IC:/Qt/6.2.0/mingw81_64/include/QtNetwork -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\DataManagerLib\Services\inputflow.h -o debug\moc_inputflow.cpp
@@ -483,6 +468,7 @@ debug/moc_outputflow.cpp: ../../DataManagerLib/Services/outputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
@@ -699,8 +685,6 @@ debug/moc_outputflow.cpp: ../../DataManagerLib/Services/outputflow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
 	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/BuildMingw8164/DataManagerLib/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtSql -IC:/Qt/6.2.0/mingw81_64/include/QtNetwork -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\DataManagerLib\Services\outputflow.h -o debug\moc_outputflow.cpp
@@ -795,6 +779,7 @@ debug/moc_processor.cpp: ../../DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
@@ -827,15 +812,6 @@ debug/moc_processor.cpp: ../../DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
 	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/BuildMingw8164/DataManagerLib/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtSql -IC:/Qt/6.2.0/mingw81_64/include/QtNetwork -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\DataManagerLib\Services\processor.h -o debug\moc_processor.cpp
@@ -926,6 +902,7 @@ debug/moc_datamanager.cpp: ../../DataManagerLib/datamanager.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
@@ -965,15 +942,6 @@ debug/moc_datamanager.cpp: ../../DataManagerLib/datamanager.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		../../DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../DataManagerLib/Services/outputflow.h \
@@ -994,6 +962,10 @@ debug/moc_datamanager.cpp: ../../DataManagerLib/datamanager.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbytearraymatcher.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcbormap.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstream.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstreamreader.h \
@@ -1022,7 +994,9 @@ debug/moc_datamanager.cpp: ../../DataManagerLib/datamanager.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QScopedPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjniobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsondocument.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibrary.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibraryinfo.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qversionnumber.h \
@@ -1039,6 +1013,7 @@ debug/moc_datamanager.cpp: ../../DataManagerLib/datamanager.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qoperatingsystemversion.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qparallelanimationgroup.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpauseanimation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpluginloader.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qprocess.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpromise.h \
@@ -1280,22 +1255,15 @@ debug/baseservice.o: ../../DataManagerLib/Services/baseservice.cpp ../../DataMan
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
+		../../DataManagerLib/Models/Signals.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
-		../../DataManagerLib/Models/Signals.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDir \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdir.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfile.h \
@@ -1305,6 +1273,13 @@ debug/baseservice.o: ../../DataManagerLib/Services/baseservice.cpp ../../DataMan
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPluginLoader \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpluginloader.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibrary.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QJsonDocument \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QJsonObject \
@@ -1397,6 +1372,7 @@ debug/inputflow.o: ../../DataManagerLib/Services/inputflow.cpp ../../DataManager
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
@@ -1432,16 +1408,7 @@ debug/inputflow.o: ../../DataManagerLib/Services/inputflow.cpp ../../DataManager
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
-		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug
+		../../../../Plugins/Interface/plugininterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\inputflow.o ..\..\DataManagerLib\Services\inputflow.cpp
 
 debug/outputflow.o: ../../DataManagerLib/Services/outputflow.cpp ../../DataManagerLib/Services/outputflow.h \
@@ -1529,6 +1496,7 @@ debug/outputflow.o: ../../DataManagerLib/Services/outputflow.cpp ../../DataManag
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
@@ -1744,9 +1712,7 @@ debug/outputflow.o: ../../DataManagerLib/Services/outputflow.cpp ../../DataManag
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
-		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug
+		../../../../Plugins/Interface/plugininterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\outputflow.o ..\..\DataManagerLib\Services\outputflow.cpp
 
 debug/processor.o: ../../DataManagerLib/Services/processor.cpp ../../DataManagerLib/Services/processor.h \
@@ -1839,6 +1805,7 @@ debug/processor.o: ../../DataManagerLib/Services/processor.cpp ../../DataManager
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
@@ -1871,15 +1838,6 @@ debug/processor.o: ../../DataManagerLib/Services/processor.cpp ../../DataManager
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDir \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdir.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfile.h \
@@ -1889,6 +1847,13 @@ debug/processor.o: ../../DataManagerLib/Services/processor.cpp ../../DataManager
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPluginLoader \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpluginloader.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibrary.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\processor.o ..\..\DataManagerLib\Services\processor.cpp
 
@@ -1978,6 +1943,7 @@ debug/datamanager.o: ../../DataManagerLib/datamanager.cpp ../../DataManagerLib/d
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
@@ -2017,15 +1983,6 @@ debug/datamanager.o: ../../DataManagerLib/datamanager.cpp ../../DataManagerLib/d
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		../../DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../DataManagerLib/Services/outputflow.h \
@@ -2046,6 +2003,10 @@ debug/datamanager.o: ../../DataManagerLib/datamanager.cpp ../../DataManagerLib/d
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbytearraymatcher.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcbormap.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstream.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstreamreader.h \
@@ -2074,7 +2035,9 @@ debug/datamanager.o: ../../DataManagerLib/datamanager.cpp ../../DataManagerLib/d
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QScopedPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjniobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsondocument.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibrary.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibraryinfo.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qversionnumber.h \
@@ -2091,6 +2054,7 @@ debug/datamanager.o: ../../DataManagerLib/datamanager.cpp ../../DataManagerLib/d
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qoperatingsystemversion.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qparallelanimationgroup.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpauseanimation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpluginloader.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qprocess.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpromise.h \

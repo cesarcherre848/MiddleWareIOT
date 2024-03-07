@@ -200,62 +200,24 @@ debug/moc_maincontroller.cpp: ../../App/Controllers/maincontroller.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
-		../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
-		../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttype.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
+		../../Manager/DataManager/DataManagerLib/datamanager.h \
+		../../Manager/DataManager/DataManagerLib/DataManager_global.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPair \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedDataPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QHash \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttconnectionproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttpublishproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscription.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttmessage.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicname.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QExplicitlySharedDataPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMetaType \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicfilter.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscriptionproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QIODevice \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qiodevice.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/QTcpSocket \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtnetworkglobal.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtnetwork-config.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qhostaddress.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/QSslConfiguration \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslerror.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
+		../../Manager/DataManager/DataManagerLib/Models/Signals.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
-		../../Manager/DataManager/DataManagerLib/datamanager.h \
-		../../Manager/DataManager/DataManagerLib/DataManager_global.h \
-		../../Manager/DataManager/DataManagerLib/Models/Signals.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QThread \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qthread.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdeadlinetimer.h \
@@ -277,18 +239,12 @@ debug/moc_maincontroller.cpp: ../../App/Controllers/maincontroller.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		../../Manager/DataManager/DataManagerLib/Models/Operation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		../../Manager/DataManager/DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../Manager/DataManager/DataManagerLib/Services/outputflow.h \
@@ -305,9 +261,14 @@ debug/moc_maincontroller.cpp: ../../App/Controllers/maincontroller.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qassociativeiterable.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbitarray.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbuffer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qiodevice.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbytearraymatcher.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcbormap.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstream.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstreamreader.h \
@@ -317,6 +278,7 @@ debug/moc_maincontroller.cpp: ../../App/Controllers/maincontroller.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcommandlineoption.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcommandlineparser.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdir.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfile.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfiledevice.h \
@@ -335,7 +297,9 @@ debug/moc_maincontroller.cpp: ../../App/Controllers/maincontroller.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QScopedPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjniobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsondocument.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibrary.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibraryinfo.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qversionnumber.h \
@@ -352,6 +316,7 @@ debug/moc_maincontroller.cpp: ../../App/Controllers/maincontroller.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qoperatingsystemversion.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qparallelanimationgroup.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpauseanimation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpluginloader.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qprocess.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpromise.h \
@@ -667,62 +632,24 @@ debug/maincontroller.o: ../../App/Controllers/maincontroller.cpp ../../App/Contr
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
-		../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
-		../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttype.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
+		../../Manager/DataManager/DataManagerLib/datamanager.h \
+		../../Manager/DataManager/DataManagerLib/DataManager_global.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPair \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedDataPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QHash \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttconnectionproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttpublishproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscription.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttmessage.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicname.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QExplicitlySharedDataPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMetaType \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicfilter.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscriptionproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QIODevice \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qiodevice.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/QTcpSocket \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtnetworkglobal.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtnetwork-config.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qhostaddress.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/QSslConfiguration \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslerror.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
+		../../Manager/DataManager/DataManagerLib/Models/Signals.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
-		../../Manager/DataManager/DataManagerLib/datamanager.h \
-		../../Manager/DataManager/DataManagerLib/DataManager_global.h \
-		../../Manager/DataManager/DataManagerLib/Models/Signals.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QThread \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qthread.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdeadlinetimer.h \
@@ -744,18 +671,12 @@ debug/maincontroller.o: ../../App/Controllers/maincontroller.cpp ../../App/Contr
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		../../Manager/DataManager/DataManagerLib/Models/Operation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		../../Manager/DataManager/DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../Manager/DataManager/DataManagerLib/Services/outputflow.h \
@@ -772,9 +693,14 @@ debug/maincontroller.o: ../../App/Controllers/maincontroller.cpp ../../App/Contr
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qassociativeiterable.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbitarray.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbuffer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qiodevice.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbytearraymatcher.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcbormap.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstream.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstreamreader.h \
@@ -784,6 +710,7 @@ debug/maincontroller.o: ../../App/Controllers/maincontroller.cpp ../../App/Contr
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcommandlineoption.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcommandlineparser.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdir.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfile.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfiledevice.h \
@@ -802,7 +729,9 @@ debug/maincontroller.o: ../../App/Controllers/maincontroller.cpp ../../App/Contr
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QScopedPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjniobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsondocument.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibrary.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibraryinfo.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qversionnumber.h \
@@ -819,6 +748,7 @@ debug/maincontroller.o: ../../App/Controllers/maincontroller.cpp ../../App/Contr
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qoperatingsystemversion.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qparallelanimationgroup.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpauseanimation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpluginloader.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qprocess.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpromise.h \
@@ -932,7 +862,8 @@ debug/maincontroller.o: ../../App/Controllers/maincontroller.cpp ../../App/Contr
 		../../DataParsers/PayloadErbessd/PayloadErbessdLib/payloaderbessd.h \
 		../../DataParsers/PayloadErbessd/PayloadErbessdLib/PayloadErbessd_global.h \
 		../../DataParsers/PayloadErbessd/PayloadErbessdLib/Models/ErbessdData.h \
-		../../DataParsers/MQTTParser/mqttparser.h
+		../../DataParsers/MQTTParser/mqttparser.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\maincontroller.o ..\..\App\Controllers\maincontroller.cpp
 
 debug/globalresources.o: ../../App/Utils/globalresources.cpp ../../App/Utils/globalresources.h \
@@ -1241,75 +1172,31 @@ debug/main.o: ../../App/main.cpp C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreAppl
 		../../App/Utils/globalresources.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSettings \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsettings.h \
-		../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
-		../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttclient.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttglobal.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttauthenticationproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttype.h \
+		../../Manager/DataManager/DataManagerLib/datamanager.h \
+		../../Manager/DataManager/DataManagerLib/DataManager_global.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QList \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QPair \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedDataPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QHash \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttconnectionproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttpublishproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscription.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttmessage.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicname.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QExplicitlySharedDataPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMetaType \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqtttopicfilter.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/qmqttsubscriptionproperties.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QIODevice \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qiodevice.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSharedPointer \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/QTcpSocket \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtnetworkglobal.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qtnetwork-config.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qhostaddress.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/QSslConfiguration \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslsocket.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslerror.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
+		../../Manager/DataManager/DataManagerLib/Models/Signals.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtNetwork/qssl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QFlags \
-		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
-		../../Manager/DataManager/DataManagerLib/datamanager.h \
-		../../Manager/DataManager/DataManagerLib/DataManager_global.h \
-		../../Manager/DataManager/DataManagerLib/Models/Signals.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMutex \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QThread \
 		../../Manager/DataManager/DataManagerLib/Services/inputflow.h \
 		../../Manager/DataManager/DataManagerLib/Services/baseservice.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QStringList \
 		../../Manager/DataManager/DataManagerLib/Models/Operation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QString \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
 		../../Plugins/Interface/plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		../../Manager/DataManager/DataManagerLib/Services/processor.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QSet \
 		../../Manager/DataManager/DataManagerLib/Services/outputflow.h \
@@ -1326,9 +1213,14 @@ debug/main.o: ../../App/main.cpp C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreAppl
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qassociativeiterable.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbitarray.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbuffer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qiodevice.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbytearraymatcher.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcbormap.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstream.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborstreamreader.h \
@@ -1338,6 +1230,7 @@ debug/main.o: ../../App/main.cpp C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreAppl
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcommandlineoption.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcommandlineparser.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcryptographichash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdir.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfile.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfiledevice.h \
@@ -1356,7 +1249,9 @@ debug/main.o: ../../App/main.cpp C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreAppl
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QScopedPointer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjniobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonarray.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsondocument.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibrary.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlibraryinfo.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qversionnumber.h \
@@ -1373,6 +1268,7 @@ debug/main.o: ../../App/main.cpp C:/Qt/6.2.0/mingw81_64/include/QtCore/QCoreAppl
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qoperatingsystemversion.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qparallelanimationgroup.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpauseanimation.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpluginloader.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qprocess.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpromise.h \

@@ -3,6 +3,7 @@
 #include <vector>
 #include "QDateTime"
 #include <algorithm>
+#include "QDebug"
 #include <iostream>
 #include <QUuid>
 

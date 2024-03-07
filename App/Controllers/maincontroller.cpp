@@ -15,19 +15,9 @@ MainController::MainController(QObject *parent)
 
 MainController::~MainController()
 {
-    /*
-    if(comm){
-        //comm->disconnect();
-        comm->deleteLater();
-    }
-    */
-
-    qDebug() << "delete comm";
     if(manager){
         manager->deleteLater();
     }
-
-    qDebug() << "delete manager";
 }
 
 void MainController::initConfig()

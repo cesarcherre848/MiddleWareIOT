@@ -376,9 +376,7 @@ release/mqttcomm.o: ../../MQTTCommLib/mqttcomm.cpp ../../MQTTCommLib/mqttcomm.h 
 		C:/Qt/6.2.0/mingw81_64/include/QtMqtt/QMqttClient \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTimer \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtimer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h \
-		../../MQTTCommLib/Constants/textMaps.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mqttcomm.o ..\..\MQTTCommLib\mqttcomm.cpp
 
 release/moc_mqttcomm.o: release/moc_mqttcomm.cpp 

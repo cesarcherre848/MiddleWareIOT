@@ -12,20 +12,10 @@ BaseService::BaseService(QSettings &_settings) : settings(_settings){
 BaseService::~BaseService()
 {
 
-    qDebug() << "Destroy BaseService";
     if(timer){
-
-
         timer->stop();
         timer->deleteLater();
     }
-
-    /*
-    for (PluginInterface* obj : operationsInstances) {
-        qDebug() << "delete Interface" << obj;
-        obj->deleteLater();
-    }
-*/
 
 }
 
