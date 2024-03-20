@@ -149,6 +149,15 @@ void MQTTSubscriber::initMQTTCommunication()
 
     comm->setHostName(conf.hostname);
     comm->setPort(conf.port);
+
+    QStringList subTopics;
+
+    foreach(QString key, conf.parserTopics.keys()){
+        subTopics << conf.parserTopics[key];
+    }
+
+    comm->setSubTopics(subTopics);
+
     connect(comm, &MQTTComm::updateStatusConnection, this, [=](QString msg){
         qWarning() << QString("%1 %2").arg(getName()).arg("Connections Status") << msg;
     });

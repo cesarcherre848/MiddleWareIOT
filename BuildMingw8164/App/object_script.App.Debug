@@ -1,0 +1,10 @@
+debug/maincontroller.o
+debug/eventparser.o
+debug/globalresources.o
+debug/app.o
+debug/eventdispatcher.o
+debug/main.o
+debug/moc_maincontroller.o
+debug/moc_eventparser.o
+debug/moc_app.o
+debug/moc_eventdispatcher.o

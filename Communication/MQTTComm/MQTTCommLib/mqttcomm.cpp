@@ -54,6 +54,7 @@ void MQTTComm::setHostName(const QString &newHostName)
 }
 
 
+/*
 void MQTTComm::setSubTopic(const QString &newSubTopic)
 {
     if(!client){
@@ -69,6 +70,7 @@ void MQTTComm::setSubTopic(const QString &newSubTopic)
         }
     }
 }
+*/
 
 void MQTTComm::setPort(int newPort)
 {
@@ -102,11 +104,20 @@ void MQTTComm::publishPayload(const QByteArray &message, QString topicString)
     client->publish(topic, message);
 }
 
+void MQTTComm::setSubTopics(const QStringList &newSubTopics)
+{
+    subTopics = newSubTopics;
+}
+
 void MQTTComm::onConnected()
 {
     qInfo() << QString("Connection to MQTT Broker (%1) Succesfully").arg(hostName).toStdString().c_str();
     reconnectTimer->stop();
-    setSubTopic("");
+
+
+    foreach(QString topic, subTopics){
+        client->subscribe(topic);
+    }
 }
 
 void MQTTComm::onStateChanged(QMqttClient::ClientState state)

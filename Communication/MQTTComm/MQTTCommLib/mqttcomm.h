@@ -24,7 +24,7 @@ public:
 
     void setHostName(const QString &newHostName);
 
-    void setSubTopic(const QString &newSubTopic);
+    //void setSubTopic(const QString &newSubTopic);
 
     void setPort(int newPort);
 
@@ -36,14 +36,16 @@ public:
 
     void publishPayload(const QByteArray &message, QString topic);
 
+    void setSubTopics(const QStringList &newSubTopics);
+
 private:
 
     QString hostName;
     int port;
-    QString subTopic;
+    //QString subTopic;
     QTimer *reconnectTimer = nullptr;
 
-
+    QStringList subTopics;
 
 signals:
 
