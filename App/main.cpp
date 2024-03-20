@@ -2,6 +2,7 @@
 #include "QDebug"
 #include "Controllers/maincontroller.h"
 #include "app.h"
+#include "Services/EventDispatcher/eventdispatcher.h"
 
 
 void mySlot() {
@@ -12,6 +13,9 @@ void mySlot() {
 int main(int argc, char *argv[])
 {
     App a(argc, argv);
+
+
+    EventDispatcher::instance();
 
     MainController m;
 

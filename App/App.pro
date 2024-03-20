@@ -16,6 +16,8 @@ include("Third/Third.pri")
 
 SOURCES += \
         Controllers/maincontroller.cpp \
+        Services/EventDispatcher/Parsers/eventparser.cpp \
+        Services/EventDispatcher/eventdispatcher.cpp \
         Utils/globalresources.cpp \
         app.cpp \
         main.cpp
@@ -27,6 +29,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Controllers/maincontroller.h \
+    Services/EventDispatcher/Constants/textMaps.h \
+    Services/EventDispatcher/Models/confDispatcher.h \
+    Services/EventDispatcher/Parsers/eventparser.h \
+    Services/EventDispatcher/eventdispatcher.h \
     Utils/globalresources.h \
     app.h
 

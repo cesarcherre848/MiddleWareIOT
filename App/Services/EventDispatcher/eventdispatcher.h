@@ -2,19 +2,17 @@
 #define EVENTDISPATCHER_H
 
 #include <QObject>
+#include "mqttcomm.h"
 #include "QSettings"
-
-#include "QThread"
+#include "Utils/globalresources.h"
 #include "Models/confDispatcher.h"
 
-class MQTTComm;
 
 class EventDispatcher : public QObject
 {
     Q_OBJECT
 public:
-
-    static EventDispatcher& instance();
+    static EventDispatcher &instance();
 
     ~EventDispatcher();
 
@@ -28,8 +26,9 @@ private:
 
 private:
 
-
     MQTTComm* comm = nullptr;
+
+    QSettings& settings = GlobalResources::getSettings();
 
 private slots:
 
@@ -41,6 +40,8 @@ signals:
 
 
     void updateAssignedComponent();
+
+
 };
 
 #endif // EVENTDISPATCHER_H

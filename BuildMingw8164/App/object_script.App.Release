@@ -1,10 +1,10 @@
 release/maincontroller.o
 release/eventparser.o
+release/eventdispatcher.o
 release/globalresources.o
 release/app.o
-release/eventdispatcher.o
 release/main.o
 release/moc_maincontroller.o
 release/moc_eventparser.o
-release/moc_app.o
 release/moc_eventdispatcher.o
+release/moc_app.o

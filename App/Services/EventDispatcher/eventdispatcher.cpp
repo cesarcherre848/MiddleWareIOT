@@ -1,12 +1,21 @@
 #include "eventdispatcher.h"
+#include "QDebug"
 #include "Parsers/eventparser.h"
-#include "mqttcomm.h"
+#include "QThread"
+
+EventDispatcher &EventDispatcher::instance()
+{
+    static EventDispatcher _instance;
+    return _instance;
+}
+
 EventDispatcher::EventDispatcher() {
 
     qDebug() << "Init event Dispatcher";
 
-    comm = new MQTTComm(this);
+    comm = new MQTTComm();
     initMQTTCommunication();
+
 }
 
 void EventDispatcher::initMQTTCommunication()
@@ -25,10 +34,6 @@ void EventDispatcher::initMQTTCommunication()
     comm->setHostName(hostname);
     comm->setPort(port);
     comm->setSubTopics({"events/#"});
-    connect(comm, &MQTTComm::updateStatusConnection, this, [=](QString msg){
-        //qWarning() << QString("%1 %2").arg(getName()).arg("Connections Status") << msg;
-    });
-
 
 
     connect(comm, &MQTTComm::recievePayload, this,  &EventDispatcher::computePayload);
@@ -55,6 +60,7 @@ void EventDispatcher::reciveUpdateAction(ActionUpdate action)
 {
     switch (action) {
     case ActionUpdate::AUassignedComponent :
+        qDebug() << "update" << "assignedComponent";
         emit updateAssignedComponent();
         break;
     default:
@@ -63,15 +69,10 @@ void EventDispatcher::reciveUpdateAction(ActionUpdate action)
 }
 
 
-
-EventDispatcher& EventDispatcher::instance() {
-    static EventDispatcher _instance;
-    return _instance;
-}
-
 EventDispatcher::~EventDispatcher()
 {
     if(comm){
         comm->deleteLater();
     }
 }
+
