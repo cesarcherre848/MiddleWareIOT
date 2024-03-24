@@ -88,7 +88,11 @@ void MQTTPublish::insertData(const Signal & data)
 
 void MQTTPublish::setAsignedComponents(const QMap<QString, AssignedComponent> & newAsignedComponents)
 {
+    mutexAC.lock();
     asignedComponents = newAsignedComponents;
+
+
+    mutexAC.unlock();
 }
 
 
@@ -149,15 +153,34 @@ void MQTTPublish::applyComponentSignal(Signal &signal)
     QString& name = signal.name;
     QString channel = signal.channel;
 
+
+
+    QString idComponent;
+    QMap<QString, QString> channelMap;
+    mutexAC.lock();
     if(asignedComponents.contains(idNode)){
-        QString idComponent = asignedComponents[idNode].id;
-        QMap<QString, QString> channelMap = asignedComponents[idNode].channel;
-        name = name.replace(idNode, idComponent);
-        if(channelMap.contains(channel)){
-            QString newChannel = channelMap[channel];
-            name = name.replace(channel, newChannel);
-        }
+        idComponent = asignedComponents[idNode].id;
+        channelMap = asignedComponents[idNode].channel;
+
+
     }
+    mutexAC.unlock();
+
+    if(idComponent.isEmpty()){
+        return;
+    }
+
+    if(idNode.isEmpty()){
+        return;
+    }
+
+    name = name.replace(idNode, idComponent);
+    if(channelMap.contains(channel)){
+        QString newChannel = channelMap[channel];
+        name = name.replace(channel, newChannel);
+    }
+
+
 }
 
 void MQTTPublish::publishMultipleTopics(QByteArray message, QStringList topics)

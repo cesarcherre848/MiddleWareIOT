@@ -9,6 +9,7 @@
 #include "Models/Signals.h" // modificar al cambiar de entorno
 #include "Models/MPConf.h"
 #include "mqttcomm.h"
+#include "QMutex"
 
 
 class MQTTPublish : public PluginInterface {
@@ -49,6 +50,8 @@ private:
     MQTTComm* comm = nullptr;
 
     QMap<QString, AssignedComponent> asignedComponents;
+
+    QMutex mutexAC;
 
 private:
 

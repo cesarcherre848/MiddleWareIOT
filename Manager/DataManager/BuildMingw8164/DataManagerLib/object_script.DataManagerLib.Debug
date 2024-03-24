@@ -1,8 +1,10 @@
+debug/apirequest.o
 debug/baseservice.o
 debug/inputflow.o
 debug/outputflow.o
 debug/processor.o
 debug/datamanager.o
+debug/moc_apirequest.o
 debug/moc_baseservice.o
 debug/moc_inputflow.o
 debug/moc_outputflow.o

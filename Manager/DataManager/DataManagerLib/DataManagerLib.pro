@@ -13,6 +13,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Services/apirequest.cpp \
     Services/baseservice.cpp \
     Services/inputflow.cpp \
     Services/outputflow.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     DataManager_global.h \
     Models/Operation.h \
     Models/Signals.h \
+    Services/apirequest.h \
     Services/baseservice.h \
     Services/inputflow.h \
     Services/outputflow.h \

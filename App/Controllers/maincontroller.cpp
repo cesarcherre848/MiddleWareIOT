@@ -1,6 +1,6 @@
 #include "maincontroller.h"
 #include "QThread"
-#include "payloaderbessd.h"
+#include "Services/EventDispatcher/eventdispatcher.h"
 
 
 MainController::MainController(QObject *parent)
@@ -95,6 +95,8 @@ void MainController::initDataManager()
 {
     manager = new DataManager(settings);
     manager->setParent(this);
+
+    connect(&EventDispatcher::instance(), SIGNAL(updateAssignedComponent()), manager, SLOT(updateEventAssignedComponent()));
 }
 
 void MainController::exitRequest()

@@ -12,6 +12,7 @@
 #include "Services/processor.h"
 #include "Services/outputflow.h"
 #include "QSettings"
+#include "Services/apirequest.h"
 
 class DATAMANAGER_EXPORT DataManager : public QObject
 {
@@ -27,6 +28,8 @@ public:
 
     void setMaxQueuesProcessItems(int newMaxQueuesProcessItems);
 
+
+
 private:
 
     QQueue<Signal> inputDataQueue;
@@ -40,6 +43,8 @@ private:
     InputFlow* inputFlow = nullptr;
     Processor* processor = nullptr;
     OutputFlow* outputFlow = nullptr;
+
+    ApiRequest* apiRequest = nullptr;
 
 
     QSqlDatabase db;
@@ -61,6 +66,13 @@ private:
 
     void loadKnowIdNodes();
 
+public slots:
+
+    void updateEventAssignedComponent();
+
+private slots:
+
+    void updateAssignedComponent(QMap<QString, AssignedComponent> asignedComponents);
 
 };
 

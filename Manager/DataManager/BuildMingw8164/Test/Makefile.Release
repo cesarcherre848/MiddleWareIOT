@@ -489,6 +489,10 @@ release/tst_dataflow.moc: ../../Test/tst_dataflow.cpp \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/qsqltablemodel.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/qsqlresult.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/qtsqlversion.h \
+		../../DataManagerLib/Services/apirequest.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QJsonDocument \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QJsonArray \
 		release/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
 	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/BuildMingw8164/Test/release/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/Test" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/Test" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManager" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib" -I"D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtTest -IC:/Qt/6.2.0/mingw81_64/include/QtSql -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\Test\tst_dataflow.cpp -o release\tst_dataflow.moc
@@ -888,6 +892,10 @@ release/tst_dataflow.o: ../../Test/tst_dataflow.cpp C:/Qt/6.2.0/mingw81_64/inclu
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/qsqltablemodel.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/qsqlresult.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtSql/qtsqlversion.h \
+		../../DataManagerLib/Services/apirequest.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QJsonDocument \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QJsonArray \
 		release/tst_dataflow.moc
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\tst_dataflow.o ..\..\Test\tst_dataflow.cpp
 

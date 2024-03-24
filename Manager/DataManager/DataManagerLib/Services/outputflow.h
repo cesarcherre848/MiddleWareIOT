@@ -14,9 +14,11 @@ class OutputFlow : public BaseService
 {
     Q_OBJECT
 public:
-    explicit OutputFlow(const QMap<QString, AssignedComponent> &newAssignedComponent, QSettings &_settings);
+    explicit OutputFlow( QSettings &_settings);
 
     ~OutputFlow();
+
+    void init();
 
 
 private:
@@ -25,6 +27,7 @@ private:
 
 
 private:
+
 
 
 

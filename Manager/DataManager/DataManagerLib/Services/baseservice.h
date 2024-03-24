@@ -28,7 +28,7 @@ public:
 
     QString dirRel = QCoreApplication::applicationDirPath();
 
-
+    QMutex mutexAC;
 
 
 public:
@@ -77,6 +77,7 @@ private:
 
     QMutex mutex;
 
+
     QSettings& settings;
 
 
@@ -101,6 +102,7 @@ signals:
 
     void returnDataToInputQueue(const Signal&);
 
+    void finishedLoadPlugins();
 };
 
 #endif // BASESERVICE_H

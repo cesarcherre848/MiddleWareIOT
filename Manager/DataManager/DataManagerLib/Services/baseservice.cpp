@@ -69,9 +69,9 @@ std::shared_ptr<PluginInterface>BaseService::getPluginInterface(Operation operat
                         std::shared_ptr<PluginInterface> instance(plugin->newInstance());
                         instance->setSetup(operation.setup);
                         instance->setAsginedSignals(operation.assignedSignalName);
-                        if(!asignedComponents.isEmpty()){
-                            instance->setAsignedComponents(asignedComponents);
-                        }
+                        //if(!asignedComponents.isEmpty()){
+                            //instance->setAsignedComponents(asignedComponents);
+                        //}
                         return instance;
                     }
                     else{
@@ -127,7 +127,16 @@ void BaseService::jsonByteArrayToOperation(QByteArray byteArray)
 
 void BaseService::setAsignedComponents(const QMap<QString, AssignedComponent> &newAsignedComponents)
 {
+
+
+    mutexAC.lock();
     asignedComponents = newAsignedComponents;
+
+    foreach (std::shared_ptr<PluginInterface> instance, operationsInstances) {
+        instance->setAsignedComponents(asignedComponents);
+    }
+
+    mutexAC.unlock();
 }
 
 void BaseService::loadConfig()

@@ -60,7 +60,6 @@ void EventDispatcher::reciveUpdateAction(ActionUpdate action)
 {
     switch (action) {
     case ActionUpdate::AUassignedComponent :
-        qDebug() << "update" << "assignedComponent";
         emit updateAssignedComponent();
         break;
     default:

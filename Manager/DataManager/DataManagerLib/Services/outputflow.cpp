@@ -1,7 +1,7 @@
 #include "outputflow.h"
 #include <sstream>
 
-OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedComponent, QSettings &_settings)
+OutputFlow::OutputFlow(QSettings &_settings)
 :BaseService{_settings}
 {
 
@@ -25,37 +25,25 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
     }
 
     loadConfig();
-    setAsignedComponents(newAssignedComponent);
-
-    loadPluginIntances();
-
-
-    qDebug() << "Operations Output Instances:";
-    printOperationsInstances();
-
-
-    mainTimeout();
-
-/*
-    db = QSqlDatabase::addDatabase("QPSQL");
-    db.setHostName("146.190.122.149"); // Solo el nombre del host o la IP, sin el número de puerto
-    db.setPort(5432);
-    db.setDatabaseName("TestDBData");
-    db.setUserName("root");
-    db.setPassword("Mc05071995..");
-
-    //if (!db.open()) {
-        //qDebug() << "Error al abrir la base de datos: " << db.lastError().text();
-    //}
-*/
-    qDebug() << "Conexión exitosa a la base de datos";
 
 
 }
 
 OutputFlow::~OutputFlow()
 {
-    db.close();
+
+}
+
+void OutputFlow::init()
+{
+
+    loadPluginIntances();
+    emit finishedLoadPlugins();
+
+    qDebug() << "Operations Output Instances:";
+    printOperationsInstances();
+
+    mainTimeout();
 }
 
 
@@ -83,15 +71,30 @@ void OutputFlow::applyComponentSignal(Signal &signal)
     QString& name = signal.name;
     QString channel = signal.channel;
 
+
+    QString idComponent;
+    QMap<QString, QString> channelMap;
+    mutexAC.lock();
     if(asignedComponents.contains(idNode)){
-        QString idComponent = asignedComponents[idNode].id;
-        QMap<QString, QString> channelMap = asignedComponents[idNode].channel;
-        name = name.replace(idNode, idComponent);
-        if(channelMap.contains(channel)){
-            QString newChannel = channelMap[channel];
-            name = name.replace(channel, newChannel);
-        }
+        idComponent = asignedComponents[idNode].id;
+        channelMap = asignedComponents[idNode].channel;
     }
+    mutexAC.unlock();
+
+    if(idComponent.isEmpty()){
+        return;
+    }
+
+    if(idNode.isEmpty()){
+        return;
+    }
+
+    name = name.replace(idNode, idComponent);
+    if(channelMap.contains(channel)){
+        QString newChannel = channelMap[channel];
+        name = name.replace(channel, newChannel);
+    }
+
 }
 
 void OutputFlow::initConfig()

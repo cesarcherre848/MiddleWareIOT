@@ -6,9 +6,12 @@
 DataManager::DataManager(QSettings& _settings)
     :settings(_settings)
 {
-    loadKnowIdNodes();
-    InitDB();
-    getDataFromDB();
+    //loadKnowIdNodes();
+    //InitDB();
+    //getDataFromDB();
+
+    apiRequest = new ApiRequest(this);
+    connect(apiRequest, &ApiRequest::updateAssignedComponents, this,  &DataManager::updateAssignedComponent);
 
     inputFlow = new InputFlow(inputDataQueue, settings);
     inputFlow->setCleanTimeout(true);
@@ -23,7 +26,11 @@ DataManager::DataManager(QSettings& _settings)
     connect(processor, &Processor::returnDataToInputQueue, inputFlow, &InputFlow::insertData);
 
 
-    outputFlow = new OutputFlow(asignedComponents, settings);
+    outputFlow = new OutputFlow(settings);
+    connect(outputFlow,  &OutputFlow::finishedLoadPlugins, this, [=](){
+        updateEventAssignedComponent();
+    });
+    outputFlow->init();
 
     // conectar el processor con el salida
     connect(processor, &Processor::newProcessData, outputFlow, &OutputFlow::insertData);
@@ -42,6 +49,10 @@ DataManager::~DataManager()
     }
     if(outputFlow){
         outputFlow->deleteLater();
+    }
+
+    if(apiRequest){
+        apiRequest->deleteLater();
     }
 }
 
@@ -71,6 +82,8 @@ void DataManager::setMaxQueuesProcessItems(int newMaxQueuesProcessItems)
     }
     maxQueuesProcessItems = newMaxQueuesProcessItems;
 }
+
+
 
 void DataManager::InitDB()
 {
@@ -196,4 +209,21 @@ void DataManager::loadKnowIdNodes()
     }
 
 }
+
+void DataManager::updateEventAssignedComponent()
+{
+    qDebug() << "update assigned componet from manager";
+    apiRequest->requestGetAllAssignedComponents();
+}
+
+void DataManager::updateAssignedComponent(QMap<QString, AssignedComponent> asignedComponents)
+{
+
+    if(!outputFlow){
+        return;
+    }
+
+    outputFlow->setAsignedComponents(asignedComponents);
+}
+
 
