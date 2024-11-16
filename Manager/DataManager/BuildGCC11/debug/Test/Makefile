@@ -913,7 +913,6 @@ tst_dataflow.moc: ../../../Test/tst_dataflow.cpp \
 		../../../DataManagerLib/Models/Operation.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
 		../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../DataManagerLib/Services/outputflow.h \
@@ -1309,7 +1308,6 @@ tst_dataflow.o: ../../../Test/tst_dataflow.cpp /opt/Qt/6.2.0/gcc_64/include/QtTe
 		../../../DataManagerLib/Models/Operation.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
 		../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../DataManagerLib/Services/outputflow.h \

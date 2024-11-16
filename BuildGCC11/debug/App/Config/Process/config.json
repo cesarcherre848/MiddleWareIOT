@@ -4,12 +4,13 @@
         "Reduce Name": "UC",
         "Assigned Channels":
             [
-                "189301637_ERB_Accelerometer_ch0",
-                "189301637_ERB_Accelerometer_ch1",
-                "189301637_ERB_Accelerometer_ch2",
                 "189301605_ERB_Accelerometer_ch0",
                 "189301605_ERB_Accelerometer_ch1",
-                "189301605_ERB_Accelerometer_ch2"
+                "189301605_ERB_Accelerometer_ch2",
+                
+                "189301635_ERB_Accelerometer_ch0",
+                "189301635_ERB_Accelerometer_ch1",
+                "189301635_ERB_Accelerometer_ch2"
             ],
         "Params":
             {
@@ -24,9 +25,12 @@
         "Reduce Name": "FFT",
         "Assigned Channels":
             [
-                "189301637_ERB_Accelerometer_ch0_UC",
-                "189301637_ERB_Accelerometer_ch1_UC",
-                "189301637_ERB_Accelerometer_ch2_UC"
+                "189301635_ERB_Accelerometer_ch0_UC",
+                "189301635_ERB_Accelerometer_ch1_UC",
+                "189301635_ERB_Accelerometer_ch2_UC",
+                "189301635_ERB_Accelerometer_ch0",
+                "189301635_ERB_Accelerometer_ch1",
+                "189301635_ERB_Accelerometer_ch2"
             ],
         "Setup":
             {
@@ -50,14 +54,13 @@
             [
                 "189301637_ERB_Accelerometer_ch0_UC",
                 "189301637_ERB_Accelerometer_ch1_UC",
-                "189301637_ERB_Accelerometer_ch2_UC",
-                "189301605_ERB_Accelerometer_ch0_UC",
-                "189301605_ERB_Accelerometer_ch1_UC",
-                "189301605_ERB_Accelerometer_ch2_UC"
+                "189301637_ERB_Accelerometer_ch2_UC"
             ],
         "Setup":
             {
                 "functions": ["RMS", "Crest Factor", "Peak", "Kurtosis", "Skewness", "Peak Peak"]
             }
     }
+
+    
 ]

@@ -12,7 +12,7 @@
             {
                 "OutputUnit": "mm/s",
                 "HP_bt": 2.0,
-                "HP_fc": 5.0
+                "HP_fc": 2.0
             }
     },
 
@@ -37,7 +37,7 @@
                 "ampFormat": "RMS",
                 "window": "Hanning",
                 "function": "FFT",
-                "isDCFilter": true,
+                "isDCFilter": false,
                 "fcDCFilter": 1.0,
                 "isFullRange": true
             }

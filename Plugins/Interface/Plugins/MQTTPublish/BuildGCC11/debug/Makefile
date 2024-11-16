@@ -574,8 +574,7 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mqttpublish.cpp
 moc_mqttpublish.cpp: ../../mqttpublish.h \
 		../../../../plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
@@ -643,34 +642,35 @@ moc_mqttpublish.cpp: ../../mqttpublish.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpointer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
-		/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QQueue \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qqueue.h \
 		../../Models/MPConf.h \
@@ -735,8 +735,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 
 mqttpublish.o: ../../mqttpublish.cpp ../../mqttpublish.h \
 		../../../../plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
@@ -804,34 +803,35 @@ mqttpublish.o: ../../mqttpublish.cpp ../../mqttpublish.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpointer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
-		/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QQueue \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qqueue.h \
 		../../Models/MPConf.h \

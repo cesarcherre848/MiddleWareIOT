@@ -843,9 +843,7 @@ mqttcomm.o: ../../../MQTTCommLib/mqttcomm.cpp ../../../MQTTCommLib/mqttcomm.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
-		../../../MQTTCommLib/Constants/textMaps.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mqttcomm.o ../../../MQTTCommLib/mqttcomm.cpp
 
 moc_mqttcomm.o: moc_mqttcomm.cpp 

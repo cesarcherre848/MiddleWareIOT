@@ -659,6 +659,7 @@ moc_mqttparser.cpp: ../../mqttparser.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
@@ -773,6 +774,7 @@ mqttparser.o: ../../mqttparser.cpp ../../mqttparser.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mqttparser.o ../../mqttparser.cpp
 

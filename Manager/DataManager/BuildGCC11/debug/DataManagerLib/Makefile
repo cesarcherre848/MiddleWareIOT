@@ -715,22 +715,15 @@ moc_baseservice.cpp: ../../../DataManagerLib/Services/baseservice.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		../../../DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
-		../../../DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/baseservice.h -o moc_baseservice.cpp
@@ -820,6 +813,7 @@ moc_inputflow.cpp: ../../../DataManagerLib/Services/inputflow.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -856,15 +850,6 @@ moc_inputflow.cpp: ../../../DataManagerLib/Services/inputflow.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/inputflow.h -o moc_inputflow.cpp
@@ -954,6 +939,7 @@ moc_outputflow.cpp: ../../../DataManagerLib/Services/outputflow.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
@@ -1170,8 +1156,6 @@ moc_outputflow.cpp: ../../../DataManagerLib/Services/outputflow.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/outputflow.h -o moc_outputflow.cpp
@@ -1266,6 +1250,7 @@ moc_processor.cpp: ../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -1298,15 +1283,6 @@ moc_processor.cpp: ../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/processor.h -o moc_processor.cpp
@@ -1397,6 +1373,7 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -1436,15 +1413,6 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../DataManagerLib/Services/outputflow.h \
@@ -1465,6 +1433,10 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraymatcher.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcbormap.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstreamreader.h \
@@ -1493,7 +1465,9 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QScopedPointer \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjniobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibraryinfo.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversionnumber.h \
@@ -1510,6 +1484,7 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qoperatingsystemversion.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpauseanimation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocess.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpromise.h \
@@ -1749,22 +1724,15 @@ baseservice.o: ../../../DataManagerLib/Services/baseservice.cpp ../../../DataMan
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		../../../DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
-		../../../DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDir \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdir.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfile.h \
@@ -1774,6 +1742,13 @@ baseservice.o: ../../../DataManagerLib/Services/baseservice.cpp ../../../DataMan
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPluginLoader \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
@@ -1866,6 +1841,7 @@ inputflow.o: ../../../DataManagerLib/Services/inputflow.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -1901,16 +1877,7 @@ inputflow.o: ../../../DataManagerLib/Services/inputflow.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
-		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug
+		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o inputflow.o ../../../DataManagerLib/Services/inputflow.cpp
 
 outputflow.o: ../../../DataManagerLib/Services/outputflow.cpp ../../../DataManagerLib/Services/outputflow.h \
@@ -1998,6 +1965,7 @@ outputflow.o: ../../../DataManagerLib/Services/outputflow.cpp ../../../DataManag
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
@@ -2213,9 +2181,7 @@ outputflow.o: ../../../DataManagerLib/Services/outputflow.cpp ../../../DataManag
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
-		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug
+		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o outputflow.o ../../../DataManagerLib/Services/outputflow.cpp
 
 processor.o: ../../../DataManagerLib/Services/processor.cpp ../../../DataManagerLib/Services/processor.h \
@@ -2308,6 +2274,7 @@ processor.o: ../../../DataManagerLib/Services/processor.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -2340,15 +2307,6 @@ processor.o: ../../../DataManagerLib/Services/processor.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDir \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdir.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfile.h \
@@ -2358,6 +2316,13 @@ processor.o: ../../../DataManagerLib/Services/processor.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPluginLoader \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o processor.o ../../../DataManagerLib/Services/processor.cpp
 
@@ -2447,6 +2412,7 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -2486,15 +2452,6 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../DataManagerLib/Services/outputflow.h \
@@ -2515,6 +2472,10 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraymatcher.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcbormap.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstreamreader.h \
@@ -2543,7 +2504,9 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QScopedPointer \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjniobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibraryinfo.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversionnumber.h \
@@ -2560,6 +2523,7 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qoperatingsystemversion.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpauseanimation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocess.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpromise.h \

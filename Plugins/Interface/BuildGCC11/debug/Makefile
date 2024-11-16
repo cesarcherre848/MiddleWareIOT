@@ -565,8 +565,7 @@ compiler_moc_header_make_all: moc_plugininterface.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_plugininterface.cpp
 moc_plugininterface.cpp: ../../plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
@@ -634,33 +633,26 @@ moc_plugininterface.cpp: ../../plugininterface.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpointer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
-		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/BuildGCC11/debug/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtGui -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../plugininterface.h -o moc_plugininterface.cpp
@@ -680,8 +672,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 ####### Compile
 
 plugininterface.o: ../../plugininterface.cpp ../../plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
@@ -749,33 +740,26 @@ plugininterface.o: ../../plugininterface.cpp ../../plugininterface.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpointer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
-		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o plugininterface.o ../../plugininterface.cpp
 
 moc_plugininterface.o: moc_plugininterface.cpp 

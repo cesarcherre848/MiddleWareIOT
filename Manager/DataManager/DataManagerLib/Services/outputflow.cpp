@@ -17,6 +17,7 @@ OutputFlow::OutputFlow(const QMap<QString, AssignedComponent> &newAssignedCompon
         addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/Save2DData/BuildMingw8164/debug");
 #elif __linux__
         addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/MQTTPublish/BuildGCC11/debug");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/Save2DData/BuildGCC11/debug");
 #endif
     }
 
