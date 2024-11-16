@@ -6,7 +6,8 @@
 
 const QMap<QString, TypeParser> invMapTypeParser = {
     {"ERB" , TypeParser::ERB},
-    {"DW" , TypeParser::DW}
+    {"DW" , TypeParser::DW},
+    {"MSGT" , TypeParser::MSGT}
 };
 
 

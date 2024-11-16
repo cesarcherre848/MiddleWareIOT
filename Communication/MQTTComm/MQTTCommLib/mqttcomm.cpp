@@ -20,6 +20,7 @@ MQTTComm::MQTTComm(QObject *parent):
 
 
     QObject::connect(client, &QMqttClient::messageReceived, this, [=](const QByteArray &payload, const QMqttTopicName &topic) {
+
         emit recievePayload(payload, topic.name());
     });
 
@@ -117,6 +118,7 @@ void MQTTComm::onConnected()
 
     foreach(QString topic, subTopics){
         client->subscribe(topic);
+        qDebug() << topic;
     }
 }
 

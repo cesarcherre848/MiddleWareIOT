@@ -6,7 +6,8 @@
 
 enum TypeParser{
     ERB,
-    DW
+    DW,
+    MSGT,
 };
 
 struct MSConf {

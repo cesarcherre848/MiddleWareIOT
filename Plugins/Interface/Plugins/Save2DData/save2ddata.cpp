@@ -264,7 +264,7 @@ void Save2DData::completeQuery(Signal& signal, QString& queryString, int& count)
 
     QString name = signal.name;
     QDateTime timestamp = signal.timestamp;
-    timestamp.setTimeSpec(Qt::OffsetFromUTC);
+    timestamp.setTimeSpec(Qt::UTC);
 
     if (count > 0) queryString += ", ";
 

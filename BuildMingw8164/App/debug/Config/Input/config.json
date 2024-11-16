@@ -4,7 +4,7 @@
         "Reduce Name": "MQTTS",
         "Setup":
             {
-                "hostname": "146.190.122.149",
+                "hostname": "146.190.122.149", 
                 "port": 1883,
                 "topics":
                 {

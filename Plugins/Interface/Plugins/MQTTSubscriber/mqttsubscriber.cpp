@@ -152,11 +152,16 @@ void MQTTSubscriber::initMQTTCommunication()
 
     QStringList subTopics;
 
+
+
     foreach(QString key, conf.parserTopics.keys()){
         subTopics << conf.parserTopics[key];
     }
 
+
     comm->setSubTopics(subTopics);
+
+
 
     connect(comm, &MQTTComm::updateStatusConnection, this, [=](QString msg){
         qWarning() << QString("%1 %2").arg(getName()).arg("Connections Status") << msg;
@@ -178,9 +183,14 @@ void MQTTSubscriber::initMQTTCommunication()
 
 void MQTTSubscriber::getTopicTypeParser()
 {
+
+
     QMap<QString, QStringList> parserTopics = conf.parserTopics;
     foreach (QString key, parserTopics.keys()) {
         QStringList topics = parserTopics[key];
+
+
+
         foreach (QString topic, topics) {
             if(!invMapTypeParser.keys().contains(key)){
                 continue;
@@ -190,10 +200,15 @@ void MQTTSubscriber::getTopicTypeParser()
         }
     }
 
+
+
 }
 
 void MQTTSubscriber::computePayload(const QByteArray &message, QString topic)
 {
+
+
+    //qDebug() << message;
 
     QStringList topics = topicTypeParser.keys();
 
@@ -228,6 +243,10 @@ void MQTTSubscriber::computePayload(const QByteArray &message, QString topic)
 
         QObject::connect(thread, &QThread::started, payloadErbessdParser, &PayloadErbessd::execute);
         thread->start();
+    }
+
+    else if(typeParser == TypeParser::MSGT){
+        qDebug() << "Pass Parser MSGT";
     }
 
 

@@ -200,6 +200,7 @@ release/moc_mqttparser.cpp: ../mqttparser.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		release/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
@@ -316,6 +317,7 @@ release/mqttparser.o: ../mqttparser.cpp ../mqttparser.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
 		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mqttparser.o ..\mqttparser.cpp
 
