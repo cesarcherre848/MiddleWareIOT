@@ -105,6 +105,8 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -263,6 +265,8 @@ Makefile: ../../../Test/Test.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.co
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -414,6 +418,8 @@ Makefile: ../../../Test/Test.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.co
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri:
@@ -913,7 +919,6 @@ tst_dataflow.moc: ../../../Test/tst_dataflow.cpp \
 		../../../DataManagerLib/Models/Operation.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
 		../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../DataManagerLib/Services/outputflow.h \
@@ -951,6 +956,10 @@ tst_dataflow.moc: ../../../Test/tst_dataflow.cpp \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqltablemodel.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqlresult.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qtsqlversion.h \
+		../../../DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/Test/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/Test -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/Test -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManager -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtTest -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../Test/tst_dataflow.cpp -o tst_dataflow.moc
@@ -1309,7 +1318,6 @@ tst_dataflow.o: ../../../Test/tst_dataflow.cpp /opt/Qt/6.2.0/gcc_64/include/QtTe
 		../../../DataManagerLib/Models/Operation.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
 		../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../DataManagerLib/Services/outputflow.h \
@@ -1347,6 +1355,10 @@ tst_dataflow.o: ../../../Test/tst_dataflow.cpp /opt/Qt/6.2.0/gcc_64/include/QtTe
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqltablemodel.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqlresult.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qtsqlversion.h \
+		../../../DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
 		tst_dataflow.moc
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tst_dataflow.o ../../../Test/tst_dataflow.cpp
 

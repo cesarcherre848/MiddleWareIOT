@@ -53,15 +53,23 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../../../App/Controllers/maincontroller.cpp \
+		../../../App/Services/EventDispatcher/Parsers/eventparser.cpp \
+		../../../App/Services/EventDispatcher/eventdispatcher.cpp \
 		../../../App/Utils/globalresources.cpp \
 		../../../App/app.cpp \
 		../../../App/main.cpp moc_maincontroller.cpp \
+		moc_eventparser.cpp \
+		moc_eventdispatcher.cpp \
 		moc_app.cpp
 OBJECTS       = maincontroller.o \
+		eventparser.o \
+		eventdispatcher.o \
 		globalresources.o \
 		app.o \
 		main.o \
 		moc_maincontroller.o \
+		moc_eventparser.o \
+		moc_eventdispatcher.o \
 		moc_app.o
 DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/common/unix.conf \
@@ -210,8 +218,14 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/features/lex.prf \
 		/home/cesarcherre/App/App.pro ../../../App/Controllers/maincontroller.h \
+		../../../App/Services/EventDispatcher/Constants/textMaps.h \
+		../../../App/Services/EventDispatcher/Models/confDispatcher.h \
+		../../../App/Services/EventDispatcher/Parsers/eventparser.h \
+		../../../App/Services/EventDispatcher/eventdispatcher.h \
 		../../../App/Utils/globalresources.h \
 		../../../App/app.h ../../../App/Controllers/maincontroller.cpp \
+		../../../App/Services/EventDispatcher/Parsers/eventparser.cpp \
+		../../../App/Services/EventDispatcher/eventdispatcher.cpp \
 		../../../App/Utils/globalresources.cpp \
 		../../../App/app.cpp \
 		../../../App/main.cpp
@@ -544,8 +558,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../App/Controllers/maincontroller.h ../../../App/Utils/globalresources.h ../../../App/app.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../App/Controllers/maincontroller.cpp ../../../App/Utils/globalresources.cpp ../../../App/app.cpp ../../../App/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../../App/Controllers/maincontroller.h ../../../App/Services/EventDispatcher/Constants/textMaps.h ../../../App/Services/EventDispatcher/Models/confDispatcher.h ../../../App/Services/EventDispatcher/Parsers/eventparser.h ../../../App/Services/EventDispatcher/eventdispatcher.h ../../../App/Utils/globalresources.h ../../../App/app.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../../App/Controllers/maincontroller.cpp ../../../App/Services/EventDispatcher/Parsers/eventparser.cpp ../../../App/Services/EventDispatcher/eventdispatcher.cpp ../../../App/Utils/globalresources.cpp ../../../App/app.cpp ../../../App/main.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -576,9 +590,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /opt/Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h /opt/Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_maincontroller.cpp moc_app.cpp
+compiler_moc_header_make_all: moc_maincontroller.cpp moc_eventparser.cpp moc_eventdispatcher.cpp moc_app.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_maincontroller.cpp moc_app.cpp
+	-$(DEL_FILE) moc_maincontroller.cpp moc_eventparser.cpp moc_eventdispatcher.cpp moc_app.cpp
 moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
@@ -662,61 +676,24 @@ moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
-		../../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttclient.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttglobal.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttauthenticationproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttype.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		../../../Manager/DataManager/DataManagerLib/datamanager.h \
+		../../../Manager/DataManager/DataManagerLib/DataManager_global.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPair \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QHash \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttconnectionproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttpublishproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscription.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttmessage.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicname.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QExplicitlySharedDataPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QStringList \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicfilter.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscriptionproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QTcpSocket \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
+		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
-		../../../Manager/DataManager/DataManagerLib/datamanager.h \
-		../../../Manager/DataManager/DataManagerLib/DataManager_global.h \
-		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmutex.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QQueue \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qqueue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QThread \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qthread.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdeadlinetimer.h \
@@ -738,18 +715,12 @@ moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnativeinterface.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qloggingcategory.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QStringList \
 		../../../Manager/DataManager/DataManagerLib/Models/Operation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		../../../Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		../../../Manager/DataManager/DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../Manager/DataManager/DataManagerLib/Services/outputflow.h \
@@ -766,9 +737,14 @@ moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qassociativeiterable.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbitarray.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbuffer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraymatcher.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcbormap.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstreamreader.h \
@@ -778,6 +754,7 @@ moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcommandlineoption.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcommandlineparser.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdir.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfile.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfiledevice.h \
@@ -796,7 +773,9 @@ moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QScopedPointer \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjniobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibraryinfo.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversionnumber.h \
@@ -813,6 +792,7 @@ moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qoperatingsystemversion.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpauseanimation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocess.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpromise.h \
@@ -923,9 +903,244 @@ moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqltablemodel.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqlresult.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qtsqlversion.h \
+		../../../Manager/DataManager/DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUrl \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Controllers/maincontroller.h -o moc_maincontroller.cpp
+
+moc_eventparser.cpp: ../../../App/Services/EventDispatcher/Parsers/eventparser.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtmetamacros.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydataops.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qanystringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qutf8stringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompare.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopeguard.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevicebase.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterable.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetacontainer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmath.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
+		../../../App/Services/EventDispatcher/Models/confDispatcher.h \
+		moc_predefs.h \
+		/opt/Qt/6.2.0/gcc_64/libexec/moc
+	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Services/EventDispatcher/Parsers/eventparser.h -o moc_eventparser.cpp
+
+moc_eventdispatcher.cpp: ../../../App/Services/EventDispatcher/eventdispatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtmetamacros.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydataops.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qanystringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qutf8stringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompare.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopeguard.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevicebase.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterable.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetacontainer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmath.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
+		../../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
+		../../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttclient.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttauthenticationproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPair \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QHash \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttconnectionproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttpublishproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscription.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttmessage.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicname.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QExplicitlySharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QStringList \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicfilter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscriptionproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QTcpSocket \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSettings \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsettings.h \
+		../../../App/Utils/globalresources.h \
+		../../../App/Services/EventDispatcher/Models/confDispatcher.h \
+		moc_predefs.h \
+		/opt/Qt/6.2.0/gcc_64/libexec/moc
+	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Services/EventDispatcher/eventdispatcher.h -o moc_eventdispatcher.cpp
 
 moc_app.cpp: ../../../App/app.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplication \
@@ -1126,61 +1341,24 @@ maincontroller.o: ../../../App/Controllers/maincontroller.cpp ../../../App/Contr
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
-		../../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttclient.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttglobal.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttauthenticationproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttype.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		../../../Manager/DataManager/DataManagerLib/datamanager.h \
+		../../../Manager/DataManager/DataManagerLib/DataManager_global.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPair \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QHash \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttconnectionproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttpublishproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscription.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttmessage.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicname.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QExplicitlySharedDataPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QStringList \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicfilter.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscriptionproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QTcpSocket \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
+		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
-		../../../Manager/DataManager/DataManagerLib/datamanager.h \
-		../../../Manager/DataManager/DataManagerLib/DataManager_global.h \
-		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmutex.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QQueue \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qqueue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QThread \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qthread.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdeadlinetimer.h \
@@ -1202,18 +1380,12 @@ maincontroller.o: ../../../App/Controllers/maincontroller.cpp ../../../App/Contr
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnativeinterface.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qloggingcategory.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QStringList \
 		../../../Manager/DataManager/DataManagerLib/Models/Operation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		../../../Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		../../../Manager/DataManager/DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../Manager/DataManager/DataManagerLib/Services/outputflow.h \
@@ -1230,9 +1402,14 @@ maincontroller.o: ../../../App/Controllers/maincontroller.cpp ../../../App/Contr
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qassociativeiterable.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbitarray.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbuffer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraymatcher.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcbormap.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstreamreader.h \
@@ -1242,6 +1419,7 @@ maincontroller.o: ../../../App/Controllers/maincontroller.cpp ../../../App/Contr
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcommandlineoption.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcommandlineparser.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdir.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfile.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfiledevice.h \
@@ -1260,7 +1438,9 @@ maincontroller.o: ../../../App/Controllers/maincontroller.cpp ../../../App/Contr
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QScopedPointer \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjniobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibraryinfo.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversionnumber.h \
@@ -1277,6 +1457,7 @@ maincontroller.o: ../../../App/Controllers/maincontroller.cpp ../../../App/Contr
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qoperatingsystemversion.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpauseanimation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocess.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpromise.h \
@@ -1387,11 +1568,291 @@ maincontroller.o: ../../../App/Controllers/maincontroller.cpp ../../../App/Contr
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqltablemodel.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqlresult.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qtsqlversion.h \
-		../../../DataParsers/PayloadErbessd/PayloadErbessdLib/payloaderbessd.h \
-		../../../DataParsers/PayloadErbessd/PayloadErbessdLib/PayloadErbessd_global.h \
-		../../../DataParsers/PayloadErbessd/PayloadErbessdLib/Models/ErbessdData.h \
-		../../../DataParsers/MQTTParser/mqttparser.h
+		../../../Manager/DataManager/DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUrl \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
+		../../../App/Services/EventDispatcher/eventdispatcher.h \
+		../../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
+		../../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttclient.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttauthenticationproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPair \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QHash \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttconnectionproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttpublishproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscription.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttmessage.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicname.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QExplicitlySharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicfilter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscriptionproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QTcpSocket \
+		../../../App/Services/EventDispatcher/Models/confDispatcher.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maincontroller.o ../../../App/Controllers/maincontroller.cpp
+
+eventparser.o: ../../../App/Services/EventDispatcher/Parsers/eventparser.cpp ../../../App/Services/EventDispatcher/Parsers/eventparser.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtmetamacros.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydataops.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qanystringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qutf8stringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompare.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopeguard.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevicebase.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterable.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetacontainer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmath.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
+		../../../App/Services/EventDispatcher/Models/confDispatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		../../../App/Services/EventDispatcher/Constants/textMaps.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o eventparser.o ../../../App/Services/EventDispatcher/Parsers/eventparser.cpp
+
+eventdispatcher.o: ../../../App/Services/EventDispatcher/eventdispatcher.cpp ../../../App/Services/EventDispatcher/eventdispatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtmetamacros.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydataops.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qanystringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qutf8stringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompare.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopeguard.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevicebase.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterable.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetacontainer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmath.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
+		../../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
+		../../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttclient.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttauthenticationproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPair \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QHash \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttconnectionproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttpublishproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscription.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttmessage.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicname.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QExplicitlySharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QStringList \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicfilter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscriptionproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QTcpSocket \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSettings \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsettings.h \
+		../../../App/Utils/globalresources.h \
+		../../../App/Services/EventDispatcher/Models/confDispatcher.h \
+		../../../App/Services/EventDispatcher/Parsers/eventparser.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QThread \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qthread.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qelapsedtimer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o eventdispatcher.o ../../../App/Services/EventDispatcher/eventdispatcher.cpp
 
 globalresources.o: ../../../App/Utils/globalresources.cpp ../../../App/Utils/globalresources.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSettings \
@@ -1699,74 +2160,31 @@ main.o: ../../../App/main.cpp /opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplicati
 		../../../App/Utils/globalresources.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSettings \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsettings.h \
-		../../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
-		../../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttclient.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttglobal.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttauthenticationproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttype.h \
+		../../../Manager/DataManager/DataManagerLib/datamanager.h \
+		../../../Manager/DataManager/DataManagerLib/DataManager_global.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPair \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QHash \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttconnectionproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttpublishproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscription.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttmessage.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicname.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QExplicitlySharedDataPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QStringList \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicfilter.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscriptionproperties.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedPointer \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QTcpSocket \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
+		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
-		../../../Manager/DataManager/DataManagerLib/datamanager.h \
-		../../../Manager/DataManager/DataManagerLib/DataManager_global.h \
-		../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QQueue \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qqueue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtimer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasictimer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QThread \
 		../../../Manager/DataManager/DataManagerLib/Services/inputflow.h \
 		../../../Manager/DataManager/DataManagerLib/Services/baseservice.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QStringList \
 		../../../Manager/DataManager/DataManagerLib/Models/Operation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		../../../Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		../../../Manager/DataManager/DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../Manager/DataManager/DataManagerLib/Services/outputflow.h \
@@ -1783,9 +2201,14 @@ main.o: ../../../App/main.cpp /opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplicati
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qassociativeiterable.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbitarray.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbuffer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraymatcher.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcbormap.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstreamreader.h \
@@ -1795,6 +2218,7 @@ main.o: ../../../App/main.cpp /opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplicati
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcommandlineoption.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcommandlineparser.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdir.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfile.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfiledevice.h \
@@ -1813,7 +2237,9 @@ main.o: ../../../App/main.cpp /opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplicati
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QScopedPointer \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjniobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibraryinfo.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversionnumber.h \
@@ -1830,6 +2256,7 @@ main.o: ../../../App/main.cpp /opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplicati
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qoperatingsystemversion.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpauseanimation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocess.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpromise.h \
@@ -1940,11 +2367,65 @@ main.o: ../../../App/main.cpp /opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplicati
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqltablemodel.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqlresult.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qtsqlversion.h \
-		../../../App/app.h
+		../../../Manager/DataManager/DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUrl \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
+		../../../App/app.h \
+		../../../App/Services/EventDispatcher/eventdispatcher.h \
+		../../../Communication/MQTTComm/MQTTCommLib/mqttcomm.h \
+		../../../Communication/MQTTComm/MQTTCommLib/MQTTComm_global.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttclient.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttauthenticationproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPair \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QHash \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttconnectionproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttpublishproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscription.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttmessage.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicname.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QExplicitlySharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqtttopicfilter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtMqtt/qmqttsubscriptionproperties.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QTcpSocket \
+		../../../App/Services/EventDispatcher/Models/confDispatcher.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../../App/main.cpp
 
 moc_maincontroller.o: moc_maincontroller.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_maincontroller.o moc_maincontroller.cpp
+
+moc_eventparser.o: moc_eventparser.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_eventparser.o moc_eventparser.cpp
+
+moc_eventdispatcher.o: moc_eventdispatcher.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_eventdispatcher.o moc_eventdispatcher.cpp
 
 moc_app.o: moc_app.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_app.o moc_app.cpp

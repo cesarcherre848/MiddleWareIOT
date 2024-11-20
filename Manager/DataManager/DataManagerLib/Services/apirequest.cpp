@@ -15,7 +15,10 @@ ApiRequest::~ApiRequest()
 
 void ApiRequest::requestGetAllAssignedComponents()
 {
-    QString url = "http://localhost:2540/devices/getall/assignedcomponents";
+    QString endpoint = "/devices/getall/assignedcomponents";
+    QString url = url_service + endpoint;
+
+    qDebug() << url;
 
     makeGetRequest(url,  TypeRequest::GetAllAssignedComponents);
 }
@@ -117,4 +120,9 @@ void ApiRequest::processGetAllAssignedComponents(QJsonObject data)
     }
 
     emit updateAssignedComponents(asignedComponents);
+}
+
+void ApiRequest::setUrl_service(const QString &newUrl_service)
+{
+    url_service = newUrl_service;
 }

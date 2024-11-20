@@ -105,6 +105,8 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -263,6 +265,8 @@ Makefile: ../../../Test/Test.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.co
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -413,6 +417,8 @@ Makefile: ../../../Test/Test.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.co
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri:

@@ -52,20 +52,24 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../../../DataManagerLib/Services/baseservice.cpp \
+SOURCES       = ../../../DataManagerLib/Services/apirequest.cpp \
+		../../../DataManagerLib/Services/baseservice.cpp \
 		../../../DataManagerLib/Services/inputflow.cpp \
 		../../../DataManagerLib/Services/outputflow.cpp \
 		../../../DataManagerLib/Services/processor.cpp \
-		../../../DataManagerLib/datamanager.cpp moc_baseservice.cpp \
+		../../../DataManagerLib/datamanager.cpp moc_apirequest.cpp \
+		moc_baseservice.cpp \
 		moc_inputflow.cpp \
 		moc_outputflow.cpp \
 		moc_processor.cpp \
 		moc_datamanager.cpp
-OBJECTS       = baseservice.o \
+OBJECTS       = apirequest.o \
+		baseservice.o \
 		inputflow.o \
 		outputflow.o \
 		processor.o \
 		datamanager.o \
+		moc_apirequest.o \
 		moc_baseservice.o \
 		moc_inputflow.o \
 		moc_outputflow.o \
@@ -122,6 +126,8 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -218,12 +224,14 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/cesarcherre/Projects/MiddleWareIOT/DataManagerLib/DataManagerLib.pro ../../../DataManagerLib/DataManager_global.h \
 		../../../DataManagerLib/Models/Operation.h \
 		../../../DataManagerLib/Models/Signals.h \
+		../../../DataManagerLib/Services/apirequest.h \
 		../../../DataManagerLib/Services/baseservice.h \
 		../../../DataManagerLib/Services/inputflow.h \
 		../../../DataManagerLib/Services/outputflow.h \
 		../../../DataManagerLib/Services/processor.h \
 		../../../DataManagerLib/Utils/ServicesCommon.h \
-		../../../DataManagerLib/datamanager.h ../../../DataManagerLib/Services/baseservice.cpp \
+		../../../DataManagerLib/datamanager.h ../../../DataManagerLib/Services/apirequest.cpp \
+		../../../DataManagerLib/Services/baseservice.cpp \
 		../../../DataManagerLib/Services/inputflow.cpp \
 		../../../DataManagerLib/Services/outputflow.cpp \
 		../../../DataManagerLib/Services/processor.cpp \
@@ -307,6 +315,8 @@ Makefile: ../../../DataManagerLib/DataManagerLib.pro /opt/Qt/6.2.0/gcc_64/mkspec
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -456,6 +466,8 @@ Makefile: ../../../DataManagerLib/DataManagerLib.pro /opt/Qt/6.2.0/gcc_64/mkspec
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri:
@@ -568,8 +580,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../DataManagerLib/DataManager_global.h ../../../DataManagerLib/Models/Operation.h ../../../DataManagerLib/Models/Signals.h ../../../DataManagerLib/Services/baseservice.h ../../../DataManagerLib/Services/inputflow.h ../../../DataManagerLib/Services/outputflow.h ../../../DataManagerLib/Services/processor.h ../../../DataManagerLib/Utils/ServicesCommon.h ../../../DataManagerLib/datamanager.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../DataManagerLib/Services/baseservice.cpp ../../../DataManagerLib/Services/inputflow.cpp ../../../DataManagerLib/Services/outputflow.cpp ../../../DataManagerLib/Services/processor.cpp ../../../DataManagerLib/datamanager.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../../DataManagerLib/DataManager_global.h ../../../DataManagerLib/Models/Operation.h ../../../DataManagerLib/Models/Signals.h ../../../DataManagerLib/Services/apirequest.h ../../../DataManagerLib/Services/baseservice.h ../../../DataManagerLib/Services/inputflow.h ../../../DataManagerLib/Services/outputflow.h ../../../DataManagerLib/Services/processor.h ../../../DataManagerLib/Utils/ServicesCommon.h ../../../DataManagerLib/datamanager.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../../DataManagerLib/Services/apirequest.cpp ../../../DataManagerLib/Services/baseservice.cpp ../../../DataManagerLib/Services/inputflow.cpp ../../../DataManagerLib/Services/outputflow.cpp ../../../DataManagerLib/Services/processor.cpp ../../../DataManagerLib/datamanager.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -601,9 +613,141 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /opt/Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h /opt/Qt/6.2.0/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_baseservice.cpp moc_inputflow.cpp moc_outputflow.cpp moc_processor.cpp moc_datamanager.cpp
+compiler_moc_header_make_all: moc_apirequest.cpp moc_baseservice.cpp moc_inputflow.cpp moc_outputflow.cpp moc_processor.cpp moc_datamanager.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_baseservice.cpp moc_inputflow.cpp moc_outputflow.cpp moc_processor.cpp moc_datamanager.cpp
+	-$(DEL_FILE) moc_apirequest.cpp moc_baseservice.cpp moc_inputflow.cpp moc_outputflow.cpp moc_processor.cpp moc_datamanager.cpp
+moc_apirequest.cpp: ../../../DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtmetamacros.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydataops.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qanystringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qutf8stringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompare.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopeguard.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevicebase.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterable.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetacontainer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmath.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUrl \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		../../../DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		moc_predefs.h \
+		/opt/Qt/6.2.0/gcc_64/libexec/moc
+	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/apirequest.h -o moc_apirequest.cpp
+
 moc_baseservice.cpp: ../../../DataManagerLib/Services/baseservice.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplication \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreapplication.h \
@@ -715,22 +859,15 @@ moc_baseservice.cpp: ../../../DataManagerLib/Services/baseservice.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		../../../DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
-		../../../DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/baseservice.h -o moc_baseservice.cpp
@@ -820,6 +957,7 @@ moc_inputflow.cpp: ../../../DataManagerLib/Services/inputflow.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -856,15 +994,6 @@ moc_inputflow.cpp: ../../../DataManagerLib/Services/inputflow.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/inputflow.h -o moc_inputflow.cpp
@@ -954,6 +1083,7 @@ moc_outputflow.cpp: ../../../DataManagerLib/Services/outputflow.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
@@ -1170,8 +1300,6 @@ moc_outputflow.cpp: ../../../DataManagerLib/Services/outputflow.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/outputflow.h -o moc_outputflow.cpp
@@ -1266,6 +1394,7 @@ moc_processor.cpp: ../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -1298,15 +1427,6 @@ moc_processor.cpp: ../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/Services/processor.h -o moc_processor.cpp
@@ -1397,6 +1517,7 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -1436,15 +1557,6 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../DataManagerLib/Services/outputflow.h \
@@ -1465,6 +1577,10 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraymatcher.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcbormap.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstreamreader.h \
@@ -1493,7 +1609,9 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QScopedPointer \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjniobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibraryinfo.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversionnumber.h \
@@ -1510,6 +1628,7 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qoperatingsystemversion.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpauseanimation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocess.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpromise.h \
@@ -1620,6 +1739,34 @@ moc_datamanager.cpp: ../../../DataManagerLib/datamanager.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqltablemodel.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqlresult.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qtsqlversion.h \
+		../../../DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUrl \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
 	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/BuildGCC11/debug/DataManagerLib/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../DataManagerLib/datamanager.h -o moc_datamanager.cpp
@@ -1637,6 +1784,136 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean 
 
 ####### Compile
+
+apirequest.o: ../../../DataManagerLib/Services/apirequest.cpp ../../../DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtmetamacros.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qarraydataops.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearrayview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qanystringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qutf8stringview.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcompare.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qscopeguard.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevicebase.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiterable.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmetacontainer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmath.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qproperty.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpropertyprivate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUrl \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qstringconverter.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qset.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcryptographichash.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		../../../DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o apirequest.o ../../../DataManagerLib/Services/apirequest.cpp
 
 baseservice.o: ../../../DataManagerLib/Services/baseservice.cpp ../../../DataManagerLib/Services/baseservice.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplication \
@@ -1749,22 +2026,15 @@ baseservice.o: ../../../DataManagerLib/Services/baseservice.cpp ../../../DataMan
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
+		../../../DataManagerLib/Models/Signals.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
-		../../../DataManagerLib/Models/Signals.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDir \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdir.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfile.h \
@@ -1774,6 +2044,13 @@ baseservice.o: ../../../DataManagerLib/Services/baseservice.cpp ../../../DataMan
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPluginLoader \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
@@ -1866,6 +2143,7 @@ inputflow.o: ../../../DataManagerLib/Services/inputflow.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -1901,16 +2179,7 @@ inputflow.o: ../../../DataManagerLib/Services/inputflow.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
-		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug
+		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o inputflow.o ../../../DataManagerLib/Services/inputflow.cpp
 
 outputflow.o: ../../../DataManagerLib/Services/outputflow.cpp ../../../DataManagerLib/Services/outputflow.h \
@@ -1998,6 +2267,7 @@ outputflow.o: ../../../DataManagerLib/Services/outputflow.cpp ../../../DataManag
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QTimer \
@@ -2213,9 +2483,7 @@ outputflow.o: ../../../DataManagerLib/Services/outputflow.cpp ../../../DataManag
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QString \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
-		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug
+		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o outputflow.o ../../../DataManagerLib/Services/outputflow.cpp
 
 processor.o: ../../../DataManagerLib/Services/processor.cpp ../../../DataManagerLib/Services/processor.h \
@@ -2308,6 +2576,7 @@ processor.o: ../../../DataManagerLib/Services/processor.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdatetime.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcalendar.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -2340,15 +2609,6 @@ processor.o: ../../../DataManagerLib/Services/processor.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDir \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qdir.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qfile.h \
@@ -2358,6 +2618,13 @@ processor.o: ../../../DataManagerLib/Services/processor.cpp ../../../DataManager
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QPluginLoader \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QList
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o processor.o ../../../DataManagerLib/Services/processor.cpp
 
@@ -2447,6 +2714,7 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/quuid.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMutex \
@@ -2486,15 +2754,6 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QVariant \
 		/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/plugininterface.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QtPlugin \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		../../../DataManagerLib/Services/processor.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSet \
 		../../../DataManagerLib/Services/outputflow.h \
@@ -2515,6 +2774,10 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qbytearraymatcher.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcache.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborvalue.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborcommon.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qregularexpression.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qurl.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcbormap.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstream.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qcborstreamreader.h \
@@ -2543,7 +2806,9 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QScopedPointer \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjniobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonarray.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonvalue.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsondocument.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qjsonobject.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibrary.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qlibraryinfo.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qversionnumber.h \
@@ -2560,6 +2825,7 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qoperatingsystemversion.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpauseanimation.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/qplugin.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpluginloader.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qprocess.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qpromise.h \
@@ -2669,8 +2935,39 @@ datamanager.o: ../../../DataManagerLib/datamanager.cpp ../../../DataManagerLib/d
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqltablemodel.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtSql/qsqlresult.h \
-		/opt/Qt/6.2.0/gcc_64/include/QtSql/qtsqlversion.h
+		/opt/Qt/6.2.0/gcc_64/include/QtSql/qtsqlversion.h \
+		../../../DataManagerLib/Services/apirequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUrl \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QFlags \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt/6.2.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonDocument \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonObject \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datamanager.o ../../../DataManagerLib/datamanager.cpp
+
+moc_apirequest.o: moc_apirequest.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_apirequest.o moc_apirequest.cpp
 
 moc_baseservice.o: moc_baseservice.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_baseservice.o moc_baseservice.cpp
