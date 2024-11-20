@@ -3,6 +3,7 @@ QT += sql
 QT += core
 QT += network
 
+
 TEMPLATE = lib
 DEFINES += DATAMANAGER_LIBRARY
 

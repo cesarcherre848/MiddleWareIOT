@@ -11,6 +11,10 @@ DataManager::DataManager(QSettings& _settings)
     //getDataFromDB();
 
     apiRequest = new ApiRequest(this);
+    QString url_service = settings.value("Manager/URLService", "http://localhost:2540").toString();
+    apiRequest->setUrl_service(url_service);
+
+
     connect(apiRequest, &ApiRequest::updateAssignedComponents, this,  &DataManager::updateAssignedComponent);
 
     inputFlow = new InputFlow(inputDataQueue, settings);

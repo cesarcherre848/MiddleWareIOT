@@ -33,7 +33,7 @@ void EventDispatcher::initMQTTCommunication()
 
     comm->setHostName(hostname);
     comm->setPort(port);
-    comm->setSubTopics({"events/#"});
+    //comm->setSubTopics({"events/#"});
 
 
     connect(comm, &MQTTComm::recievePayload, this,  &EventDispatcher::computePayload);

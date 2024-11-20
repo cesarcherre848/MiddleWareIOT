@@ -1,9 +1,9 @@
 #ifndef APIREQUEST_H
 #define APIREQUEST_H
-
+#include <QString>
 #include <QObject>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
 #include "QJsonDocument"
 #include "QJsonObject"
 #include "QJsonArray"
@@ -22,6 +22,8 @@ public:
 
     void requestGetAllAssignedComponents();
 
+    void setUrl_service(const QString &newUrl_service);
+
 private:
 
     void requestFinished(TypeRequest);
@@ -31,6 +33,8 @@ private:
 private:
 
     QNetworkAccessManager* manager = nullptr;
+
+    QString url_service = "http://localhost:2540";
 
 private slots:
 

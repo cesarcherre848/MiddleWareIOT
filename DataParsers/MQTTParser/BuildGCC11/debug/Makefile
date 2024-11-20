@@ -106,6 +106,8 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -267,6 +269,8 @@ Makefile: ../../MQTTParser.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -416,6 +420,8 @@ Makefile: ../../MQTTParser.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri:
@@ -659,6 +665,7 @@ moc_mqttparser.cpp: ../../mqttparser.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
@@ -773,6 +780,7 @@ mqttparser.o: ../../mqttparser.cpp ../../mqttparser.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QMap \
 		../../../../Manager/DataManager/DataManagerLib/Models/Signals.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDateTime \
+		/opt/Qt/6.2.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QUuid
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mqttparser.o ../../mqttparser.cpp
 
