@@ -191,6 +191,7 @@ release/moc_plugininterface.cpp: ../plugininterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
 		release/moc_predefs.h \
@@ -299,6 +300,7 @@ release/plugininterface.o: ../plugininterface.cpp ../plugininterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\plugininterface.o ..\plugininterface.cpp

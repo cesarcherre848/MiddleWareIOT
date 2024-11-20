@@ -95,6 +95,11 @@ void MQTTPublish::setAsignedComponents(const QMap<QString, AssignedComponent> & 
     mutexAC.unlock();
 }
 
+void MQTTPublish::setAlias(const QString &newAlias)
+{
+
+}
+
 
 
 

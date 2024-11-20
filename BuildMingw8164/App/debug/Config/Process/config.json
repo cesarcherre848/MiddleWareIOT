@@ -1,7 +1,7 @@
 [
     {
         "Plugin": "UnitConverter",
-        "Reduce Name": "UC",
+        "Alias": "UC",
         "Assigned Channels":
             [
                 "189301605_ERB_Accelerometer_ch0",
@@ -12,7 +12,7 @@
                 "189301635_ERB_Accelerometer_ch1",
                 "189301635_ERB_Accelerometer_ch2"
             ],
-        "Params":
+        "Setup":
             {
                 "OutputUnit": "mm/s",
                 "HP_bt": 2.0,
@@ -22,7 +22,7 @@
 
     {
         "Plugin": "FFTAnalysis",
-        "Reduce Name": "FFT",
+        "Alias": "FFT",
         "Assigned Channels":
             [   
                 "189301605_ERB_Accelerometer_ch0_UC",
@@ -50,7 +50,7 @@
 
     {
         "Plugin": "BasicStatistics",
-        "Reduce Name": "BS",
+        "Alias": "BS",
         "Assigned Channels":
             [
                 "189301605_ERB_Accelerometer_ch0_UC",
@@ -60,7 +60,29 @@
             {
                 "functions": ["Crest Factor", "Kurtosis"]
             }
+    },
+
+    {
+        "Plugin": "Array2DStatistics",
+        "Alias": "A2DS",
+        "Assigned Channels":
+            [
+                "189301635_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
+                "189301605_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS"
+
+            ],
+        "Setup":
+            {
+               
+                "functions" :[
+                    {"searchAxis":"x", "range": [311.6, 315], "operation": "Max", "alias": "1X_PK_GMF"}
+                ]
+            }
+        
+        
     }
+
+
 
     
 ]

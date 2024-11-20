@@ -110,6 +110,11 @@ void MQTTSubscriber::setAsignedComponents(const QMap<QString, AssignedComponent>
     asignedComponents = newAsignedComponents;
 }
 
+void MQTTSubscriber::setAlias(const QString &newAlias)
+{
+
+}
+
 
 
 

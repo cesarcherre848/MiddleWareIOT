@@ -30,6 +30,8 @@ public:
 
     void insertData(const Signal&) override;
 
+    void setAlias(const QString &newAlias) override;
+
 
 
 private:

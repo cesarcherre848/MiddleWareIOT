@@ -69,6 +69,7 @@ std::shared_ptr<PluginInterface>BaseService::getPluginInterface(Operation operat
                         std::shared_ptr<PluginInterface> instance(plugin->newInstance());
                         instance->setSetup(operation.setup);
                         instance->setAsginedSignals(operation.assignedSignalName);
+                        instance->setAlias(operation.alias);
                         //if(!asignedComponents.isEmpty()){
                             //instance->setAsignedComponents(asignedComponents);
                         //}
@@ -105,6 +106,7 @@ void BaseService::jsonByteArrayToOperation(QByteArray byteArray)
         QJsonArray assChsArray = object["Assigned Channels"].toArray();
         QJsonObject setupObj = object["Setup"].toObject();
         QString nameOp = object["Plugin"].toString();
+        QString aliasOp = object["Alias"].toString();
         QStringList assChsOp;
         QMap<QString, QVariant> setupOp;
         for (const QJsonValue& assChArray : assChsArray) {
@@ -117,6 +119,7 @@ void BaseService::jsonByteArrayToOperation(QByteArray byteArray)
         if(!nameOp.isEmpty() || !assChsOp.empty()){
             Operation operation;
             operation.name = nameOp;
+            operation.alias = aliasOp;
             operation.assignedSignalName = assChsOp;
             operation.setup = setupOp;
             operations << operation;

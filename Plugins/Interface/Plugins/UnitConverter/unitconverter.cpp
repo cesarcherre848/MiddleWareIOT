@@ -73,6 +73,11 @@ void UnitConverter::insertData(const Signal & data)
     }
 }
 
+void UnitConverter::setAlias(const QString &newAlias)
+{
+
+}
+
 void UnitConverter::getUCConf()
 {
     conf.HP_bt = 2.;

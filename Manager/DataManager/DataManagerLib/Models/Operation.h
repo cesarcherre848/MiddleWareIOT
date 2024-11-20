@@ -8,6 +8,7 @@
 struct Operation{
 
     QString name;
+    QString alias;
     QStringList assignedSignalName;
     QMap<QString, QVariant> setup;
 

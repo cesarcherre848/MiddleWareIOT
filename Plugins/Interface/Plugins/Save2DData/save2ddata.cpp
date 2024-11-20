@@ -119,6 +119,11 @@ void Save2DData::setAsignedComponents(const QMap<QString, AssignedComponent> &ne
     asignedComponents = newAsignedComponents;
 }
 
+void Save2DData::setAlias(const QString &newAlias)
+{
+
+}
+
 void Save2DData::InitDB()
 {
 

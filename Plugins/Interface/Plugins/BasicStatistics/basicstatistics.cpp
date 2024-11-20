@@ -85,6 +85,11 @@ void BasicStatistics::insertData(const Signal & data)
     }
 }
 
+void BasicStatistics::setAlias(const QString &newAlias)
+{
+
+}
+
 void BasicStatistics::getBSConf()
 {
     if(setup.contains("functions")){

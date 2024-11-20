@@ -2,8 +2,8 @@
 #define APIREQUEST_H
 
 #include <QObject>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
 #include "QJsonDocument"
 #include "QJsonObject"
 #include "QJsonArray"

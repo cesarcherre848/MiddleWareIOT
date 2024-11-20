@@ -19,6 +19,8 @@ public:
 
     virtual void setSetup(const QMap<QString, QVariant> &newSetup) = 0;
 
+    virtual void setAlias(const QString &newAlias) = 0;
+
     virtual QString getName() const = 0;
 
     virtual void execute() = 0;

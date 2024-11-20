@@ -75,6 +75,11 @@ void FFTAnalysis::insertData(const Signal & data)
     }
 }
 
+void FFTAnalysis::setAlias(const QString &newAlias)
+{
+
+}
+
 
 
 void FFTAnalysis::getFFTConf()

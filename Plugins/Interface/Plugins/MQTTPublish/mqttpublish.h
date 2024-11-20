@@ -36,6 +36,8 @@ public:
 
     void setAsignedComponents(const QMap<QString, AssignedComponent>&) override;
 
+    void setAlias(const QString &newAlias) override;
+
 
 private:
 

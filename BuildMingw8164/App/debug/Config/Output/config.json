@@ -1,7 +1,7 @@
 [
     {
         "Plugin": "MQTTPublish",
-        "Reduce Name": "MQTTP",
+        "Alias": "MQTTP",
         "Assigned Channels":
             [
                 "189301605_ERB_Temperature",
@@ -34,7 +34,7 @@
 
     {
         "Plugin": "Save2DData",
-        "Reduce Name": "S2D",
+        "Alias": "S2D",
         "Assigned Channels":
             [
                 "189301605_ERB_Accelerometer_ch0_UC",

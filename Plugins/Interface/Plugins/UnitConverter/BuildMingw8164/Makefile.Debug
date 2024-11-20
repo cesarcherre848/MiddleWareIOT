@@ -110,8 +110,7 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) debug\moc_unitconverter.cpp
 debug/moc_unitconverter.cpp: ../unitconverter.h \
 		../../../plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qobjectdefs.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnamespace.h \
@@ -179,34 +178,35 @@ debug/moc_unitconverter.cpp: ../unitconverter.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qproperty.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qshareddata.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpropertyprivate.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpointer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qvariant.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmap.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qshareddata_impl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qhash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdebug.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtextstream.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qstringconverter.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qset.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpointer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
-		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
 		../Models/UCConf.h \
@@ -234,8 +234,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 
 debug/unitconverter.o: ../unitconverter.cpp ../unitconverter.h \
 		../../../plugininterface.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qobject.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qobjectdefs.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnamespace.h \
@@ -303,34 +302,35 @@ debug/unitconverter.o: ../unitconverter.cpp ../unitconverter.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qproperty.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qshareddata.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpropertyprivate.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpointer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qvariant.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmap.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qshareddata_impl.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qhash.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdebug.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qtextstream.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qstringconverter.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qset.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QtPlugin \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qplugin.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qpointer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborvalue.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcborcommon.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qurl.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/quuid.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QMap \
-		D:/Proyectos/Health\ Vibration\ Monitoring/MiddleWareIOT/Manager/DataManager/DataManagerLib/Models/Signals.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDateTime \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QUuid \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QObject \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QQueue \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qqueue.h \
 		../Models/UCConf.h \
