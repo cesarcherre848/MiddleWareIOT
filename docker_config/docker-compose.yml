@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  middlewareiot-service:
+    build:
+      context: ./MiddleWareIOT
+      dockerfile: Dockerfile
+    container_name: middlewareiot-service
+    restart: unless-stopped
+    working_dir: /App
+    command: ["sh", "-c", "./App.sh"]

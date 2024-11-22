@@ -1,0 +1,49 @@
+# Reglas actuales
+**/*.pro.user
+*:Zone.Identifier*
+
+# Archivos generados por Qt Creator y qmake
+*.pro.user.*
+*.qmake.stash
+*.qmake.cache
+
+# Archivos temporales de compilación y generación
+*.log
+*.moc
+*.rcc
+*.qrc
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Archivos y directorios específicos de compilación en Windows
+Debug/
+Release/
+*.pdb
+*.ilk
+*.ipdb
+*.iobj
+
+# Archivos y directorios específicos de compilación en Linux
+*.core
+*.d
+*.DS_Store
+cmake-build-*/
+
+# Conserva binarios y librerías
+!*.exe
+!*.dll
+!*.so
+!*.so.*
+!*.a
+!*.lib
+!*.dylib
+
+# Ignorar directorios temporales de compilación (excepto binarios/librerías)
+#build-*/
+#Makefile
+#Makefile.Debug
+#Makefile.Release
+#*.prl
+#*.pch

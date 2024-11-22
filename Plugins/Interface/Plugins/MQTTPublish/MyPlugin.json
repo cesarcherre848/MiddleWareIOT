@@ -1,0 +1,8 @@
+{
+    "MetaData": {
+        "Name": "MyPlugin",
+        "Version": "1.0",
+        "Description": "Plugin de ejemplo",
+        "Author": "Nombre del autor"
+    }
+}
