@@ -148,17 +148,15 @@ void Array2DStatistics::computeOperation(Signal data, QQueue<Signal> &queue)
     QList<Function> functions = conf.functions;
 
     QString searchAxis = "";
-    QString alias = "";
+    QString opAlias = "";
     QVector<double> range(2);
 
     foreach (Function function, functions) {
         searchAxis = function.searchAxis;
         Operation operation = function.operation;
         range = function.range;
-        alias = function.alias;
+        opAlias = function.alias;
         double value = 0.;
-
-        qDebug() << "compute" << data.name << searchAxis << range << alias;
 
         switch (operation) {
         case Operation::Max:
@@ -167,7 +165,7 @@ void Array2DStatistics::computeOperation(Signal data, QQueue<Signal> &queue)
         }
 
         Signal dataOut;
-        dataOut.name = "result filter"; //QString("%1_%2_%3").arg(data.name).arg("BS").arg(subProcess);
+        dataOut.name = QString("%1_%2_%3").arg(data.name).arg(alias).arg(opAlias);
         dataOut.idNode = data.idNode;
         dataOut.channel = data.channel;
         dataOut.type = Type::value;
@@ -177,9 +175,7 @@ void Array2DStatistics::computeOperation(Signal data, QQueue<Signal> &queue)
 
         dataOut.timestamp = data.timestamp;
 
-        qDebug() << dataOut;
-
-        //queue.enqueue(dataOut);
+        queue.enqueue(dataOut);
 
     }
     /*
