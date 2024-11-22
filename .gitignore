@@ -18,8 +18,8 @@
 *.swo
 
 # Archivos y directorios específicos de compilación en Windows
-Debug/
-Release/
+#Debug/
+#Release/
 *.pdb
 *.ilk
 *.ipdb
@@ -29,7 +29,7 @@ Release/
 *.core
 *.d
 *.DS_Store
-cmake-build-*/
+#cmake-build-*/
 
 # Conserva binarios y librerías
 !*.exe
