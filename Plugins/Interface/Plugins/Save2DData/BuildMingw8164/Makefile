@@ -220,7 +220,7 @@ Makefile: ../Save2DData.pro C:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++/qmake.conf 
 		C:/Qt/6.2.0/mingw81_64/mkspecs/features/lex.prf \
 		../Save2DData.pro \
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6Gui.prl \
-		C:/Qt/6.2.0/mingw81_64/lib/Qt6Sql.prl \
+		C:/Qt/6.2.0/mingw81_64/lib/Qt6Network.prl \
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6Core.prl \
 		C:/Qt/6.2.0/mingw81_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\Save2DData.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -374,7 +374,7 @@ C:/Qt/6.2.0/mingw81_64/mkspecs/features/yacc.prf:
 C:/Qt/6.2.0/mingw81_64/mkspecs/features/lex.prf:
 ../Save2DData.pro:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6Gui.prl:
-C:/Qt/6.2.0/mingw81_64/lib/Qt6Sql.prl:
+C:/Qt/6.2.0/mingw81_64/lib/Qt6Network.prl:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6Core.prl:
 C:/Qt/6.2.0/mingw81_64/mkspecs/features/build_pass.prf:
 qmake: FORCE

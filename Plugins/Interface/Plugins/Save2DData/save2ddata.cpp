@@ -1,12 +1,9 @@
 #include "save2ddata.h"
 #include "QDebug"
-#include "QSqlError"
-#include "QSqlQuery"
-#include <sstream>
-//#include "Utils/TimeDomain.h"
-//#include "Constants/textMaps.h"
-//#include "Utils/FreqDomain.h"
-//#include "Utils/UnitsConvert.h"
+#include <QVariantList>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QTimer>
 
 
 PluginInterface *Save2DData::newInstance()
@@ -16,23 +13,20 @@ PluginInterface *Save2DData::newInstance()
 
 Save2DData::Save2DData()
 {
-    reconnectTimer = new QTimer(this);
 
 }
 
 
 Save2DData::~Save2DData()
 {
-    reconnectTimer->stop();
-    reconnectTimer->deleteLater();
+
 }
 
 void Save2DData::setSetup(const QMap<QString, QVariant> &newSetup)
 {
     setup = newSetup;
     getS2DConf();
-    InitTimerReconnection();
-    InitDB();
+
 }
 
 void Save2DData::setAsginedSignals(const QStringList &newAsginedSignals)
@@ -49,56 +43,26 @@ QString Save2DData::getName() const
 
 void Save2DData::execute()
 {
-    if(!db.isOpen()){
-        if(reconnectTimer->remainingTime() < 0 && currentReconnectionAttempts < conf.reconnectionAttempts){
-
-            reconnectTimer->start();
-        }
-        inputDataQueue.clear();
-        return;
-    }
-
-
-    if(inputDataQueue.size() <  1){
-        return;
-    }
-
-
-
-
-    QSqlQuery query(db);
-    QString queryString = "INSERT INTO \"Test\" (id, measurement, \"timestamp\", arrayx, arrayy) VALUES ";
-    int count = 0;
+    QUrl url(conf.urlUpload);
 
 
     int itemsToProcess = inputDataQueue.size();
     for (int i = 0; i < itemsToProcess; i++) {
+        QJsonObject jsonObject;
         Signal currentData = inputDataQueue.dequeue();
         applyComponentSignal(currentData);
-        completeQuery(currentData, queryString, count);
+        convertSignalToJson(currentData, jsonObject);
+        postJsonAsync(url, jsonObject, this);
+        //qDebug() << jsonObject;
+        //completeQuery(currentData, queryString, count);
 
     }
 
-    inputDataQueue.clear();
-
-    if(count < 1){
-        return;
-    }
-
-    db.transaction();
-
-    query.prepare(queryString);
-    if (!query.exec()) {
-        qWarning() << "Error in Query Insertion" << query.lastError().text();
-        db.rollback(); // Revertir la transacción en caso de error
-    } else {
-        qInfo() << "Query Insertion Succesfully";
-        query.clear();
-        db.commit(); // Confirmar la transacción si la ejecución fue exitosa
-    }
 
     inputDataQueue.clear();
 }
+
+
 
 
 void Save2DData::insertData(const Signal & data)
@@ -121,81 +85,17 @@ void Save2DData::setAsignedComponents(const QMap<QString, AssignedComponent> &ne
 
 void Save2DData::setAlias(const QString &newAlias)
 {
-
+    alias = newAlias;
 }
 
-void Save2DData::InitDB()
-{
-
-    db = QSqlDatabase::addDatabase("QPSQL");
-    QString host = conf.hostname;
-    int port = conf.port;
-    QString name = conf.database;
-    QString user = conf.username;
-    QString password = conf.password;
-
-
-    if( host.isEmpty() || name.isEmpty() || user.isEmpty() || password.isEmpty()){
-        return;
-    }
-
-
-    db.setHostName(host);
-    db.setPort(port);
-    db.setDatabaseName(name);
-    db.setUserName(user);
-    db.setPassword(password);
-
-    if (!db.open()) {
-        qWarning() << "Error open DB Manager:" << db.lastError().text();
-        if(currentReconnectionAttempts > conf.reconnectionAttempts){
-            currentReconnectionAttempts = conf.reconnectionAttempts;
-            reconnectTimer->stop();
-        }
-        else{
-            currentReconnectionAttempts++;
-            if(reconnectTimer->remainingTime() < 0 ){
-                reconnectTimer->start();
-            }
-        }
-
-        return;
-    }
-
-    currentReconnectionAttempts = 0;
-    reconnectTimer->stop();
-    qInfo() << "Conection DB Save2D Succesfully";
-}
 
 void Save2DData::getS2DConf()
 {
-    if(setup.contains("hostname")){
-        QString hostname = setup["hostname"].toString();
-        conf.hostname = hostname;
-    }
-    if(setup.contains("port")){
-        int port = setup["port"].toInt();
-        conf.port = port;
-    }
-    if(setup.contains("database")){
-        QString database = setup["database"].toString();
-        conf.database = database;
-    }
-    if(setup.contains("username")){
-        QString username = setup["username"].toString();
-        conf.username = username;
-    }
-    if(setup.contains("password")){
-        QString password = setup["password"].toString();
-        conf.password = password;
-    }
-    if(setup.contains("reconnectionAttempts")){
-        int reconnectionAttempts = setup["reconnectionAttempts"].toInt();
-        conf.reconnectionAttempts = reconnectionAttempts;
-    }
-    if(setup.contains("reconnectionTimeout")){
-        int reconnectionTimeout = setup["reconnectionTimeout"].toInt();
-        conf.reconnectionTimeout = reconnectionTimeout;
+
+
+    if(setup.contains("url")){
+        QString url = setup["url"].toString();
+        conf.urlUpload = url;
     }
 
 
@@ -204,20 +104,6 @@ void Save2DData::getS2DConf()
 
 
 
-std::string Save2DData::vectorToText(const std::vector<double> &data)
-{
-    std::stringstream ss;
-    ss << "{";
-
-    if (!data.empty()) {
-        ss << data[0];
-        for (size_t i = 1; i < data.size(); ++i) {
-            ss << ", " << data[i];
-        }
-    }
-    ss << "}";
-    return ss.str();
-}
 
 void Save2DData::applyComponentSignal(Signal &signal)
 {
@@ -236,47 +122,6 @@ void Save2DData::applyComponentSignal(Signal &signal)
     }
 }
 
-void Save2DData::completeQuery(Signal& signal, QString& queryString, int& count)
-{
-    QString id = QUuid::createUuid().toString(QUuid::WithoutBraces);
-
-
-    std::string arrayXText;
-    std::string arrayYText;
-
-    if(signal.type == Type::array2D){
-
-        if(signal.array2D.empty() || signal.array2D.size() < 2){
-            return;
-        }
-
-        if(signal.array2D[0].empty() || signal.array2D[0].empty() ){
-            return;
-        }
-
-        arrayXText = vectorToText(signal.array2D[0]);
-        arrayYText = vectorToText(signal.array2D[1]);
-    }
-    else if(signal.type == Type::array1D){
-
-        arrayXText =  vectorToText(getXVector1DData(0., signal.array1D.size(), 1./signal.rate));
-        arrayYText = vectorToText(signal.array1D);
-    }
-
-    if(arrayXText.empty() || arrayYText.empty()){
-        return;
-    }
-
-    QString name = signal.name;
-    QDateTime timestamp = signal.timestamp;
-    timestamp.setTimeSpec(Qt::UTC);
-
-    if (count > 0) queryString += ", ";
-
-    queryString += "('" + id + "', '" + name + "', '" + timestamp.toString(Qt::ISODate) + "', '" + QString::fromStdString(arrayXText) + "', '" + QString::fromStdString(arrayYText) + "')";
-
-    count++;
-}
 
 std::vector<double> Save2DData::getXVector1DData(double init, int size, double delta)
 {
@@ -291,28 +136,93 @@ std::vector<double> Save2DData::getXVector1DData(double init, int size, double d
 
 }
 
-void Save2DData::InitTimerReconnection()
-{
-    if(!reconnectTimer){
-        return;
-    }
-    if(conf.reconnectionTimeout <= 0){
-        return;
-    }
-    reconnectTimer->setInterval(conf.reconnectionTimeout*1000);
-    QObject::connect(reconnectTimer, &QTimer::timeout, this, &Save2DData::tryReconnect);
-}
 
-void Save2DData::tryReconnect()
+
+void Save2DData::convertSignalToJson(Signal &signal, QJsonObject &jsonObject)
 {
 
-    if(currentReconnectionAttempts <= conf.reconnectionAttempts){
-        InitDB();
-        return;
+    QJsonArray xArray, yArray;
+    if(signal.type == Type::array2D){
+        if (signal.array2D.size() == 2) {
+            xArray = QJsonArray::fromVariantList(
+                QList<QVariant>(signal.array2D[0].begin(), signal.array2D[0].end())
+                );
+            yArray = QJsonArray::fromVariantList(
+                QList<QVariant>(signal.array2D[1].begin(), signal.array2D[1].end())
+                );
+        }
+        else{
+            return;
+        }
     }
-    reconnectTimer->stop();
+    else if(signal.type == Type::array1D){
 
+        std::vector<double> timeVector = getXVector1DData(0., signal.array1D.size(), 1./signal.rate);
+
+        xArray = QJsonArray::fromVariantList(
+            QList<QVariant>(timeVector.begin(), timeVector.end())
+            );
+
+        yArray = QJsonArray::fromVariantList(
+            QList<QVariant>(signal.array1D.begin(), signal.array1D.end())
+            );
+
+        //jsonObject["x_unit"] = "Sec";
+    }
+
+    jsonObject["measurement"] = signal.name;
+
+    if (signal.timestamp.isValid()) {
+        double timestampWithDecimals = signal.timestamp.toMSecsSinceEpoch() / 1000.0;
+        jsonObject["timestamp"] = timestampWithDecimals;
+    } else {
+        jsonObject["timestamp"] = 0;
+    }
+
+
+    jsonObject["x"] = xArray;
+    jsonObject["y"] = yArray;
+    jsonObject["y_unit"] = signal.unit;
+    jsonObject["x_unit"] = "undefinded";
 }
 
+void Save2DData::postJsonAsync(const QUrl &url, const QJsonObject &jsonObject, QObject *parent)
+{
+    QNetworkAccessManager *manager = new QNetworkAccessManager(parent);
+    QNetworkRequest request(url);
 
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QJsonArray jsonArray;
+    jsonArray.append(jsonObject);
+
+    QByteArray jsonData = QJsonDocument(jsonArray).toJson();
+    QNetworkReply *reply = manager->post(request, jsonData);
+
+    // Configurar un temporizador como hijo de reply
+    QTimer *timeoutTimer = new QTimer(reply); // Ahora el temporizador es hijo de reply
+    timeoutTimer->setSingleShot(true);
+
+    // Conectar timeout del temporizador
+    QObject::connect(timeoutTimer, &QTimer::timeout, reply, [reply]() {
+        if (reply->isRunning()) {
+            reply->abort(); // Cancelar la solicitud
+            qDebug() << "Request timed out.";
+        }
+    });
+
+    // Conectar la señal finished de reply
+    QObject::connect(reply, &QNetworkReply::finished, reply, [reply, manager]() {
+        if (reply->error() != QNetworkReply::NoError) {
+            qDebug() << "Request failed. Error:" << reply->errorString();
+        }
+
+        reply->deleteLater(); // Liberar memoria de reply
+        manager->deleteLater(); // Liberar el administrador
+    });
+
+    // Iniciar el temporizador
+    timeoutTimer->start(20000); // Tiempo de espera de 10 segundos
+
+}
 

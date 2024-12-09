@@ -49,6 +49,8 @@ private:
 
     PhysicalQty uniformInputQty = PhysicalQty::other;
 
+    QString alias;
+
 private:
 
     void getFFTConf();

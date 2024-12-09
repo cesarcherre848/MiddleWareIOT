@@ -77,7 +77,7 @@ void FFTAnalysis::insertData(const Signal & data)
 
 void FFTAnalysis::setAlias(const QString &newAlias)
 {
-
+    alias = newAlias;
 }
 
 
@@ -220,7 +220,7 @@ void FFTAnalysis::computeSingleFunction(Signal data, QQueue<Signal>& queue)
     if(conf.outputType == OutputType::Magnitude){
         Signal dataMag;
         dataMag.name = QString("%1_%2_Magnitude_%3").arg(data.name)
-                           .arg("FFT")
+                           .arg(alias)
                            .arg(mapAmpFormat[conf.ampFormat]);
         dataMag.idNode = data.idNode;
         dataMag.channel = data.channel;

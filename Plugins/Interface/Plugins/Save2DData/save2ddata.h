@@ -6,8 +6,10 @@
 #include "QObject"
 #include "QQueue"
 #include "Models/Signals.h"
-#include <QtSql>
 #include "Models/S2DConf.h"
+#include "QJsonObject"
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
 
 
 class Save2DData : public PluginInterface {
@@ -40,27 +42,21 @@ public:
 
 private:
 
+    QString alias = "";
+
     QMap<QString, QVariant> setup;
 
     QStringList asginedSignals;
 
     QQueue<Signal> inputDataQueue;
 
-    QSqlDatabase db;
-
     QMap<QString, AssignedComponent> asignedComponents;
 
     S2DConf conf;
 
-    QTimer *reconnectTimer = nullptr;
-
-    int currentReconnectionAttempts = 0;
-
 private:
 
     void getS2DConf();
-
-    std::string vectorToText(const std::vector<double>& data);
 
     void applyComponentSignal(Signal &signal);
 
@@ -68,16 +64,11 @@ private:
 
     std::vector<double> getXVector1DData(double init, int size, double delta);
 
-    void InitTimerReconnection();
+    void convertSignalToJson(Signal &signal, QJsonObject& jsonObject);
 
-
-private slots:
-
-    void tryReconnect();
-
-public slots:
-
-    void InitDB();
+    void postJsonAsync(const QUrl &url,
+                       const QJsonObject &jsonObject,
+                       QObject *parent = nullptr);
 
 };
 

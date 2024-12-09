@@ -4,7 +4,7 @@ TARGET = Save2DData
 INCLUDEPATH += ./
 
 QT += core
-QT += sql
+QT += network
 
 # Archivos fuente
 HEADERS += save2ddata.h \

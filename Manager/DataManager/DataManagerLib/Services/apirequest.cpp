@@ -17,9 +17,6 @@ void ApiRequest::requestGetAllAssignedComponents()
 {
     QString endpoint = "/devices/getall/assignedcomponents";
     QString url = url_service + endpoint;
-
-    qDebug() << url;
-
     makeGetRequest(url,  TypeRequest::GetAllAssignedComponents);
 }
 

@@ -34,7 +34,6 @@ void Array2DStatistics::setAlias(const QString &newAlias)
 {
 
     alias = newAlias;
-    qDebug() << alias;
 }
 
 

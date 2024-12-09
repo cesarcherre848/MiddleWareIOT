@@ -4,14 +4,43 @@
         "Alias": "MQTTP",
         "Assigned Channels":
             [
-                "189301605_ERB_Temperature",
-                "189301605_ERB_Battery",
-                "189301605_ERB_Velocity_ch0_RMS",
-                "189301605_ERB_Velocity_ch1_RMS",
-                "189301605_ERB_Velocity_ch2_RMS",
-                "189301605_ERB_Accelerometer_ch0_UC_BS_RMS",
-                "189301605_ERB_Accelerometer_ch1_UC_BS_RMS",
-                "189301605_ERB_Accelerometer_ch2_UC_BS_RMS",
+                "189329158_ERB_Temperature",
+                "189329158_ERB_Battery",
+                "189329158_ERB_Velocity_ch0_RMS",
+                "189329158_ERB_Velocity_ch1_RMS",
+                "189329158_ERB_Velocity_ch2_RMS",
+                "189329158_ERB_Accelerometer_ch0_UC_BS_RMS",
+                "189329158_ERB_Accelerometer_ch1_UC_BS_RMS",
+                "189329158_ERB_Accelerometer_ch2_UC_BS_RMS",
+
+                "189329139_ERB_Temperature",
+                "189329139_ERB_Battery",
+                "189329139_ERB_Velocity_ch0_RMS",
+                "189329139_ERB_Velocity_ch1_RMS",
+                "189329139_ERB_Velocity_ch2_RMS",
+                "189329139_ERB_Accelerometer_ch0_UC_BS_RMS",
+                "189329139_ERB_Accelerometer_ch1_UC_BS_RMS",
+                "189329139_ERB_Accelerometer_ch2_UC_BS_RMS",
+
+                "189329188_ERB_Temperature",
+                "189329188_ERB_Battery",
+                "189329188_ERB_Velocity_ch0_RMS",
+                "189329188_ERB_Velocity_ch1_RMS",
+                "189329188_ERB_Velocity_ch2_RMS",
+                "189329188_ERB_Accelerometer_ch0_UC_BS_RMS",
+                "189329188_ERB_Accelerometer_ch1_UC_BS_RMS",
+                "189329188_ERB_Accelerometer_ch2_UC_BS_RMS",
+
+
+                "189329145_ERB_Temperature",
+                "189329145_ERB_Battery",
+                "189329145_ERB_Velocity_ch0_RMS",
+                "189329145_ERB_Velocity_ch1_RMS",
+                "189329145_ERB_Velocity_ch2_RMS",
+                "189329145_ERB_Accelerometer_ch0_UC_BS_RMS",
+                "189329145_ERB_Accelerometer_ch1_UC_BS_RMS",
+                "189329145_ERB_Accelerometer_ch2_UC_BS_RMS",
+
 
                 "189301635_ERB_Temperature",
                 "189301635_ERB_Battery",
@@ -20,8 +49,40 @@
                 "189301635_ERB_Velocity_ch2_RMS",
                 "189301635_ERB_Accelerometer_ch0_UC_BS_RMS",
                 "189301635_ERB_Accelerometer_ch1_UC_BS_RMS",
-                "189301635_ERB_Accelerometer_ch2_UC_BS_RMS"
+                "189301635_ERB_Accelerometer_ch2_UC_BS_RMS",
 
+
+                "189329198_ERB_Temperature",
+                "189329198_ERB_Battery",
+                "189329198_ERB_Velocity_ch0_RMS",
+                "189329198_ERB_Velocity_ch1_RMS",
+                "189329198_ERB_Velocity_ch2_RMS",
+                "189329198_ERB_Accelerometer_ch0_UC_BS_RMS",
+                "189329198_ERB_Accelerometer_ch1_UC_BS_RMS",
+                "189329198_ERB_Accelerometer_ch2_UC_BS_RMS",
+
+
+                "189329176_ERB_Temperature",
+                "189329176_ERB_Battery",
+                "189329176_ERB_Velocity_ch0_RMS",
+                "189329176_ERB_Velocity_ch1_RMS",
+                "189329176_ERB_Velocity_ch2_RMS",
+                "189329176_ERB_Accelerometer_ch0_UC_BS_RMS",
+                "189329176_ERB_Accelerometer_ch1_UC_BS_RMS",
+                "189329176_ERB_Accelerometer_ch2_UC_BS_RMS",
+
+
+                "189329169_ERB_Temperature",
+                "189329169_ERB_Battery",
+                "189329169_ERB_Velocity_ch0_RMS",
+                "189329169_ERB_Velocity_ch1_RMS",
+                "189329169_ERB_Velocity_ch2_RMS",
+                "189329169_ERB_Accelerometer_ch0_UC_BS_RMS",
+                "189329169_ERB_Accelerometer_ch1_UC_BS_RMS",
+                "189329169_ERB_Accelerometer_ch2_UC_BS_RMS",
+
+
+                "71fb118c-ba8d-4fa8-9f87-9742c047cbff_ERB_Accelerometer_V_UC_FFT_Magnitude_RMS_A2DS2_1X_PK_GMF_REDUCTOR"
                 
             ],
         "Setup":
@@ -37,32 +98,81 @@
         "Alias": "S2D",
         "Assigned Channels":
             [
-                "189301605_ERB_Accelerometer_ch0_UC",
-                "189301605_ERB_Accelerometer_ch1_UC",
-                "189301605_ERB_Accelerometer_ch2_UC",
+                "189329158_ERB_Accelerometer_ch0_UC",
+                "189329158_ERB_Accelerometer_ch1_UC",
+                "189329158_ERB_Accelerometer_ch2_UC",
+                
+                "189329139_ERB_Accelerometer_ch0_UC",
+                "189329139_ERB_Accelerometer_ch1_UC",
+                "189329139_ERB_Accelerometer_ch2_UC",
+
+                "189329188_ERB_Accelerometer_ch0_UC",
+                "189329188_ERB_Accelerometer_ch1_UC",
+                "189329188_ERB_Accelerometer_ch2_UC",
+
+                "189329145_ERB_Accelerometer_ch0_UC",
+                "189329145_ERB_Accelerometer_ch1_UC",
+                "189329145_ERB_Accelerometer_ch2_UC",
 
                 "189301635_ERB_Accelerometer_ch0_UC",
                 "189301635_ERB_Accelerometer_ch1_UC",
                 "189301635_ERB_Accelerometer_ch2_UC",
 
-                "189301605_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
-                "189301605_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
-                "189301605_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
+                "189329198_ERB_Accelerometer_ch0_UC",
+                "189329198_ERB_Accelerometer_ch1_UC",
+                "189329198_ERB_Accelerometer_ch2_UC",
+
+                "189329176_ERB_Accelerometer_ch0_UC",
+                "189329176_ERB_Accelerometer_ch1_UC",
+                "189329176_ERB_Accelerometer_ch2_UC",
+
+                "189329169_ERB_Accelerometer_ch0_UC",
+                "189329169_ERB_Accelerometer_ch1_UC",
+                "189329169_ERB_Accelerometer_ch2_UC",
+
+
+
+                "189329158_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
+                "189329158_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
+                "189329158_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
+
+                "189329139_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
+                "189329139_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
+                "189329139_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
+
+                "189329188_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
+                "189329188_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
+                "189329188_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
+
+                "189329145_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
+                "189329145_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
+                "189329145_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
 
                 "189301635_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
                 "189301635_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
-                "189301635_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS"
+                "189301635_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
+
+                "189329198_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
+                "189329198_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
+                "189329198_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
+
+                "189329176_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
+                "189329176_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
+                "189329176_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
+
+                "189329169_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
+                "189329169_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS",
+                "189329169_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
+
+
+                "189329198_ERB_Accelerometer_ch0_EV1",
+                "189329198_ERB_Accelerometer_ch0_EV1_FFT2_Magnitude_Pk"
+                
+
             ],
         "Setup":
             {
-                
-                "hostname": "146.190.122.149",
-                "port": 5432,
-                "database": "TestDBData",
-                "username": "root",
-                "password": "Mc05071995..",
-                "reconnectionTimeout": 10,
-                "reconnectionAttempts": 100              
+                "url": "http://146.190.122.149:2541/data/upload"               
             }
     }
 ]

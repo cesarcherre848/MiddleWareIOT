@@ -10,6 +10,7 @@ struct S2DConf{
     QString password = "";
     int reconnectionAttempts = 1;
     int reconnectionTimeout = 0;
+    QString urlUpload = "";
 };
 
 

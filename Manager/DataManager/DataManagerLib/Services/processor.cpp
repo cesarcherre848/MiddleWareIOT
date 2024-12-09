@@ -22,6 +22,7 @@ Processor::Processor(QSettings &_settings) : BaseService{_settings}
         addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildMingw8164/debug");
         addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildMingw8164/debug");
         addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/Array2DStatistics/BuildMingw8164/debug");
+        addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/Envelope/BuildMingw8164/debug");
 
 #elif __linux__
         addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildGCC11/debug");
@@ -55,8 +56,8 @@ Processor::~Processor()
 void Processor::execute()
 {
 
-    int maxQueuesProcessItems_ = 10;
-    int itemsToProcess = qMin(sizeDataQueue(), maxQueuesProcessItems_);
+
+    int itemsToProcess = sizeDataQueue();
     for (int i = 0; i < itemsToProcess; ++i) {
         Signal currentData = dequeueDataQueue();
 
