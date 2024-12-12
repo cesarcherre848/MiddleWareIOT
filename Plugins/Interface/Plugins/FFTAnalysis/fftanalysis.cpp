@@ -225,7 +225,7 @@ void FFTAnalysis::computeSingleFunction(Signal data, QQueue<Signal>& queue)
         dataMag.idNode = data.idNode;
         dataMag.channel = data.channel;
         dataMag.type = Type::array2D;
-        dataMag.unit = mapUnit[outputUnit];
+        dataMag.unit = data.unit;
         dataMag.timestamp = data.timestamp;
         dataMag.rate = deltaFreq;
         std::vector<std::vector<double>> array2D (2, std::vector<double>(mag.size()));

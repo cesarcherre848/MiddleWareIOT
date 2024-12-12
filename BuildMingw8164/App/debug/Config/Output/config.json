@@ -82,8 +82,123 @@
                 "189329169_ERB_Accelerometer_ch2_UC_BS_RMS",
 
 
-                "71fb118c-ba8d-4fa8-9f87-9742c047cbff_ERB_Accelerometer_V_UC_FFT_Magnitude_RMS_A2DS2_1X_PK_GMF_REDUCTOR"
+                "189329176_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_MOLINO",
+                "189329176_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_MOLINO",
+                "189329176_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_MOLINO",
+
+                "189329176_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_MOLINO",
+                "189329176_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_MOLINO",
+                "189329176_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_MOLINO",
+
+                "189329176_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFI_23260CC",
+                "189329176_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFI_23260CC",
+                "189329176_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFI_23260CC",
+
+                "189329176_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFO_23260CC",
+                "189329176_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFO_23260CC",
+                "189329176_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFO_23260CC",
+
+
+                "189329176_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BSF_23260CC",
+                "189329176_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BSF_23260CC",
+                "189329176_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BSF_23260CC",
+
+
+                "189329169_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_MOLINO",
+                "189329169_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_MOLINO",
+                "189329169_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_MOLINO",
+
+                "189329169_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_MOLINO",
+                "189329169_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_MOLINO",
+                "189329169_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_MOLINO",
+
+                "189329169_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFI_23260CC",
+                "189329169_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFI_23260CC",
+                "189329169_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFI_23260CC",
+
+                "189329169_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFO_23260CC",
+                "189329169_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFO_23260CC",
+                "189329169_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BPFO_23260CC",
+
+                "189329169_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BSF_23260CC",
+                "189329169_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BSF_23260CC",
+                "189329169_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_BSF_23260CC",
+
+
+
+
+
+                "189329188_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+                "189329188_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+                "189329188_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+
+                "189329188_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+                "189329188_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+                "189329188_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+
+
+                "189329145_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+                "189329145_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+                "189329145_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS2_1X_PK_GMF_REDUCTOR",
+
+                "189329145_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+                "189329145_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+                "189329145_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+
+
+                "189301635_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+                "189301635_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+                "189301635_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+
+                "189301635_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+                "189301635_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+                "189301635_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+
+
+                "189329198_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+                "189329198_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+                "189329198_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_1X_PK_GMF_REDUCTOR",
+
+                "189329198_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+                "189329198_ERB_Accelerometer_ch1_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+                "189329198_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS_A2DS1_2X_PK_GMF_REDUCTOR",
+
+
+                "189329158_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329158_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329158_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+
+                "189329139_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329139_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329139_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+
+                "189329188_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329188_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329188_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+
+                "189329198_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329198_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329198_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+
+                "189329145_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329145_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329145_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+
+                "189301635_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189301635_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189301635_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+
+                "189329176_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329176_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329176_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+
+                "189329169_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329169_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk_A2DS_MODULE",
+                "189329169_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk_A2DS_MODULE"
                 
+               
+                
+
             ],
         "Setup":
             {
@@ -165,10 +280,42 @@
                 "189329169_ERB_Accelerometer_ch2_UC_FFT_Magnitude_RMS",
 
 
-                "189329198_ERB_Accelerometer_ch0_EV1",
-                "189329198_ERB_Accelerometer_ch0_EV1_FFT2_Magnitude_Pk"
                 
+                "189329158_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329158_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329158_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
 
+                "189329139_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329139_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329139_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+                "189329188_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329188_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329188_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+                "189329198_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329198_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329198_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+                "189329145_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329145_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329145_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+
+                "189301635_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189301635_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189301635_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+
+                "189329176_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329176_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329176_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+                "189329169_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329169_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329169_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk"
+
+            
             ],
         "Setup":
             {

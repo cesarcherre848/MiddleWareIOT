@@ -11,7 +11,7 @@ enum class Operation{
     //Crest_Factor,
     //Skewness
     Max,
-    //Module
+    Module
 };
 
 struct Function {

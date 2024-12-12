@@ -99,10 +99,43 @@
 
     {
         "Plugin": "FFTAnalysis",
-        "Alias": "FFT2",
+        "Alias": "FFT",
         "Assigned Channels":
             [   
-               "189329198_ERB_Accelerometer_ch0_EV1"
+               "189329158_ERB_Accelerometer_ch0_EV",
+               "189329158_ERB_Accelerometer_ch1_EV",
+               "189329158_ERB_Accelerometer_ch2_EV",
+
+               "189329139_ERB_Accelerometer_ch0_EV",
+               "189329139_ERB_Accelerometer_ch1_EV",
+               "189329139_ERB_Accelerometer_ch2_EV",
+
+               "189329188_ERB_Accelerometer_ch0_EV",
+               "189329188_ERB_Accelerometer_ch1_EV",
+               "189329188_ERB_Accelerometer_ch2_EV",
+
+               "189329198_ERB_Accelerometer_ch0_EV",
+               "189329198_ERB_Accelerometer_ch1_EV",
+               "189329198_ERB_Accelerometer_ch2_EV",
+
+               "189329145_ERB_Accelerometer_ch0_EV",
+               "189329145_ERB_Accelerometer_ch1_EV",
+               "189329145_ERB_Accelerometer_ch2_EV",
+
+
+               "189301635_ERB_Accelerometer_ch0_EV",
+               "189301635_ERB_Accelerometer_ch1_EV",
+               "189301635_ERB_Accelerometer_ch2_EV",
+
+
+               "189329176_ERB_Accelerometer_ch0_EV",
+               "189329176_ERB_Accelerometer_ch1_EV",
+               "189329176_ERB_Accelerometer_ch2_EV",
+
+
+               "189329169_ERB_Accelerometer_ch0_EV",
+               "189329169_ERB_Accelerometer_ch1_EV",
+               "189329169_ERB_Accelerometer_ch2_EV"
 
             ],
         "Setup":
@@ -167,7 +200,7 @@
 
     {
         "Plugin": "Array2DStatistics",
-        "Alias": "A2DS2",
+        "Alias": "A2DS1",
         "Assigned Channels":
             [
                 "189329188_ERB_Accelerometer_ch0_UC_FFT_Magnitude_RMS",
@@ -200,10 +233,55 @@
 
     {
         "Plugin": "Envelope",
-        "Alias": "EV1",
+        "Alias": "EV",
         "Assigned Channels":
             [
-                "189329198_ERB_Accelerometer_ch0"
+                "189329158_ERB_Accelerometer_ch0",
+                "189329158_ERB_Accelerometer_ch1",
+                "189329158_ERB_Accelerometer_ch2",
+
+                "189329139_ERB_Accelerometer_ch0",
+                "189329139_ERB_Accelerometer_ch1",
+                "189329139_ERB_Accelerometer_ch2",
+
+                "189329188_ERB_Accelerometer_ch0",
+                "189329188_ERB_Accelerometer_ch1",
+                "189329188_ERB_Accelerometer_ch2",
+
+                "189329198_ERB_Accelerometer_ch0",
+                "189329198_ERB_Accelerometer_ch1",
+                "189329198_ERB_Accelerometer_ch2"
+
+            ],
+        "Setup":
+            {
+                "lower_freq": 500.0,
+                "upper_freq": 2500.0,
+                "bt" : 2.0
+            }
+    },
+
+    {
+        "Plugin": "Envelope",
+        "Alias": "EV",
+        "Assigned Channels":
+            [
+                "189329145_ERB_Accelerometer_ch0",
+                "189329145_ERB_Accelerometer_ch1",
+                "189329145_ERB_Accelerometer_ch2",
+
+                "189301635_ERB_Accelerometer_ch0",
+                "189301635_ERB_Accelerometer_ch1",
+                "189301635_ERB_Accelerometer_ch2",
+
+                "189329176_ERB_Accelerometer_ch0",
+                "189329176_ERB_Accelerometer_ch1",
+                "189329176_ERB_Accelerometer_ch2",
+
+                "189329169_ERB_Accelerometer_ch0",
+                "189329169_ERB_Accelerometer_ch1",
+                "189329169_ERB_Accelerometer_ch2"
+                
             ],
         "Setup":
             {
@@ -211,9 +289,61 @@
                 "upper_freq": 1000.0,
                 "bt" : 2.0
             }
+    },
+
+    {
+        "Plugin": "Array2DStatistics",
+        "Alias": "A2DS",
+        "Assigned Channels":
+            [
+                
+                "189329158_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329158_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329158_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+
+                "189329139_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329139_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329139_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+                "189329188_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329188_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329188_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+
+                "189329198_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329198_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329198_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+
+                "189329145_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329145_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329145_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+
+                "189301635_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189301635_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189301635_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+
+                "189329176_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329176_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329176_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk",
+
+
+                "189329169_ERB_Accelerometer_ch0_EV_FFT_Magnitude_Pk",
+                "189329169_ERB_Accelerometer_ch1_EV_FFT_Magnitude_Pk",
+                "189329169_ERB_Accelerometer_ch2_EV_FFT_Magnitude_Pk"
+
+            ],
+        "Setup":
+            {
+               
+                "functions" :[
+                    {"searchAxis":"x", "range": [10, 1000], "operation": "Module", "alias": "MODULE"}
+                
+                ]
+            }
     }
-
-
-
     
 ]

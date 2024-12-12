@@ -80,6 +80,48 @@ inline double computeMax(const std::vector<std::vector<double>>& data, QString s
 }
 
 
+inline double computeModule(const std::vector<std::vector<double>>& data, QString searchAxis, QVector<double> range){
+    int indexSearch = getIndexFromAxis(searchAxis);
+
+    if(range.size() != 2){
+        return -1.;
+    }
+
+    if(range[0] >= range[1]){
+        return -1.;
+    }
+
+    std::vector<double> axisData = data[indexSearch];
+    int indexData = 0;
+    if(indexSearch == 0){
+        indexData = 1;
+    }
+    else if(indexSearch == 1){
+        indexData = 0;
+    }
+
+    std::vector<double> operationData = data[indexData];
+
+    int minIndex = findClosestIndexfromASCOrderVector(axisData, range[0]);
+    int maxIndex = findClosestIndexfromASCOrderVector(axisData, range[1]);
+
+    if (minIndex < 0 || maxIndex >= (int)axisData.size() || minIndex > maxIndex) {
+        //std::cerr << "Índices fuera de rango o inválidos\n";
+        return -1.;
+    }
+
+    std::vector<double> subData(operationData.begin() + minIndex, operationData.begin() + maxIndex + 1);
+
+    // Calcular la magnitud (suma cuadrática y raíz cuadrada) usando std::transform_reduce
+    double magnitude = std::sqrt(std::accumulate(subData.begin(), subData.end(), 0.0, [](double acc, double value) {
+        return acc + value * value;
+    }));
+
+    return magnitude;
+}
+
+
+
 
 
 #endif // ARRAY2DDOMAIN_H

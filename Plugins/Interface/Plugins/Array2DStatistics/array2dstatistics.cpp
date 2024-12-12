@@ -159,9 +159,17 @@ void Array2DStatistics::computeOperation(Signal data, QQueue<Signal> &queue)
 
         switch (operation) {
         case Operation::Max:
-            value = computeMax(data2DArray, searchAxis, range);
+            value = computeModule(data2DArray, searchAxis, range);
             break;
+        case Operation::Module:
+            value = computeModule(data2DArray, searchAxis, range);
+            break;
+
         }
+
+
+
+
 
         Signal dataOut;
         dataOut.name = QString("%1_%2_%3").arg(data.name).arg(alias).arg(opAlias);

@@ -1,7 +1,7 @@
 [
     {
         "Plugin": "MQTTSubscriber",
-        "Reduce Name": "MQTTS",
+        "Alias": "MQTTS",
         "Setup":
             {
                 "hostname": "146.190.122.149", 

@@ -116,7 +116,7 @@ void Envelope::computeOperation(Signal data, QQueue<Signal> &queue)
     std::vector<double> coeffFIR;
     std::vector<double> outDataTimeWaveform;
 
-    qDebug() << lowerFreq << upperFreq << bt << coeffFIR;
+
 
     if(lowerFreq < 0 || upperFreq < 0){
         return;
