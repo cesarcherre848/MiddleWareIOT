@@ -25,9 +25,12 @@ Processor::Processor(QSettings &_settings) : BaseService{_settings}
         addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/Envelope/BuildMingw8164/debug");
 
 #elif __linux__
-        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildGCC11/debug");
-        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/UnitConverter/BuildGCC11/debug");
-        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildGCC11/debug");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/BasicStatistics/BuildGCC11/release");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/UnitConverter/BuildGCC11/release");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/FFTAnalysis/BuildGCC11/release");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/Array2DStatistics/BuildGCC11/release");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/Envelope/BuildGCC11/release");
+
 #endif
     }
 

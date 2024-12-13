@@ -19,7 +19,7 @@ InputFlow::InputFlow(QQueue<Signal>& inputDataQueue, QSettings &_settings)
 #ifdef _WIN32
         addDirectoryPlugins("D:/Proyectos/Health Vibration Monitoring/MiddleWareIOT/Plugins/Interface/Plugins/MQTTSubscriber/BuildMingw8164/debug");
 #elif __linux__
-        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/MQTTSubscriber/BuildGCC11/debug");
+        addDirectoryPlugins("/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface/Plugins/MQTTSubscriber/BuildGCC11/release");
 #endif
     }
 
