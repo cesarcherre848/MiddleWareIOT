@@ -5,7 +5,7 @@
 #include "QVariantList"
 #include "Constants/textMaps.h"
 #include "payloaderbessd.h"
-
+#include "payloadmilesight.h"
 
 #ifdef __linux__
 #include <QtMqtt/qmqtttopicfilter.h>
@@ -189,8 +189,9 @@ void MQTTSubscriber::initMQTTCommunication()
 void MQTTSubscriber::getTopicTypeParser()
 {
 
-
     QMap<QString, QStringList> parserTopics = conf.parserTopics;
+
+
     foreach (QString key, parserTopics.keys()) {
         QStringList topics = parserTopics[key];
 
@@ -213,9 +214,10 @@ void MQTTSubscriber::computePayload(const QByteArray &message, QString topic)
 {
 
 
-    //qDebug() << message;
-
     QStringList topics = topicTypeParser.keys();
+
+    TypeParser typeParser = TypeParser::None;
+
 
     bool matchTopic = false;
     QMqttTopicName topicN(topic);
@@ -223,17 +225,18 @@ void MQTTSubscriber::computePayload(const QByteArray &message, QString topic)
         QMqttTopicFilter _topicN(_topic);
         if(_topicN.match(topicN)){
             matchTopic = true;
+            typeParser = topicTypeParser.value(_topic);
             break;
         }
     }
+
+
 
     if(!matchTopic){
         return;
     }
 
 
-
-    TypeParser typeParser = topicTypeParser[topic];
 
     if(typeParser == TypeParser::ERB){
         QThread* thread = new QThread(this);
@@ -251,7 +254,21 @@ void MQTTSubscriber::computePayload(const QByteArray &message, QString topic)
     }
 
     else if(typeParser == TypeParser::MSGT){
-        qDebug() << "Pass Parser MSGT";
+
+
+        QThread* thread = new QThread(this);
+        PayloadMilesight* payloadMilesightParser = new PayloadMilesight(this);
+        payloadMilesightParser->setPayLoad(message, topic);
+        MQTTParser* parser = (MQTTParser*) payloadMilesightParser;
+        connect(parser, SIGNAL(finished()), thread, SLOT(quit()));
+        connect(parser, SIGNAL(finished()), parser, SLOT(deleteLater()));
+        connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+
+        connect(parser, SIGNAL(updateSignals(QList<Signal>)), this, SLOT(recibeSignals(QList<Signal>)));
+
+        QObject::connect(thread, &QThread::started, payloadMilesightParser, &PayloadMilesight::execute);
+        thread->start();
+
     }
 
 

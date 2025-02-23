@@ -143,6 +143,7 @@ QByteArray MQTTPublish::parseValuePayload(const Signal &data)
 {
     QJsonObject jsonObject;
     jsonObject["measurement"] = data.name;
+    jsonObject["id_node"] = data.idNode;
     jsonObject["value"] = data.value;
     jsonObject["unit"] = data.unit;
     jsonObject["timestamp"] = data.timestamp.toSecsSinceEpoch();

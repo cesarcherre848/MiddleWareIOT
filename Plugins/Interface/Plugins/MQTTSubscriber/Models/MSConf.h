@@ -5,6 +5,7 @@
 #include "QStringList"
 
 enum TypeParser{
+    None,
     ERB,
     DW,
     MSGT,

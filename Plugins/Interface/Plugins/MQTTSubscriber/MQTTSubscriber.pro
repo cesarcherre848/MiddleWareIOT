@@ -76,6 +76,10 @@ INCLUDEPATH += $$PWD/../../../../DataParsers/PayloadErbessd/PayloadErbessdLib
 DEPENDPATH += $$PWD/../../../../DataParsers/PayloadErbessd/PayloadErbessdLib
 
 
+
+
+
+
 INCLUDEPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
 DEPENDPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
 
@@ -85,3 +89,9 @@ DEPENDPATH += $$PWD/../../../../Manager/DataManager/DataManagerLib
 
 
 
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../DataParsers/PayloadMilesight/BuildMingw8164/PayloadMilesightLib/release/ -lPayloadMilesightLib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../DataParsers/PayloadMilesight/BuildMingw8164/PayloadMilesightLib/debug/ -lPayloadMilesightLib
+
+INCLUDEPATH += $$PWD/../../../../DataParsers/PayloadMilesight/PayloadMilesightLib
+DEPENDPATH += $$PWD/../../../../DataParsers/PayloadMilesight/PayloadMilesightLib

@@ -68,7 +68,7 @@ std::string OutputFlow::vectorToText(const std::vector<double> &data)
 
 void OutputFlow::applyComponentSignal(Signal &signal)
 {
-    QString idNode = signal.idNode;
+    QString& idNode = signal.idNode;
     QString& name = signal.name;
     QString channel = signal.channel;
 
@@ -90,11 +90,13 @@ void OutputFlow::applyComponentSignal(Signal &signal)
         return;
     }
 
+
     name = name.replace(idNode, idComponent);
     if(channelMap.contains(channel)){
         QString newChannel = channelMap[channel];
         name = name.replace(channel, newChannel);
     }
+
 
 }
 
