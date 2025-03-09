@@ -4,8 +4,22 @@
         "Alias": "MQTTP",
         "Assigned Channels":
             [
+                "24e124454e100301_MSGT_Modbus_ch1",
+                "24e124454e100301_MSGT_Modbus_ch2",
+
+                "24e124454e105280_MSGT_Modbus_ch1",
+                "24e124454e105280_MSGT_Modbus_ch2",
+
+
+                "24e124454e101792_MSGT_Modbus_ch1",
+                "24e124454e101792_MSGT_Modbus_ch2",
+
+
                 "24e124454e106951_MSGT_Modbus_ch1",
-                "24e124454e106951_MSGT_Modbus_ch2"
+                "24e124454e106951_MSGT_Modbus_ch2",
+
+                "24e124454e102942_MSGT_Modbus_ch1",
+                "24e124454e102942_MSGT_Modbus_ch2"
 
             ],
         "Setup":

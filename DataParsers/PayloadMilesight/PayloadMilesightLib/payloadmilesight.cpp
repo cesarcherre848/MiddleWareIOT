@@ -34,6 +34,7 @@ void PayloadMilesight::setPayLoad(const QByteArray &byteArray, QString topic)
 void PayloadMilesight::parseProcessData(MilesightData &data, const QJsonObject &json)
 {
 
+
     const QJsonValue &devEUIValue = json["devEUI"];
 
     if(devEUIValue.isString()){
@@ -46,7 +47,7 @@ void PayloadMilesight::parseProcessData(MilesightData &data, const QJsonObject &
         data.deviceName = deviceNameValue.toString();
     }
 
-    const QJsonValue &timezoneValue = json["timezone"];
+    const QJsonValue &timezoneValue = json["timeZone"];
 
     if(timezoneValue.isString()){
         data.timezone = timezoneValue.toString();
@@ -60,8 +61,8 @@ void PayloadMilesight::parseProcessData(MilesightData &data, const QJsonObject &
     }
 
 
-    if (json.contains("modbus_chnn_1")){
-        const QJsonValue &modbusChnn1Value = json["modbus_chnn_1"];
+    if (json.contains("modbus_chn_1")){
+        const QJsonValue &modbusChnn1Value = json["modbus_chn_1"];
 
         if(modbusChnn1Value.isDouble()){
             data.modbusChs.insert("ch1", modbusChnn1Value.toDouble());
@@ -70,8 +71,8 @@ void PayloadMilesight::parseProcessData(MilesightData &data, const QJsonObject &
 
 
 
-    if (json.contains("modbus_chnn_2")){
-        const QJsonValue &modbusChnn2Value = json["modbus_chnn_2"];
+    if (json.contains("modbus_chn_2")){
+        const QJsonValue &modbusChnn2Value = json["modbus_chn_2"];
 
         if(modbusChnn2Value.isDouble()){
             data.modbusChs.insert("ch2", modbusChnn2Value.toDouble());
@@ -128,11 +129,9 @@ void PayloadMilesight::dataToSignal(MilesightData &data)
 void PayloadMilesight::execute()
 {
 
-
     QJsonParseError jsonError;
 
     QJsonDocument jsonDoc = QJsonDocument::fromJson(byteArray, &jsonError);
-
 
     if (jsonDoc.isNull()) {
         return;

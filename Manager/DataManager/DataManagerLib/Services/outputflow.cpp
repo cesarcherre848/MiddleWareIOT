@@ -97,6 +97,7 @@ void OutputFlow::applyComponentSignal(Signal &signal)
         name = name.replace(channel, newChannel);
     }
 
+    signal.idNode = idComponent;
 
 }
 

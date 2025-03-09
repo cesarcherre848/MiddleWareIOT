@@ -213,6 +213,8 @@ void MQTTSubscriber::getTopicTypeParser()
 void MQTTSubscriber::computePayload(const QByteArray &message, QString topic)
 {
 
+    //qDebug() << message;
+
 
     QStringList topics = topicTypeParser.keys();
 
@@ -255,6 +257,8 @@ void MQTTSubscriber::computePayload(const QByteArray &message, QString topic)
 
     else if(typeParser == TypeParser::MSGT){
 
+
+        //qDebug() << "Pass type parser";
 
         QThread* thread = new QThread(this);
         PayloadMilesight* payloadMilesightParser = new PayloadMilesight(this);

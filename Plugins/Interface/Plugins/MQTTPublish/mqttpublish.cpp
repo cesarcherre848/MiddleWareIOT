@@ -155,7 +155,7 @@ QByteArray MQTTPublish::parseValuePayload(const Signal &data)
 
 void MQTTPublish::applyComponentSignal(Signal &signal)
 {
-    QString idNode = signal.idNode;
+    QString& idNode = signal.idNode;
     QString& name = signal.name;
     QString channel = signal.channel;
 
@@ -185,6 +185,8 @@ void MQTTPublish::applyComponentSignal(Signal &signal)
         QString newChannel = channelMap[channel];
         name = name.replace(channel, newChannel);
     }
+
+    idNode = idComponent;
 
 
 }
