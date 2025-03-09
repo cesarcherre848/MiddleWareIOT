@@ -1,6 +1,7 @@
 # Reglas actuales
 **/*.pro.user
 *:Zone.Identifier*
+*:Zone.Identifier
 
 # Archivos generados por Qt Creator y qmake
 *.pro.user.*
