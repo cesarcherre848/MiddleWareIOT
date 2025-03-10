@@ -1,4 +1,4 @@
-#include "PayloadMilesight.h"
+#include "payloadmilesight.h"
 #include "QDebug"
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -58,6 +58,7 @@ void PayloadMilesight::parseProcessData(MilesightData &data, const QJsonObject &
     if(timestampValue.isDouble()){
 
         data.timestamp = QDateTime::fromSecsSinceEpoch(timestampValue.toInt(), QTimeZone(data.timezone.toUtf8()));
+
     }
 
 

@@ -4,11 +4,11 @@
         "Alias": "MQTTS",
         "Setup":
             {
-                "hostname": "146.190.122.149", 
+                "hostname": "146.190.151.81", 
                 "port": 1883,
                 "topics":
                 {
-                    "ERB":["prueba/#"]
+                    "MSGT":["MSGT/#", "milesight/#"]
                 }
             }
     }

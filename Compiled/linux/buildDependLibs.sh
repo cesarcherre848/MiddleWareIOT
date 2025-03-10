@@ -50,6 +50,13 @@ echo "Copy PayLoadErbessd Libs"
 operation_so "$dirCopy" "$dirPaste"
 
 
+payloadmsgtLibDir="/DataParsers/PayloadMilesight/BuildGCC11/release/PayloadMilesightLib"
+dirCopy="$projectDir$payloadmsgtLibDir"
+echo "Copy PayLoadMilesight Libs"
+operation_so "$dirCopy" "$dirPaste"
+
+
+
 interfaceLibDir="/Plugins/Interface/BuildGCC11/release"
 dirCopy="$projectDir$interfaceLibDir"
 echo "Copy Interface Libs"

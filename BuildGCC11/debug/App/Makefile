@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DTHRID_LIBS_STATIC -DQT_QML_DEBUG -DQT_SQL_LIB -DQT_MQTT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++1z -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../../../App -I. -I../../../Communication/MQTTComm/MQTTCommLib -I../../../DataParsers/PayloadErbessd/PayloadErbessdLib -I../../../DataParsers/MQTTParser -I../../../Manager/DataManager/DataManagerLib -I../../../Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../../../App -I. -I../../../Communication/MQTTComm/MQTTCommLib -I../../../DataParsers/PayloadErbessd/PayloadErbessdLib -I../../../DataParsers/MQTTParser -I../../../Manager/DataManager/DataManagerLib -I../../../Plugins/Interface -I../../../DataParsers/PayloadMilesight/PayloadMilesightLib -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++
 QMAKE         = /opt/Qt/6.2.0/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = App1.0.0
 DISTDIR = /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/.tmp/App1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/opt/Qt/6.2.0/gcc_64/lib
-LIBS          = $(SUBLIBS) -L/home/cesarcherre/Projects/MiddleWareIOT/App/../Communication/MQTTComm/BuildGCC11/debug/MQTTCommLib/ -lMQTTCommLib -L/home/cesarcherre/Projects/MiddleWareIOT/App/../DataParsers/PayloadErbessd/BuildGCC11/debug/PayloadErbessdLib/ -lPayloadErbessdLib -L/home/cesarcherre/Projects/MiddleWareIOT/App/../DataParsers/MQTTParser/BuildGCC11/debug/ -lMQTTParser -L/home/cesarcherre/Projects/MiddleWareIOT/App/../Manager/DataManager/BuildGCC11/debug/DataManagerLib/ -lDataManagerLib -L/home/cesarcherre/Projects/MiddleWareIOT/App/../Plugins/Interface/BuildGCC11/debug/ -lPluginInterface /opt/Qt/6.2.0/gcc_64/lib/libQt6Sql.so /opt/Qt/6.2.0/gcc_64/lib/libQt6Mqtt.so /opt/Qt/6.2.0/gcc_64/lib/libQt6Network.so /opt/Qt/6.2.0/gcc_64/lib/libQt6Core.so -lpthread   
+LIBS          = $(SUBLIBS) -L/home/cesarcherre/Projects/MiddleWareIOT/App/../Communication/MQTTComm/BuildGCC11/debug/MQTTCommLib/ -lMQTTCommLib -L/home/cesarcherre/Projects/MiddleWareIOT/App/../DataParsers/PayloadErbessd/BuildGCC11/debug/PayloadErbessdLib/ -lPayloadErbessdLib -L/home/cesarcherre/Projects/MiddleWareIOT/App/../DataParsers/MQTTParser/BuildGCC11/debug/ -lMQTTParser -L/home/cesarcherre/Projects/MiddleWareIOT/App/../Manager/DataManager/BuildGCC11/debug/DataManagerLib/ -lDataManagerLib -L/home/cesarcherre/Projects/MiddleWareIOT/App/../Plugins/Interface/BuildGCC11/debug/ -lPluginInterface -L/home/cesarcherre/Projects/MiddleWareIOT/App/../DataParsers/PayloadMilesight/BuildGCC11/debug/PayloadMilesightLib/ -lPayloadMilesightLib /opt/Qt/6.2.0/gcc_64/lib/libQt6Sql.so /opt/Qt/6.2.0/gcc_64/lib/libQt6Mqtt.so /opt/Qt/6.2.0/gcc_64/lib/libQt6Network.so /opt/Qt/6.2.0/gcc_64/lib/libQt6Core.so -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -122,6 +122,8 @@ DIST          = /opt/Qt/6.2.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -291,6 +293,8 @@ Makefile: ../../../App/App.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri \
+		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
 		/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
@@ -443,6 +447,8 @@ Makefile: ../../../App/App.pro /opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++/qmake.conf
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_mqtt_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_network_private.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth.pri:
+/opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_networkauth_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri:
 /opt/Qt/6.2.0/gcc_64/mkspecs/modules/qt_lib_opengl.pri:
@@ -933,7 +939,7 @@ moc_maincontroller.cpp: ../../../App/Controllers/maincontroller.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QJsonArray \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
-	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Controllers/maincontroller.h -o moc_maincontroller.cpp
+	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadMilesight/PayloadMilesightLib -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Controllers/maincontroller.h -o moc_maincontroller.cpp
 
 moc_eventparser.cpp: ../../../App/Services/EventDispatcher/Parsers/eventparser.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
@@ -1007,7 +1013,7 @@ moc_eventparser.cpp: ../../../App/Services/EventDispatcher/Parsers/eventparser.h
 		../../../App/Services/EventDispatcher/Models/confDispatcher.h \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
-	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Services/EventDispatcher/Parsers/eventparser.h -o moc_eventparser.cpp
+	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadMilesight/PayloadMilesightLib -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Services/EventDispatcher/Parsers/eventparser.h -o moc_eventparser.cpp
 
 moc_eventdispatcher.cpp: ../../../App/Services/EventDispatcher/eventdispatcher.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QObject \
@@ -1140,7 +1146,7 @@ moc_eventdispatcher.cpp: ../../../App/Services/EventDispatcher/eventdispatcher.h
 		../../../App/Services/EventDispatcher/Models/confDispatcher.h \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
-	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Services/EventDispatcher/eventdispatcher.h -o moc_eventdispatcher.cpp
+	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadMilesight/PayloadMilesightLib -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/Services/EventDispatcher/eventdispatcher.h -o moc_eventdispatcher.cpp
 
 moc_app.cpp: ../../../App/app.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/QCoreApplication \
@@ -1242,7 +1248,7 @@ moc_app.cpp: ../../../App/app.h \
 		/opt/Qt/6.2.0/gcc_64/include/QtCore/qvariant.h \
 		moc_predefs.h \
 		/opt/Qt/6.2.0/gcc_64/libexec/moc
-	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/app.h -o moc_app.cpp
+	/opt/Qt/6.2.0/gcc_64/libexec/moc $(DEFINES) --include /home/cesarcherre/Projects/MiddleWareIOT/BuildGCC11/debug/App/moc_predefs.h -I/opt/Qt/6.2.0/gcc_64/mkspecs/linux-g++ -I/home/cesarcherre/Projects/MiddleWareIOT/App -I/home/cesarcherre/Projects/MiddleWareIOT/Communication/MQTTComm/MQTTCommLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadErbessd/PayloadErbessdLib -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/MQTTParser -I/home/cesarcherre/Projects/MiddleWareIOT/Manager/DataManager/DataManagerLib -I/home/cesarcherre/Projects/MiddleWareIOT/Plugins/Interface -I/home/cesarcherre/Projects/MiddleWareIOT/DataParsers/PayloadMilesight/PayloadMilesightLib -I/opt/Qt/6.2.0/gcc_64/include -I/opt/Qt/6.2.0/gcc_64/include/QtSql -I/opt/Qt/6.2.0/gcc_64/include/QtMqtt -I/opt/Qt/6.2.0/gcc_64/include/QtNetwork -I/opt/Qt/6.2.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../../App/app.h -o moc_app.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
